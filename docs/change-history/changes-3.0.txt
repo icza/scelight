@@ -1,0 +1,50 @@
+New title:
+[------------------------------------------------]
+Scelight 3.0: External Module API and SDK 1.0  
+
+
+[hr]
+
+[big][b]2014 February 20 - Scelight 3.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]External Module API 1.0[/i][/red]
+The External Module API has reached version 1.0 and is now public. This means everyone can now create external modules for Scelight to extend its functionalities and capabilities. 
+The External Module API exposes advanced engines, components and libraries, the very [red][i]core[/i][/red] APIs that are used [red][i]internally[/i][/red] to build the UI and features of Scelight, making it possible for external modules to create UIs that are [red][i]consistent[/i][/red] with Scelight and to [red][i]deeply integrate[/i][/red] into Scelight. The Scelight External Module API is more than just an interface API: it is a [red][i]platform[/i][/red].
+This means the power is in your hands, but to utilize this power you have get familiar with certain aspects, concepts and interfaces of the API (the 1.0 API exposes [red][i]hundreds[/i][/red] of interfaces and classes).
+Main exposed components:
+  -Application logger.
+  -Language and locale specific utilities.
+  -Extended and custom Swing GUI component library.
+  -Settings. External modules can specify settings and integrate into the Settings dialog; take advantage of setting dependent and bound components and listen to setting changes. 
+  -Replay parser engine.
+  -Replay processor engine.
+  -Basic SC2 Balance Data.
+  -Name template engine.
+  -Replay search engine.
+  -SC2 monitor (current game status, live APM, game status change listening).
+  -Replay folder monitor (new replay listening).
+  -Sound utilities (background sound player - including MP3 format).
+  -General utilities to help implement any kind of code.
+More will be added / exposed in the future.
+The External Module API library also contains the source code of the interface. This means whenever you use the auto-complete feature of modern IDEs (like Eclipse) or you move your mouse cursor over different parts of your code, the Javadoc of the appropriate entity (e.g. a method or interface) will be displayed to you.
+The External Module API is part of the Scelight External Module SDK (see below), you can download it from the [url=https://sites.google.com/site/scelight/downloads]Downloads[/url] page.
+
+-[red][i]Scelight External Module SDK[/i][/red]
+I have created an SDK (Software Development Kit) to aid the development of Scelight External Modules. You can download the Scelight External Module SDK from the [url=https://sites.google.com/site/scelight/downloads]Downloads[/url] page.
+The SDK is a [red][i]complete Eclipse project[/i][/red] with an Ant build script which can build releases of the external module, make deployments, install / inject it into a Scelight installation and make project backups.
+The SDK also contains the External Module API library and its Javadoc.
+To get started with the SDK, first download it and extract it, then use the File / Import... menu in Eclipse, choose "Existing Projects into Workspace" and select the extracted ScelightExtModSDK folder which is the Eclipse project root.
+The External Module SDK also contains an example Hello World external module with source code.
+External Module API, SDK and general external module development info: [url=https://sites.google.com/site/scelight/external-modules]External Modules[/url]
+The Javadoc from the External Module API archive is also a number one source of information, and it is also available online for browsing here: [url=https://scelightop.appspot.com/scelight-ext-mod-api/]Scelight External Module API Javadoc[/url] 
+
+-The Components page of the About dialog now lists loaded and started external modules too, and a new "Type" column displays the type of the components.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Light itself is a great corrective. A thousand wrongs and abuses that are grown in darkness disappear, like owls and bats, before the light of day."[/i][/small]
+

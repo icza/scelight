@@ -1,0 +1,13 @@
+New title:
+[------------------------------------------------]
+Scelight 6.0.2: 
+
+
+[hr]
+[big][b]2015 November 12 - Scelight 6.0.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added official support for Legacy of the Void and 3.0.4 replays.
+

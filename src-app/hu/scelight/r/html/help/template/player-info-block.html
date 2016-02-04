@@ -1,0 +1,31 @@
+<div class="D">
+	The <span class="s">Player Info Block</span> is a special symbol: it has a special opening and closing part (
+	<code>&lt;</code>
+	and
+	<code>&gt;</code>
+	) and some other symbols can be put <span class="h">inside</span> of it.
+</div>
+<br>
+When applying the
+<span class="s">name template</span>
+on a replay, the
+<span class="s">template engine</span>
+will evaluate and insert the contents of the
+<span class="s">Player Info Block</span>
+for
+<span class="h">every</span>
+player in the replay, grouping players by team and separating team members with a comma and teams with the
+<code>" vs "</code>
+string.
+<br>
+<br>
+<div class="E">
+	<b>Example:</b> In a 2v2 game the template:
+	<blockquote>
+		<code>&lt;[PIBplayer] ([PIBrace])&gt;</code>
+	</blockquote>
+	May result in:
+	<blockquote>
+		<code>Bob (T), Ben (Z) vs Rob (P), Ann (P)</code>
+	</blockquote>
+</div>

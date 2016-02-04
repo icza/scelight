@@ -1,0 +1,34 @@
+<div class="D">
+	The <span class="s">Player Stats</span> chart visualizes <span class="h">metrics</span> and <span class="h">state</span> of the game which are <b>not</b> the <i>result
+		of computation</i> from the <span class="h">recorded player events</span> but are the <i>results</i> of the <span class="h">SC2 game engine itself</span>.
+</div>
+<br>
+That being said
+<span class="s">Player Stats</span>
+are
+<span class="h">always accurate</span>
+(within the sampling time which is usually 6 seconds).
+<br>
+<br>
+<div class="D">
+	The <span class="s">Spending Quotient (SQ)</span> is a measurement of the <span class="h">macro skills</span> of players, how good players are spending their
+	incoming resources.<br>The <span class="s">Spending Quotient (SQ)</span> chart visualizes the <span class="h">current</span> <span class="s">SQ</span>
+	value of players at each time of the game, averaging by the available granularity time value (which is usually 6 seconds).
+	<div class="a">
+		The numeric value of <span class="s">SQ</span> is calculated by the formula:
+		<blockquote>
+			<code style="font-size: 95%">SQ = 35 * ( 0.00137 * I - ln( U ) ) + 240</code>
+		</blockquote>
+		Where
+		<code style="font-size: 95%">I</code>
+		is the income and
+		<code style="font-size: 95%">U</code>
+		is the unspent resources.<br> The <span class="s">SQ</span> metric was introduced in the <i>"Do you macro like a pro?"</i> article on Teamliquid.net, you
+		can read more about it there.
+	</div>
+</div>
+<br>
+<div class="N">
+	<b>Note:</b> The static <span class="s">SQ</span> of a player calculated for a game is only counted until the player's last command (<span class="s">Cmd</span>
+	event).
+</div>

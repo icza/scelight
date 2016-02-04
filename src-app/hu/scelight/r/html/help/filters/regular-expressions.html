@@ -1,0 +1,30 @@
+<div class="D">
+	<span class="s">Regular expressions</span> are a way to describe a set of strings based on common characteristics shared by each string in the set.<br> A
+	<span class="s">regexp</span> is a sequence of characters that forms a search pattern.
+</div>
+<br>
+You must learn a specific syntax to create
+<span class="s">regular expressions</span>
+which is beyond the scope of this help. The link leads you to the syntax specification.
+<br>
+<br>
+<div class="E">
+	<b>Example #1:</b> Replays that have a Silver league player on both teams:
+	<blockquote>
+		<code>League matchup MATCHES '(.*)s(.*)v(.*)s(.*)'</code>
+	</blockquote>
+	Note: this example is doable without regexp:
+	<blockquote>
+		<code>[Player A]League=Silver AND [Player A]Team=1 AND [Player B]League=Silver AND [Player B]Team=2</code>
+	</blockquote>
+
+	<b>Example #2:</b> Replays whose map name contains a number:
+	<blockquote>
+		<code>Map name MATCHES '.*\d(.*)'</code>
+	</blockquote>
+
+	<b>Example #3:</b> Replays whose map name contains non-alphanumeric, non-space characters (e.g. dash, apostrophe, parenthesis etc.):
+	<blockquote>
+		<code>Map name MATCHES '.*[^\w\s](.*)'</code>
+	</blockquote>
+</div>

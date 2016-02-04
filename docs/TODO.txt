@@ -1,0 +1,213 @@
+
+
+-Dialogs in info bar: should auto-refresh in like 1 second while open.
+
+
+-New setting: (Race) color sheme.
+	Currently: Blue Protoss, Green Terran and Red Zerg
+	Alternative: Teamliquid: Green Protoss, Blue Terran, Red Zerg
+
+
+-Investigate:
+140306 121638.182 E Error reading replay from replay processor cache, replayKey: awzdQ5OAp47sHWdezyju8niKFsU
+java.lang.NullPointerException
+	at hu.scelight.sc2.rep.cache.RepProcCache.getRepProc(RepProcCache.java:123)
+	at hu.scelight.sc2.rep.factory.RepParserEngine.getRepProc(RepParserEngine.java:172)
+	at hu.scelight.gui.page.replist.RepListComp$14$3.run(RepListComp.java:604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+140306 121638.216 I No balance data available for version: 1.3.6.19269
+
+
+-Map aliases for the Multi-Replay Analyzer.
+
+
+-Ext Mod API TODOs
+	-TextFilterComp, TextSearchComp, Searcher (and implementations), Ability to hook into AboutDialog (to be able to add an IPage)
+	-Expose DDS image support via IRIcon? Then RIcon should implement it, and ServicesImpl.newRIcon() should return an instance of RIcon.
+	-Expose RepCrawlerJob, RepCounterJob
+
+
+-Add source stats to the application.
+	-About dialog, Source code stats page.
+	-Visible only with Developer skill level.
+	-Create beans for source code stats, release build should calculate these and update the bean xml, place it under the resource folder (R)
+		-This could be even part of the build-info.xml (an improved BuildInfoBean should be created, BuildInfoBean is needed as is for ext mods)
+	-Each module should have separate stats, because modules might be released / updated independently.
+
+
+-Indicate supply-capped periods on the Food Made+Used chart!
+
+
+-General chart options, new "section": Overlays.
+	An overlay: Supply-capped. It should show supply-capped periods with a gray background (bar) for example.
+	Consider making it a dialog where overlays can be selected if multiple overlays are added.
+
+
+-Add to errors page: unknown class major.minor version 51.0 (or something).
+
+
+-Alternate (secondary) backup folder with secondary name template. Use the term mirror because rep will be copied to both folders.
+
+
+-Mention in javadoc that control group chart's eventbox tooltips are calculated lazily.
+
+
+-Admin "ask" summarize stats between a date range.
+
+
+-In request stats report put in title where the table data comes from: reg stats from modules.xml requests, uptime stats from modules.xml.digest requests.
+
+
+-EAPM
+
+
+-In MRA if aliases is added and  multiple accounts are actually merged, Alias tab should be added: showing general stats for the individual merged accounts.
+
+
+-Locale settings: first day of week, day end hour.
+
+
+-Allow ext mod custom logger?
+
+
+-About dialog, installed ext mods, new column: Loaded? Started?
+
+
+-Display if extension was used, maybe some info about it (if mpq, sc2ma contains it).
+
+
+-Game info tab, map name link which activates the map info tab.
+
+
+-Allow repfilters to be attached specifying what reps to autosave? Our nice rep filters editor dialog could be used...
+
+
+-Each filterconf monitor edit will cause to remonitoring... Needlessly... (should I care?)
+
+
+-Skip-update-check-ticket.txt...
+
+
+-Refresh reps count when new reps detected? (setting)
+
+
+-Reg-only Logo settings: State, number of stars, gravity (these would be the initial settings).
+
+
+-Option to allow html formatted emails?
+
+
+-Option in email sender dialog: include info about reps.
+
+
+-In player menu: Search other replays of this player in replay folder > (Submenu listing replay folders)
+
+
+-Wait in createacc method until acc is saved, query in a cycle.
+
+
+-New tool (official ext mod?): ping bnet servers, expandable list so e.g. teamliquid.net can be added.
+
+
+-Some developer level settings can be made registration required!
+
+
+-Add boolean filter for Players: Has clan logo.
+	-Only worth it if Scelight does something with clan logos, e.g. fetches them and displays them.
+
+
+-Put a "Close all" button on the Repanalyzers page.
+
+
+-Create a Scelight Operator "clone" for people who can't reach Google.
+	-Add a boot setting to choose a Scelight Operator (Requires restart).
+
+
+-If workspace is in use, popup should have a button to "kill" the application that locked the workspace.
+	-And should have an option to bring it forward!
+
+
+-Self diagnostic.
+	-Detect if the replay backup folder is a child of any monitored replay folders.
+
+
+-Add global UI setting: UI control sizes, take advantage of Nimbus's sizeVariant client property:
+	-component.putClientProperty("JComponent.sizeVariant", "mini"); // "large", "regular"?, "small", "mini"
+	-Since some components are not added (e.g. multi-page comp), requires restart!
+
+
+-TASKS THAT CAN BE WORKED ON:
+	-Add more tips, source: Sc2gears Tips and Things you should know about Sc2gears...
+	-Drag&drop support
+	-Mouse print recorder. Use (OR MAYBE NOT - second thoughts...) LockSupport.parkNanos() to sleep (Thread.sleep() has a minimum granularity of about 12ms).
+	-More charts.
+	-Improved charts: "Use only displayed events as chart input"
+
+
+-Right click on help and tip icons => menu or something to be able to copy the text to clipboard.
+
+
+-Different name templates based on format (both for auto-rename and auto-backup).
+
+
+-Filter for auto backup games.
+
+
+-Add icon to IColumn (and Column setup dialog).
+
+
+-Generate code names for bar code players (for example from the hashcode of their toon)
+
+
+-Table menu with the following general items:
+	-Select All
+	-Pack
+	-Export to CSV?
+	-Enable column selection (not just full rows)
+
+
+-Multi-page component: Close all (that closeable), maybe children of a node? To the control bar? Context menu on the tree?
+	In the Rep analyzers page?
+
+
+-Add boolsettings for the contents of the tool bar and status bar, e.g. "Show Running Jobs", "Show Memory Status"
+
+
+-Get rid of Bean.beanVer?
+
+
+-Table search optimization: row strings are assembled in a StringBuilder, then sb.toString() is used to match,
+	make it so the match is checked in the string builder (thus no string allocation is required for toString()).
+
+
+-Also add Search function to the Settings dialog (along with the current Filter option)?
+
+
+-Add a Unified replay search field: entered value are searched "everywhere" (e.g. player name, game mode, map name etc.)
+This could be implemented by searching the inner structures (which is visualized on the Raw Data Tree tab of the Rep analyzer).
+Addition: explicit stating what to search, e.g. "player:dakota_fanning map:reflection" 
+
+
+-Use separate icons for WoL and HotS replay analyzer pages?
+
+
+-Keyboard shortcuts About page, fill automatically from Actions (and other sources?).
+	Also add general keys like ESC to close a dialog.
+	-CTRL+F to focus search in Settings dialog, ESC to clear search term
+
+
+-multiple/different replay backup folders, chosen by (a) filter(s)
+
+
+-New VersionBean property: cycle.
+Enum, values: DEV, ALPHA, BETA, RC, RETAIL
+https://en.wikipedia.org/wiki/Software_release_life_cycle
+
+
+-Make chart system to support comparing charts from multiple replays!!
+
+
+-Multi-replay analysis: allow users to assemble custom charts (select properties to calculate, select grouping properties, etc.)
+

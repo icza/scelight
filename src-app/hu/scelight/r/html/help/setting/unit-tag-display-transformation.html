@@ -1,0 +1,26 @@
+<div class="D">
+	<span class="s">Unit tags</span> are numbers uniquely identifying units. These numbers are usually big, long numbers. <br> The <span class="s">Unit
+		tag display transformation</span> is a <span class="h">function</span> which defines the format in which <span class="s">unit tags</span> are displayed in the <span
+		class="s">Events table</span> .
+</div>
+<br>
+<span class="s">Decimal radix</span>
+transformation simply displays the tag as is in decimal radix. This usually results in an 8..9 digit number.
+<br>
+<br>
+<span class="s">Hexadecimal radix</span>
+transformation simply displays the tag as is in hexadecimal radix. This usually results in a 7..8 digit number.
+<br>
+<br>
+<span class="s">Shuffled, radix 36</span>
+transformation first rearranges the bytes / bits of the tag to be the
+<span class="h">smallest possible</span>
+and displays it in radix 36. This usually results in a
+<b>2..3</b>
+digit number.
+<br>
+<br>
+<div class="N">
+	<b>Note:</b> Regardless of the chosen transformation the displayed unit tags <span class="h">will remain unique</span> and the same transformed tag will be
+	displayed everywhere for the same unit tag. The transformation function is a <span class="h">bijection</span>.
+</div>

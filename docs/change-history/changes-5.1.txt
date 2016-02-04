@@ -1,0 +1,16 @@
+New title:
+[------------------------------------------------]
+Scelight 5.1: 
+
+
+[hr]
+[big][b]2014 September 26 - Scelight 5.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Aded support for replays with version 2.1.4.[/i][/red]
+
+-Fixed a bug which caused the Build Orders tab of the Replay Analyzer to not work with some custom replays.
+
+-Scelight External Module API and SDK 1.4.1.

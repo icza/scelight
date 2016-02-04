@@ -1,0 +1,44 @@
+New title:
+[------------------------------------------------]
+Scelight 1.2: PTR 2.1, SysTray, Live APM, Overlays
+
+
+[hr]
+
+[big][b]2013 December 11 - Scelight 1.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Added support for 2.1 PTR replays.[/i][/red]
+
+-[red][i]Added System Tray support.[/i][/red]
+A new [red][i]Window[/i][/red] menu in which you can [red][i]Minimize to Tray[/i][/red], set whether to [red][i]Minimize to Tray on Close[/i][/red]
+and whether to [red][i]Start Minimized to Tray[/i][/red].
+These settings are also available on the [red][i]Window[/i][/red] settings page.
+
+-[red][i]Overlay Cards:[/i][/red] They are info panels which are on top of all other windows and—most importantly—over of StarCraft II.
+Note: Overlay Cards are only visible over StarCraft II if you use the [i]"Fullscreen (Windowed)"[/i] or [i]"Windowed"[/i] display mode of StarCraft II.
+Overlay cards support [red][i]transparency[/i][/red] and [red][i]locked[/i][/red] mode.
+
+-[red][i]Live APM Overlay:[/i][/red] This overlay displays your current, live APM during games. It is available under the Tools menu / Live APM Overlay.
+There are 2 new settings on the "SC2 Game Monitor" settings page:
+"Show Live APM Overlay when game starts"
+"Hide Live APM Overlay when game ends"
+
+-[red][i]APM Alert:[/i][/red] During games the [red][i]APM Alert[/i][/red] feature of Scelight can notify or alert you [red][i]audibly[/i][/red] when your APM drops below a certain value specified by the [red][i]APM alert level[/i][/red].
+APM Alert settings can be found on the [red][i]Live APM[/i][/red] settings page.
+
+-[red][i]Last Game Info Overlay:[/i][/red] This overlay displays information about the [red][i]last replay[/i][/red]. It is available under the Tools menu / Last Game Info Overlay.
+There is a new settings on the "Replay Folder Monitor" settings page:
+"Show Last Game Info Overlay for new replays"
+
+-A new [red][i]Watch Selected Replay[/i][/red] button in the Replay list tool bar.
+Clicking on this button will open the first selected replay in StarCraft II.
+[i]StarCraft II must be running for this to work.[/i]
+
+-Spectator and Referee roles were reversed which is now corrected.
+
+
+[small][i]"Who is more foolish, the child afraid of the dark or the man afraid of the light?"[/i][/small]
+

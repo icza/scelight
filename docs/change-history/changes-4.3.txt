@@ -1,0 +1,25 @@
+New title:
+[------------------------------------------------]
+Scelight 4.3: Selection Tracker
+
+
+[hr]
+[big][b]2014 April 10 - Scelight 4.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Selection Tracker[/i][/red]
+The Control Groups chart of the Replay Analyzer has been improved. If you move your mouse cursor over any control group number (both select and assign), the tool tip will now also display the unit selection being involved (including unit names and unit tags).
+
+-Added the 2 missing Smix recordings ("APM OK.", "Low APM!").
+
+-The session break between playing sessions was calculated wrongly which has been fixed.
+This slightly changes the session-related statistics in the Multi-Replay Analyzer.
+
+-Scelight External Module API and SDK 1.3.
+
+-Other minor changes and improvements.
+
+
+[small][i]"An age is called Dark not because the light fails to shine, but because people refuse to see it."[/i][/small]

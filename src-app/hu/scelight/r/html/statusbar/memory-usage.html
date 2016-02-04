@@ -1,0 +1,42 @@
+<html>
+<head>${generalCss}
+</head>
+<body>
+	<b>Memory Usage:</b>
+	<br>
+	<br>
+	<table border=1 cellspacing=0>
+		<tr>
+			<td colspan=2>Max Available:
+			<th align=right>${maxAvailable}
+			<td width=20>
+			<td>Max memory that ${appName} may allocate.
+		<tr>
+			<td rowspan=3>Allocated
+			<td>Total:
+			<th align=right>${allocatedTotal}
+			<td>
+			<td>Memory allocated by ${appName}.
+		<tr>
+			<td>In&nbsp;use:
+			<th align=right>${allocatedInUse}
+			<td style="background: ${colorInUse}">
+			<td>Memory that is currently in use.
+		<tr>
+			<td>Free:
+			<th align=right>${allocatedFree}
+			<td style="background: ${colorFree}">
+			<td>Memory allocated but not used currently.
+		<tr>
+			<td colspan=2>Unallocated:
+			<th align=right>${unallocated}
+			<td style="background: ${colorUnallocated}">
+			<td>Unallocated but available memory (may be allocated if needed).
+		<tr>
+			<td colspan=2>Total Free:
+			<th align=right>${totalFree}
+			<td>
+			<td>Total free memory that may be used if needed.
+	</table>
+</body>
+</html>

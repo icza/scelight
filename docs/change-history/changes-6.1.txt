@@ -1,0 +1,27 @@
+New title:
+[------------------------------------------------]
+Scelight 6.1: Archon mode support
+
+
+[hr]
+[big][b]2015 November 18 - Scelight 6.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Added Archon mode support.[/i][/red]
+Archon mode replays are now supported (attempt to open them in the previous version caused an out of memory error and instability in Scelight).
+Archon mode support includes:
+*Archon mode is indicated in the format property with value "Archon", and as such it is visible on the Game info tab in the Replay Analyzer, in the "Format" Replay list column and in the "[format]" name template symbol.
+*Build orders tab in the Replay Analyzer shows builds for the teams (not for individual users).
+*Map info tab in the Replay Analyzer displays full teams as "player names".
+*Player Stats chart and all sub-charts calculate and display data for the whole team only, these statistics have no meaning and cannot be broken down into individual users (as teams control one common base / player). These include SQ and Supply Capped %. Basically this is the same as turning on the "Teams As One" combo box for non-Archon replays. Other charts and metrics are still calculated individually for each user/player, but can be "merged" into one by enabling the "Teams As One" combo box (this also works for non-Archon replays).
+*"Archon" appears as a new tab in the Multi-replay analyzer where statistics are aggregated / grouped by format.
+
+-Scelight External Module API and SDK 1.5.1.
+
+-Other minor changes and improvements.
+
+
+[small][i]"The planet is always half light and half dark, and so are we."[/i][/small]
+

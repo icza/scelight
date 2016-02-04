@@ -1,0 +1,46 @@
+New title:
+[------------------------------------------------]
+Scelight 4.2: Multi-Replay Analyzer Boost
+
+
+[hr]
+
+[big][b]2014 March 20 - Scelight 4.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Time trend tab in Multi-Replay Analyzer[/i][/red] 
+The Time trend tab encapsulates the previous Hour and Day tabs, and adds further Session, Date (day of month) and Month (month of year) tabs.
+The [red][i]Playing Session[/i][/red] (or simply [red][i]Session[/i][/red]) is a series of [red][i]subsequent[/i][/red] plays where the break between plays is not greater than a specified limit. This limit is the Max Session Break and can be viewed / changed on the Multi-Replay Analyzer settings page.
+The Time trend Session tab analyzes your Playing Sessions, and calculates statistics for the plays based on their [red][i]position[/i][/red] in their Playing Sessions.
+The value in the "Play # in session" column tells which play from each session is included in the row's statistics. For example the first row (Play # in session = 1) shows you statistics of your first plays from each session (this is when you sit down and start to play).
+You can use this Time trend Session statistics to analyze your [red][i]stamina[/i][/red] and decide how many practice plays you need before you go serious, or after how many plays you should take a break before your performance starts to deteriorate.
+
+-[red][i]Timelapse tab in Multi-Replay Analyzer[/i][/red] 
+The Timelapse tab has multiple sub-tabs: Session, Year, Month, Week, Day, Play. Each shows general stats aggregated for the specified time periods / granularity.
+The Timelapse Session tab lists all your playing sessions, and a session stats row shows statistics for all the plays of that particular session (contrary to the Time trend Session tab which takes one play from each session at the most based on the play's position).
+The final Play tab lists every single play of the player.
+This can be used to view your time development, improvement over time.
+
+-[red][i]Numeric columns[/i][/red] in Stats tables of the Multi-Replay Analyzer are now displayed as [red][i]progress bars[/i][/red] making the rows visually comparable.
+This basically turns all numeric columns into [red][i]vertical bar charts[/i][/red]; or more than that because the table (and thus the bar chart) can be filtered and sorted by any columns. 
+
+-Added new columns to Map stats tabs in the Multi-Replay Analyzer.
+New columns include the [red][i]Map size[/i][/red] column, which is sorted by the map area (width*height). Sorting by this you can check for example how game length relates to the map size.
+
+-The "Races %" column in the Multi-Replay Analyzer is now rendered as a [red][i]colored bar code[/i][/red].
+Each race has its color (based on SC2 itself: [blue]Blue[/blue] for Protoss, [green]Green[/green] for Terran and [red]Red[/red] for Zerg), and the race distribution is visualized with a multi-colored bar making the used races visually standing out.
+
+-The APM, SPM, SQ, SC % tabs have been grouped into a [red][i]"Metric trend"[/i][/red] tab.
+
+-Added a new "Multi-Replay Analyze Replays of the Selected Row" to the tool bar of all stats table.
+With this you can launch a new Multi-Replay Analyzer to analyze only the replays of the selected stats row.
+
+-Scelight External Module API and SDK 1.2.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Genius is not so much a light as it is a constant awareness of the surrounding gloom."[/i][/small]
+

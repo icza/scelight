@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin-launcher" path="src-launcher"/>
+	<classpathentry kind="src" output="bin-sc2-textures" path="src-sc2-textures"/>
+	<classpathentry kind="src" output="bin-sc2-balance-data" path="src-sc2-balance-data"/>
+	<classpathentry kind="src" output="bin-app-libs" path="src-app-libs"/>
+	<classpathentry kind="src" path="src-app"/>
+	<classpathentry kind="src" output="bin-tool" path="src-tool"/>
+	<classpathentry kind="src" output="bin-ext-mod-api" path="src-ext-mod-api"/>
+	<classpathentry kind="lib" path="app-folder/mod/app-libs/0.0/registry.jar"/>
+	<classpathentry kind="lib" path="app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar"/>
+	<classpathentry kind="lib" path="app-folder/mod/app-libs/0.0/smtp-1.5.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7"/>
+	<classpathentry kind="output" path="bin-app"/>
+</classpath>

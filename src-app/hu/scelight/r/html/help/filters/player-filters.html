@@ -1,0 +1,44 @@
+There are several ways to filter replays based on player properties using different
+<span class="s">Filter by Groups</span>
+. These can be
+<span class="h">combined</span>
+arbitrarily.
+<br>
+<br>
+<div class="D">
+	1. The <span class="s">Players Avg</span> group contains properties which are <span class="h">aggregate</span> values calculated from all the players of a
+	replay (e.g. the weighted average APM of all players from a replay). <br> <br> 2. The <span class="s">Any Player</span> group can be used to specify
+	filters that may be matched by <span class="h">any player</span>, <span class="h">independently</span> from other player filters. <br> <br> 3. The <span
+		class="s">All Players</span> group can be used to specify filters that must be matched by <span class="h">all players</span>, <span class="h">independently</span>
+	from other player filters. <br> <br> 4. The <span class="s">Player X</span> groups (where <b>X</b> is the letter A, B, C or D) can be used to specify
+	filters <span class="h">on different</span> players and / or to specify <span class="h">multiple</span> filters <span class="h">on the same</span> player. The
+	<span class="h">same <b>X</b></span> letter always refers to the <span class="h">same player</span>, <span class="h">different <b>X</b></span> letters always
+	refer to <span class="h">different players</span>.
+</div>
+<br>
+<div class="E">
+	<b>Example #1:</b> Replays that have a player Dakota and have a player with more than 50 APM (which may or may not be Dakota):
+	<blockquote>
+		<code>[Any Player]Name='Dakota' AND [Any Player]APM&gt;50</code>
+	</blockquote>
+
+	<b>Example #2:</b> Replays that have a player Dakota who has more than 50 APM:
+	<blockquote>
+		<code>[Player A]Name='Dakota' AND [Player A]APM&gt;50</code>
+	</blockquote>
+
+	<b>Example #3:</b> Replays that have a player Dakota and have a different player with more than 50 APM:
+	<blockquote>
+		<code>[Player A]Name='Dakota' AND [Player B]APM&gt;50</code>
+	</blockquote>
+
+	<b>Example #4:</b> Replays that have a player Dakota and have a different player with more than 50 APM and have a Protoss player (could be anyone):
+	<blockquote>
+		<code>[Player A]Name='Dakota' AND [Player B]APM&gt;50 AND [Any Player]Race=Protoss</code>
+	</blockquote>
+
+	<b>Example #5:</b> Replays where the players have greather than 50 APM average and all players reached level 90:
+	<blockquote>
+		<code>[Players Avg]Average APM>50 AND [All Players]Levels&ge;90</code>
+	</blockquote>
+</div>

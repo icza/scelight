@@ -1,0 +1,15 @@
+bin-app/
+bin-app-libs/
+bin-ext-mod-api/
+bin-launcher/
+bin-sc2-balance-data/
+bin-sc2-textures/
+bin-tool/
+app-folder/boot-settings.xml
+app-folder/boot-settings.xml_
+app-folder/mod-x/hello-world/
+release/compiled-classes/
+release/deployment-dev/
+release/deployment-pub/
+release/compiled-classes/
+release/Scelight/

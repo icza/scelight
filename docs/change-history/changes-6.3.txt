@@ -1,0 +1,18 @@
+New title:
+[------------------------------------------------]
+Scelight 6.3: 
+
+
+[hr]
+[big][b]2016 February 1 - Scelight 6.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-TODO Check APM calculation (Command manager).
+
+-Other minor changes and improvements.
+
+
+[small][i]"TODO"[/i][/small]
+

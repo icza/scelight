@@ -1,0 +1,34 @@
+New title:
+[------------------------------------------------]
+Scelight 5.0: Run without Java, Merged Accounts
+
+
+[hr]
+[big][b]2014 May 16 - Scelight 5.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]This release comes with the option to run Scelight on Windows without Java having to be installed![/i][/red]
+On Windows Operating Systems if you can't or don't want to install Java on your system, you can download a prepared JRE (Java Runtime Environment) from the Scelight [url=https://sites.google.com/site/scelight/downloads]Downloads[/url] page and extract it into the Scelight folder.
+Doing so will allow you to run Scelight without having to install Java on your system. This has to be done only once.
+[i]The recommended way is still to install Java! Think of this as a last resort.[/i]
+
+-[red][i]Merged Accounts in Multi-Replay Analyzer[/i][/red]
+If you have multiple accounts and / or you play on multiple regions, you can specify all your accounts as [red][i]Merged Accounts[/i][/red] and that way you will see all your statistics summarized under one -arbitrarily chosen- main account in the Multi-Replay Analyzer. You can specify all your accounts on the Merged Accounts settings page.
+This setting requires registration to be edited / changed.
+
+-New player detail tab in the Multi-Replay Analyzer: [red][i]Region[/i][/red]
+This tab shows statistics grouped by the region of the player. Useful if you use the new Merged Accounts feature.
+
+-New player detail tab in the Multi-Replay Analyzer: [red][i]Account[/i][/red]
+This tab shows statistics grouped by the accounts that were merged. Useful if you use the new Merged Accounts feature.
+
+-Fixed a small progress bar rendering issue in tables (happened when only 1 row was added to a table).
+
+-Scelight External Module API and SDK 1.4.
+
+-Other minor changes and improvements.
+
+
+[small][i]"I will love the light for it shows me the way, yet I will endure the darkness because it shows me the stars."[/i][/small]

@@ -1,0 +1,26 @@
+New title:
+[------------------------------------------------]
+Scelight 6.2.3: 
+
+
+[hr]
+[big][b]2016 January 29 - Scelight 6.2.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added settings to change the font and background color of the Live APM Overlay.
+Colors can be changed for both normal and alert (low APM) state: "Overlay font color", "Overlay background color", "Overlay alert font color", "Overlay alert background color". 
+These can be found in the config menu of the Live APM overlay (wrench icon) and also in the Settings dialog -> SC2 Game Monitor -> Live APM page.
+
+-On multi-screen environments dialogs are now centered relative to parent window instead of the main screen. 
+
+-Fixed an issue where using the Search, Filter and Filter Out fields did not work as expected on columns displaying date/time values.  
+
+-Fixed an issue where games were included in the wrong "Week" (under Timelapse in the Multi-replay Analyze) if the game was played in the last week of the year of which week ended in the next year.
+ 
+-Other minor changes and improvements.
+
+
+[small][i]"TODO"[/i][/small]
+

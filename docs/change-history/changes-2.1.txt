@@ -1,0 +1,41 @@
+New title:
+[------------------------------------------------]
+Scelight 2.1: Search, Users tab improvements +more
+
+
+[hr]
+
+[big][b]2014 January 31 - Scelight 2.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-A new chart under the Player stats chart: [red][i]Food Made+Used[/i][/red]
+This chart shows Food Made and Food Used charts at once, making it easy to see supply capped periods (when Food Used is greater than or equal to Food Made).
+
+-[red][i]Users tab improvements[/i][/red]
+A new column has been added: [red][i]Supply-capped %[/i][/red]. This shows the ratio of supply-capped time and the time of the last command of the user (this is much more informative than the supply-capped time which depends on the game length).
+Columns have been reordered based on importance and [red][i]comparable metrics are now displayed as progress bars[/i][/red], making the users visually comparable.
+These include the following columns: APM, SPM, SQ, Supply-capped %, Swarm Levels.
+
+-[red][i]Search engine improvements[/i][/red]
+Slightly rearranged filter properties based on importance and added new properties to filter by:
+
+[red][i]"Is Beta / PTR?"[/i][/red]: Using this new filter you can list only Beta / PTR replays, or exclude them.
+[red][i]"[Players Avg] Avg. Supply-capped %"[/i][/red]: Using this you can filter replays based on the average supply-capped percent of players.
+[red][i]"Supply-capped %"[/i][/red]: This is a player filter to be applied on a player (any, all or a specific player).
+
+The [red][i]"Is Competitive?"[/i][/red] filter now also accepts AutoMM games with version less than 2.0 (when there was no unranked games and AutoMM games were equal to ladder games).
+
+-[red][i]Last Game info Overlay card improvements[/i][/red]
+Rearranged columns based on importance and to be consistent with the Users tab, also added a new column: [red][i]SP%[/i][/red] (Supply-capped percent).
+
+-Fixed a rendering bug that happened sometimes when contents of sub-tabs of the Inspector tab (visible only on Developer skill level) of the Replay analyzer were scrolled with the mouse scroll wheel. 
+
+-The External Module API design and development got a boost and jumped to version 0.6, getting closer to public release.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Remember: Always walk in the light. And if you feel like you're not walking in it, go find it. Love the light."[/i][/small]
+

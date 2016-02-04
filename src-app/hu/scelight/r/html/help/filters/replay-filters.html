@@ -1,0 +1,40 @@
+<div class="D">
+	<span class="s">Replay Filters</span> are a list of <span class="h">conditions on replay properties</span>, and they specify what replays to <span class="h">include</span>
+	in the <span class="s">Replay list</span> table, excluding those that <span class="h">do not match</span> the filters.
+</div>
+<br>
+Filters can be connected with logical
+<span class="h">AND</span>
+(both filters on its side must match) or with logical
+<span class="h">OR</span>
+(only one filter on its side is enough to match).
+<br>
+<br>
+The
+<span class="h">AND</span>
+has higher precedence than
+<span class="h">OR</span>
+, always the
+<span class="h">AND</span>
+connections are evaluated first.
+<br>
+You can use different variations of the logical connection which insert
+<span class="h">parenthesis</span>
+to
+<span class="h">group the filters</span>
+. Filters inside parenthesis take precedence in evaluation. Missing opening parenthesis will be inserted before the first filter, and missing closing
+parenthesis will be inserted after the last filter.
+<br>
+<br>
+<div class="E">
+	<b>Example #1:</b> Replays that are from the Korean region with HotS expansion <i>or</i> are from the US region and were not played on the map Daybreak LE:
+	<blockquote>
+		<code>Region=Korea AND Expansion=HotS OR Region=US AND Map name&ne;'Daybreak LE'</code>
+	</blockquote>
+
+	<b>Example #2:</b> Replays that are not played on any Daybreak maps and are either from the Korean or US region:
+	<blockquote>
+		<code>Map name does not contain 'Daybreak' AND (Region=Korea OR Region=US)</code>
+	</blockquote>
+</div>
+<br>

@@ -1,0 +1,28 @@
+New title:
+[------------------------------------------------]
+Scelight 6.2: File operations, "Just Played" reps
+
+
+[hr]
+[big][b]2015 November 27 - Scelight 6.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]New File Operations: Copy / Move / Pack[/i][/red]
+The Replay list page now contains 3 additional icons in the tool bar: Copy, Move and Pack Selected Replays. They do what their name say.
+In all of those 3 operations you have the option to "Preserve subfolders relative to source Replay Folder".
+
+-New setting under the Replay Folder Monitor node:
+[red][i]Only pick up "Just Played" new replays[/i][/red]
+If this is enabled (it is by default), only games that were just played will be picked up as new replays.
+The advantage and consequence of this is that if you download replays from others or you copy / drop "old" replays into monitored replay folders, they will not be picked up and handled as "new replays". 
+This extends to everything under the Replay Folder Monitor node: renaming new replays, auto-opening them in the Replay Analyzer, showing Last Game Info Overlay, Auto backup, playing 'Replay saved' voice.
+
+-Fixed an issue where some LotV icons were not displayed properly (e.g. KD8 Charge), and Stasis Ward might even cause an error.
+
+-Other minor changes and improvements.
+
+
+[small][i]"The speed of light sucks."[/i][/small]
+

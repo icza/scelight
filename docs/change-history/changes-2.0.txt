@@ -1,0 +1,54 @@
+New title:
+[------------------------------------------------]
+Scelight 2.0: Powerful Filters and Replay Search 
+
+
+[hr]
+
+[big][b]2014 January 20 - Scelight 2.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Filters and Replay Search[/i][/red]
+Powerful filters and advanced Replay Search have finally arrived. Predefined replay filters can be [red][i]attached[/i][/red] to Replay folders, and when you want to list the contents of a Replay folder, the attached filters will be applied [red][i]automatically[/i][/red].
+You can view/edit the attached Replay filters of a Replay folder by selecting the Replay folder and pressing the new "Edit Attached Filters" button. This will open the Replay Filters Editor (see below).
+You can also [red][i]search Replay folders[/i][/red] by pressing the "Search Replay Folders" button in which case a Replay Filters Editor will pop up where you can specify custom filters (instead of the attached filters).
+A new "Filters" column indicates the [i]active[/i] attached filters count for each Replay folder in the table. [i]Active[/i] means it is enabled and it is valid (contains no errors).
+The Replay list page now has a new [red][i]"View / Edit Filters and Repeat Search"[/i][/red] button. This opens a Replay Filters Editor where you can view the filters that were applied when replays were listed, and you can also modify these filters ([i]tune[/i] them) and repeat the search on the source Replay folder. Repeating the search will list the new results in a new Replay list page. 
+
+-[red][i]Replay Filters Editor[/i][/red]
+The Replay Filters Editor is used to view and edit Replay filters that are applied when searching / listing replays of a Replay folder.
+[red][i]It is table-based, equation-editor-like, easy but powerful filters editor.[/i][/red] It is easy to quickly add a few filters like Map name, Replay date, Version, Region etc.
+It is also possible to build complex queries as it supports [red][i]filter connections[/i][/red] like logical AND and logical OR, supports [red][i]parenthesis (grouping of filters)[/i][/red], and [red][i]advanced operators[/i][/red] like contains, starts with, ends with and [red][i]MATCHES[/i][/red] (regular expression matching).
+The search engine supports too many properties to enumerate them all. To easily find and pick the ones you're interested in, filter properties (called Filter by) are organized into groups (called Filter by Group).
+There are also special groups to filter by player properties. Special groups are at your disposal to filter by [red][i]aggregate values[/i][/red] of all players of a replay (e.g. weighted average APM of all players of a replay); to filter by a property of [red][i]any player[/i][/red], of [red][i]all players[/i][/red], or to specify filters on [red][i]different players[/i][/red] or [red][i]multiple filters on the same player[/i][/red]. 
+There is also a [red][i]Filters Structure Preview[/i][/red] which shows the structure of the filters in a [red][i]tree-like formatted table[/i][/red].
+Queries like this are easily possible (you can see exactly this query on the image):
+[i]"replays from the US or Europe region with HotS expansion that are longer than 10 min and were not played on any of the Daybreak maps and have a player named Dakota who is above Gold league and have another player with more than 50 APM with a clan tag in its name and have a player with Protoss race that could be anyone and average SPM of all players is at least 5 and all players have reached level 90"[/i]
+Specifying and editing filters is done via an editable table. Just click on any cell to view your options and to edit it.
+The constructed filters can also be [red][i]saved[/i][/red] to a file or previously saved filters can be [red][i]loaded[/i][/red] from a file. 
+
+-[red][i]A new Replay list column: "Played"[/i][/red]
+This column will show you the replay date in the form of played "xxx" ago ([red][i]relative[/i][/red] to the current time).
+Examples: "12m 30s" means 12 minutes and 30 sec ago, "7h 15m" means 7 hours and 15 min ago, "2w 1d" means 2 weeks and 1 day ago, "2y 2M" means 2 years and 2 months ago. 
+
+-Relative date is also displayed at many other locations.
+
+-Replay list progress bar now displays Added, Filtered out and Errors (renamed from Skipped).
+
+-[red][i]Unfocusable Overlay cards.[/i][/red]
+Overlay cards are now not focusable by default. This means they do not hijack focus when they are displayed, nor do they hijack focus when you click on them. Focus remains in SC2 (or in your active application).
+Of course you can still activate / open the Overlay config menu by clicking on it, but this also will not hijack the focus from SC2 (or your active application).
+This focusable state can be toggled in the config menu of the Overlay card.
+
+-[red][i]Moving Overlay cards outside the main screen.[/i][/red]
+By default Overlay cards cannot be moved outside the main screen, and this has not changed. But now the Overlay config menu contains a new option: "Allow outside the main screen". If you enable this, Scelight will not align the Overlay cards anymore, you will be able to position them outside the main screen, onto your additional screens if you have a multi-screen configuration.
+
+-Fixed a rendering bug that happened sometimes when the Events table or the Replay list table were scrolled with the mouse scroll wheel. 
+
+-Other minor changes and improvements.
+
+
+[small][i]"We realize the importance of light when we see darkness."[/i][/small]
+

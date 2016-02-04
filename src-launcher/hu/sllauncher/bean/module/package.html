@@ -1,0 +1,35 @@
+<html>
+<body>
+
+	<p>Beans describing the modules.</p>
+	<p>The role of the different module beans is the following:</p>
+	<ul>
+		<li>{@link hu.sllauncher.bean.module.ModulesBean ModulesBean}: acquired from the Application Operator, contains the latest versions of different modules.
+		
+		<li>{@link hu.sllauncher.bean.module.ModuleBean ModuleBean}: acquired from the Application Operator, describes an updateable module (both internal and
+			external).
+		<li>{@link hu.sllauncher.bean.module.ExtModRefBean ExtModRefBean}: acquired from the Application Operator, it is a reference to an official external
+			module (to its {@link hu.sllauncher.bean.module.ModuleBean ModuleBean}).
+		<li>{@link hu.sllauncher.bean.module.ExtModManifestBean ExtModManifestBean}: it is part of an external module, contains additional details and meta info
+			about the external module (like its main class.)
+	</ul>
+
+	<p>
+		<code>ModuleBean</code>
+		is used to install/update/validate a module (either internal or external), so it has to contain info about its content to be able to validate it if the module
+		is already present/installed.
+	</p>
+
+	<p>
+		<code>ExtModRefBean</code>
+		must contain enough info for the user to be able to decide whether he/she wants to install it.
+	</p>
+
+	<p>When there is no internet connection, only {@link hu.sllauncher.bean.module.ExtModManifestBean ExtModManifestBean} is accessible (from the local file
+		system), so it has to contain all necessary info for the user and for the {@link hu.scelight.service.extmods.ExtModManager ExtModManager} to load and start
+		it.</p>
+
+	@author Andras Belicza
+
+</body>
+</html>

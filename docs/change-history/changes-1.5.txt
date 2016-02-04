@@ -1,0 +1,27 @@
+New title:
+[------------------------------------------------]
+Scelight 1.5: New Logo, small improvements
+
+
+[hr]
+
+[big][b]2014 January 6 - Scelight 1.5[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]New Logo by Existor.[/i][/red]
+The application logo is replaced by a new logo created by [url=http://dexistor371.deviantart.com/]Existor[/url].
+
+-Player's full name is now indicated on the Map info tab of the Replay analyzer.
+It can also be toggled with a check box.
+
+-Added support to handle the updated 2.1 PTR replays.
+
+-Small improvements in the Replay processor engine to properly handle custom games where slots have been rearranged before start.
+
+-Other minor changes and improvements.
+
+
+[small][i]"When you can't make them see the light, make them feel the heat."[/i][/small]
+

@@ -1,0 +1,28 @@
+<div class="D">
+	Every icon and image when displayed needs to be scaled, resampled to their display size if it is not equal to their original size. The <span class="s">Icon
+		scaling quality</span> setting chooses the <span class="h">algorithm</span> and defines the result image <span class="h">quality</span>.
+</div>
+<br>
+The
+<span class="s">Low</span>
+quality is the fastest but may result in blocky images. It uses the nearest neighbour interpolation algorithm.
+<br>
+<br>
+The
+<span class="s">Medium</span>
+quality results in much smoother images than the
+<span class="s">Low</span>
+quality as there are no blocky edges between the colors. It uses the bilinear interpolation algorithm of the 4 nearest pixels.
+<br>
+<br>
+The
+<span class="s">High</span>
+quality offers slightly better quality than the
+<span class="s">Medium</span>
+quality. It uses a cubic interpolation of the 9 nearby pixels.
+<br>
+<br>
+<div class="W">
+	The <span class="s">High</span> quality on some computers (where there is no suitable hardware acceleration) may cause ${appName} to slow down significantly
+	(especially when zoomed map images are displayed). If you experience this, use the <span class="s">Medium</span> quality instead!
+</div>

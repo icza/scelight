@@ -1,0 +1,37 @@
+<div class="D">
+	<span class="s">SPM</span> stands for <span class="h">Screens Per Minute</span>, it measures the <span class="h">multitasking skills</span> of players.<br>
+	<span class="s">SPM</span> tells how fast / frequently players are changing screens during games. Numerically it shows how many times are screens switched by
+	the player in 1 minute. Higher <span class="s">SPM</span> means more / faster screen switches.
+</div>
+<br>
+Screen changes are listed under the
+<span class="s">CameraUpdate</span>
+events. Only screen changes that move the screen with at least a certain distance (delta &ge; 15) are counted in
+<span class="s">SPM</span>
+.
+<br>
+<br>
+<b>That being said <span class="s">SPM</span> includes:
+</b>
+<ul>
+	<li>Camera hotkey usage</li>
+	<li>(Left) clicking on the mini map to move your screen</li>
+	<li>Clicking on the portrait of the selected unit to center the unit on the screen</li>
+	<li>Pressing the space key to center the location of the latest event</li>
+</ul>
+<b><span class="s">SPM</span> does NOT include:</b>
+<ul>
+	<li>Locking screen on a unit</li>
+	<li>Scrolling your screen with the cursor keys (keyboard)</li>
+	<li>Scrolling your screen by moving your mouse cursor to the side of the screen (side scrolling)</li>
+	<li>Spamming the same camera hotkey or (left) clicking on the minimap to approximately the same location</li>
+</ul>
+<div class="D">
+	The <span class="s">SPM chart</span> visualizes the <span class="h">current</span> <span class="s">SPM</span> value of players at each time of the game,
+	averaging by the selected <span class="s">granularity</span> time value.
+</div>
+<br>
+<div class="N">
+	<b>Note:</b> The static <span class="s">SPM</span> of a player calculated for a game excludes the first 80 seconds (can be changed) and is only counted until
+	the player's last command (<span class="s">Cmd</span> event).
+</div>

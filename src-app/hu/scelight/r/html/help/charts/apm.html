@@ -1,0 +1,35 @@
+<div class="D">
+	<span class="s">APM</span> stands for <span class="h">Actions Per Minute</span>, it is a measurement of <span class="h">micro skills</span> of players.<br>
+	<span class="s">APM</span> tells how fast players are during games. Numerically it shows how many actions / commands are issued by the player in 1 minute.
+	Higher <span class="s">APM</span> means more activity.
+</div>
+<br>
+<span class="s">APM</span>
+calculation is pretty simple: one just have to divide the number of actions with the number of minutes where the actions spread in time. For example 200 actions
+in 1 minute results in 200 APM.
+<br>
+<br>
+<b>The following actions are included in <span class="s">APM</span> calculation:
+</b>
+<ul>
+	<li>Commands (<span class="s">Cmd</span> events)
+	</li>
+	<li>Selections (<span class="s">SelectionDelta</span> events)
+	</li>
+	<li>Control group commands (<span class="s">ControlGroupUpdate</span> events)
+	</li>
+</ul>
+<b><span class="s">APM</span> calculation does NOT include:</b>
+<ul>
+	<li>Screen movements (<span class="s">CameraUpdate</span> events)
+	</li>
+</ul>
+<div class="D">
+	The <span class="s">APM chart</span> visualizes the <span class="h">current</span> <span class="s">APM</span> value of players at each time of the game,
+	averaging by the selected <span class="s">granularity</span> time value.
+</div>
+<br>
+<div class="N">
+	<b>Note:</b> The static <span class="s">APM</span> of a player calculated for a game excludes the first 80 seconds (can be changed) and is only counted until
+	the player's last command (<span class="s">Cmd</span> event).
+</div>

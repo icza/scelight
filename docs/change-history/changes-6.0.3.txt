@@ -1,0 +1,14 @@
+New title:
+[------------------------------------------------]
+Scelight 6.0.3: 
+
+
+[hr]
+[big][b]2015 November 12 - Scelight 6.0.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Fixed a bug which caused time-related metrics (game duration, APM, etc.) to be calculated incorrectly in LotV replays.
+The source of the issue was the time measurement change in LotV.
+

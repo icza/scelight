@@ -1,0 +1,40 @@
+New title:
+[------------------------------------------------]
+Scelight 4.0: Multi-Replay Analyzer and more
+
+
+[hr]
+
+[big][b]2014 March 7 - Scelight 4.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Multi-Replay Analyzer[/i][/red]
+The major part of Sc2gears' Multi-replay analysis has been reimplemented, and many additional stats and calculations have been added (Calendar view, APM-SPM-SQ-SC% range stats; Expansion, Result, sum Race and League stats).
+Detects and displays [red][i]player name changes[/i][/red] (including both clan and character name changes).
+The new [red][i]Calendar view[/i][/red] shows stats grouped by day in a calendar layout, also uses different colors to indicate the total play time on each day (in Player details).
+In any stats table you can select a row and [red][i]list the replays that assemble the stats of the selected row[/i][/red] (this was a long awaited, missing feature in Sc2gears). The result Replay list can also be filtered further with the Scelight Replay filter system, and further filtered results can also be opened in a new Multi-Replay Analyzer.
+In the Multi-Replay Analyzer you also have the option to view / edit the filters that were used to perform the analysis, and you can fine-tune the filters to repeat the analysis in a new Multi-Replay Analyzer.
+The Replay Folders page now contains new 2 buttons to launch a Multi-Replay Analyzer for the selected Replay folder, with the attached or custom filters.
+The Replay list page also contains a new button to Multi-Replay Analyze all listed replays (using the same source and filters), and a new button to Multi-Replay Analyze only the selected replays.
+
+-The general table tool bar (with search and filter) now also shows the [red][i]Selected[/i][/red] rows count along with the Listed and All rows count.
+
+-Improved Replay parser engine to better support custom games (games that failed to parse before will most likely work now).
+
+-The Replay list column setup dialog now also shows an [red][i]icon[/i][/red] column.
+
+-Added many new icons.
+
+-Numbers with fraction parts are now displayed with 2 fraction digit precision (e.g. SPM, Supply-capped %).
+
+-Increased the default/initial size of the application dialogs and the launcher window.
+
+-Scelight External Module API and SDK 1.1.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Nature and Nature's laws lay hid in night; God said, "Let Newton be!" and all was light."[/i][/small]
+

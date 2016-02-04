@@ -1,0 +1,24 @@
+You can also have
+<span class="h">only a part</span>
+of the dynamic value of
+<span class="h">any</span>
+symbol inserted.
+<br>
+<br>
+To do so, before the closing square brackets of the symbol insert the wanted character range (first and last character index, starting at 1, both inclusive)
+wrapped in braces in the form of
+<code>{first-last}</code>
+.
+<br>
+<br>
+<div class="E">
+	<b>Example:</b> To insert the substring of the map name starting from the 2nd character up to the 10th use the following expression:
+	<blockquote>
+		<code>[map{2-10}]</code>
+	</blockquote>
+	Which in case of
+	<code>"Cloud Kingdom LE"</code>
+	results in
+	<code>"loud King"</code>
+	.
+</div>

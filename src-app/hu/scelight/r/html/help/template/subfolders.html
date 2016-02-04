@@ -1,0 +1,18 @@
+<div class="D">
+	The <span class="s">Template Engine</span> supports <span class="s">sub-folders</span> . This means that applying a <span class="s">name template</span> on
+	replays can categorize the replays into <span class="s">sub-folders</span>. <br> Folders in the template are separated with the
+	<code>"[folderSep]"</code>
+	symbol.
+</div>
+<br>
+<div class="E">
+	<b>Example:</b> Let's say you want your replays in different folders based on the region they were played on, and inside the region folders have them
+	categorized in folders based on game format (like 1v1, 2v2, FFA etc.). <br> <br> The following template will do just that:
+	<blockquote>
+		<code>[region][folderSep][format][folderSep][dateTime]&nbsp;[map]</code>
+	</blockquote>
+	An example output:
+	<blockquote>
+		<code>Europe\1v1\2013-06-28 15_23_01 Star Station.SC2Replay</code>
+	</blockquote>
+</div>

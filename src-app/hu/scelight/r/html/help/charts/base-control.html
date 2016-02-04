@@ -1,0 +1,45 @@
+<div class="D">
+	The <span class="s">Base Control</span> chart visualizes <span class="h">Larva Spawning</span> for <span class="h">Hatcheries</span> and energy usage of <span
+		class="h">Nexus</span> and <span class="h">Orbital Commands</span>.
+</div>
+<br>
+<span class="h">Chrono Boosts</span>
+are visualized in case of
+<span class="h">Nexus</span>
+grouped by the target building they are used on (each building has its own row) ,
+<span class="h">Calldown: MULEs</span>
+,
+<span class="h">Scanner Sweeps</span>
+and
+<span class="h">Calldown: Extra Supplies</span>
+in case of
+<span class="h">Orbital Commands</span>
+.
+<br>
+<br>
+For
+<span class="h">Hatcheries</span>
+the chart visualizes
+<span class="h">larva injections</span>
+(
+<span class="h">Spawn Larva</span>
+commands; each targeted
+<span class="h">Hatchery</span>
+has its own row), and also calculates 2 very important metrics from the injections: the
+<span class="s">Average Spawning Ratio</span>
+and the
+<span class="s">Average Injection Gap</span>
+(for each
+<span class="h">Hatchery</span>
+which is injected at least once, and a global value for all injected
+<span class="h">Hatcheries</span>
+).
+<br>
+<br>
+<div class="D">
+	The <span class="s">Average Spawning Ratio</span> is the ratio of the time a <span class="h">Hatchery</span> is spawning larva compared to the time between its
+	first injection till the end of its last injection. <i>The greater the better.</i><br> The <span class="s">Average Injection Gap</span> is the average
+	time gap between time windows a <span class="h">Hatchery</span> is spawning larva. <i>The smaller the better.</i>
+</div>
+<br>
+${#/hu/scelight/r/html/help/fragment/event-box-tip.html}

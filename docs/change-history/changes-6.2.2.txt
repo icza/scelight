@@ -1,0 +1,18 @@
+New title:
+[------------------------------------------------]
+Scelight 6.2.2: 
+
+
+[hr]
+[big][b]2016 January 16 - Scelight 6.2.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Corrected the "Week" names displayed in the Week tab under Timelapse in the Multi-replay Analyzer (previous value always displayed the week number +1). 
+
+-Fixed a bug in the Replay Parser Engine which failed to build command text if target unit was a neutral unit without an owner. 
+
+-Other minor changes and improvements.
+
+

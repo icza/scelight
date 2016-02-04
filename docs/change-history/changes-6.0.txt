@@ -1,0 +1,30 @@
+New title:
+[------------------------------------------------]
+Scelight 6.0: Patch 3.0 + LotV support
+
+
+[hr]
+[big][b]2015 October 10 - Scelight 6.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Patch 3.0 replay support.[/i][/red]
+Added support for replays saved with patch 3.0.
+
+-[red][i]Preliminary Legacy of the Void support.[/i][/red]
+You can now open LotV beta replays, but displayed information is incomplete.
+
+-[red][i]Eased restrictions for non-registered users.[/i][/red]
+Wait time at startup is decreased from 15 seconds to 10.
+The [red][i]Merged Accounts[/i][/red] setting is not available to non-registered users too. This is particularly useful if you have multiple accounts and you want too see summarized statistics gained from all of them in the Multi-replay analyzer. 
+
+-Added support for the new map format (version=38).
+
+-Scelight External Module API and SDK 1.5.
+
+-Other minor changes and improvements.
+
+
+[small][i]"But you know happiness can be found even in the darkest of times, when one only remembers to turn on the light."[/i][/small]
+

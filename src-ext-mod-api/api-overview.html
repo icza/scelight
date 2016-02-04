@@ -1,0 +1,49 @@
+<html>
+<body>
+
+	<p>
+		This documentation is the public Scelight External Module API documentation, home page: <a href="https://sites.google.com/site/scelight/">https://sites.google.com/site/scelight/</a>.
+	</p>
+
+	<p>
+		<i>This API documentation is public and is intended for / allowed to be used by anyone.</i>
+	</p>
+
+	<p>External Module API entry point:</p>
+	<ul>
+		<li>{@link hu.scelightapi.IExternalModule}</li>
+	</ul>
+
+	<p>Main exposed components: {@link hu.scelightapi.IServices}</p>
+	<ul>
+		<li>Application logger: {@link hu.scelightapibase.service.log.ILogger}</li>
+		<li>Language and locale specific utilities: {@link hu.scelightapibase.service.lang.ILanguage}</li>
+		<li>Extended and custom swing GUI component library: {@link hu.scelightapi.service.IGuiFactory}</li>
+		<li>Settings. External modules can specify settings and integrate into the Settings dialog; take advantage of setting dependent and bound components and
+			listen to setting changes. {@link hu.scelightapi.gui.setting.ISettingsUtils}, {@link hu.scelightapi.gui.setting.ISettingsGui}, {@link
+			hu.scelightapi.IModEnv#initSettingsBean(String, java.util.List)}</li>
+		<li>Replay parser engine: {@link hu.scelightapi.sc2.rep.factory.IRepParserEngine}</li>
+		<li>Replay processor engine: {@link hu.scelightapi.sc2.rep.repproc.IRepProcessor}</li>
+		<li>Basic SC2 Balance Data: {@link hu.scelightapi.sc2.balancedata.IBdUtil}, {@link hu.scelightapi.sc2.balancedata.IBalanceData}</li>
+		<li>Name template engine: {@link hu.scelightapi.template.ITemplateEngine}</li>
+		<li>Replay search engine: {@link hu.scelightapi.search.IRepSearchEngine}</li>
+		<li>SC2 monitor (current game status, live APM, game status change listening): {@link hu.scelightapi.service.sc2monitor.ISc2Monitor}</li>
+		<li>Replay folder monitor (new replay listening): {@link hu.scelightapi.service.repfoldermonitor.IRepFolderMonitor}</li>
+		<li>Sound utilities (background sound player - including MP3 format): {@link hu.scelightapi.service.sound.ISound}</li>
+		<li>General utilities to help implement any kind of code: {@link hu.scelightapi.util.IUtils}, {@link hu.scelightapi.util.gui.IGuiUtils}, {@link
+			hu.scelightapi.service.IFactory}</li>
+	</ul>
+
+	<p>
+		You can find Scelight here: <a href="https://sites.google.com/site/scelight/" target="_blank">Scelight home page</a>
+	</p>
+	<p>
+		Scelight External Modules general info page: <a href="https://sites.google.com/site/scelight/external-modules" target="_blank">Scelight External Modules</a>
+	</p>
+
+	<hr />
+
+	@author Andras Belicza
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+[hr]
+
+[big][b]2013 December 6 - Scelight 1.0.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added missing Smix recordings.
+
+-Fixed a bug where some Player Info Block template symbols might returned data in wrong player order in some cases when the replay was loaded from the Replay Processor cache.
+[i](This fix required the Replay Processor cache to be cleared.)[/i]

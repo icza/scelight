@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<personBean v="1">
+    <personName v="1">
+        <first>András</first>
+        <last>Belicza</last>
+    </personName>
+    <contact v="1">
+        <address>Budapest, Hungary</address>
+        <email>iczaaa@gmail.com</email>
+    </contact>
+    <description>Author of BWHF, Sc2gears and Scelight</description>
+</personBean>

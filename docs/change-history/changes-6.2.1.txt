@@ -1,0 +1,19 @@
+New title:
+[------------------------------------------------]
+Scelight 6.2.1: 
+
+
+[hr]
+[big][b]2015 December 17 - Scelight 6.2.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.1.0 replays.
+
+-Changed LotV icon to the new Artanis.
+
+-Scelight External Module API and SDK 1.5.
+
+-Other minor changes and improvements.
+

@@ -1,0 +1,675 @@
+[center][url=https://sites.google.com/site/scelight/][img]https://lh3.googleusercontent.com/-FNTGZ-tVADE/UspnkKll5CI/AAAAAAAA0Gk/TOVGugzIjh0/w730-h116-no/app-logo-1-TL.png[/img][/url][/center][hr]
+[big][green][b]SUMMARY[/b][/green][/big]
+
+[url=https://sites.google.com/site/scelight/]Scelight™[/url] is a free general StarCraft® II utility for literally everyone who is interested in the game (either a player ranging from newbie to pro, a developer, team manager, league organizer, commentator or just a game analyzer).
+
+Its main features are replay management and replay analysis.
+
+The program is written in Java so everyone can use it: Windows, MAC OS-X and Linux users (and others where you can install Java).
+
+
+[big][green][b]HOME PAGE [/b][/green][/big]
+
+[b][url=https://sites.google.com/site/scelight/]https://sites.google.com/site/scelight/[/url][/b]
+
+
+[big][green][b]SCREENSHOTS[/b][/green][/big] [i](click for more and larger versions)[/i]
+
+[url=https://goo.gl/photos/e73416t1wy1t8xWz7][img]https://lh5.googleusercontent.com/-MzLMfHDcnIA/UyrJCG8HX1I/AAAAAAAA0Zw/n8_0inipIeQ/w730-h435-no/replay-list.png[/img][/url]
+
+[url=https://goo.gl/photos/e73416t1wy1t8xWz7][img]https://lh3.googleusercontent.com/-ThXliNd6eZM/Up84gIYpadI/AAAAAAAAz_8/xbBimUiJY0U/w730-h435-no/replay-analyzer-charts-player-stats-resources-current.png[/img][/url]
+
+[url=https://goo.gl/photos/e73416t1wy1t8xWz7][img]https://lh4.googleusercontent.com/-LO5T7sHRj9M/UrFr5mOQFdI/AAAAAAAA0Do/ESoaIqCT8IM/w730-h435-no/replay-analyzer-charts-base-control.png[/img][/url]
+
+[url=https://plus.google.com/photos/+AndrasBelicza/albums/5953539327596856001][img]https://lh4.googleusercontent.com/-aY8SsF8GaTw/Ut0tDIopMDI/AAAAAAAA0IQ/d6Gidb02G58/w730-h510-no/replay-filters-editor.png[/img][/url]
+
+[url=https://goo.gl/photos/e73416t1wy1t8xWz7][img]https://lh6.googleusercontent.com/-fc3tZ3geFpk/UyrKa3Sv6cI/AAAAAAAA0bw/vf3FHHC54YM/w730-h435-no/mra-calendar.png[/img][/url]
+
+[url=https://goo.gl/photos/e73416t1wy1t8xWz7][img]https://lh4.googleusercontent.com/-ENKUEc6QykM/UyrK5dHTeRI/AAAAAAAA0dE/85EfHUI7mdA/w730-h435-no/mra-length.png[/img][/url]
+
+
+[hr]
+[big][b]2016 January 29 - Scelight 6.2.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added settings to change the font and background color of the Live APM Overlay.
+Colors can be changed for both normal and alert (low APM) state: "Overlay font color", "Overlay background color", "Overlay alert font color", "Overlay alert background color". 
+These can be found in the config menu of the Live APM overlay (wrench icon) and also in the Settings dialog -> SC2 Game Monitor -> Live APM page.
+
+-On multi-screen environments dialogs are now centered relative to parent window instead of the main screen. 
+
+-Fixed an issue where using the Search, Filter and Filter Out fields did not work as expected on columns displaying date/time values.  
+
+-Fixed an issue where games were included in the wrong "Week" (under Timelapse in the Multi-replay Analyze) if the game was played in the last week of the year of which week ended in the next year.
+ 
+-Other minor changes and improvements.
+
+
+[hr]
+[big][b]2016 January 16 - Scelight 6.2.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Corrected the "Week" names displayed in the Week tab under Timelapse in the Multi-replay Analyzer (previous value always displayed the week number +1). 
+
+-Fixed a bug in the Replay Parser Engine which failed to build command text if target unit was a neutral unit without an owner. 
+
+-Other minor changes and improvements.
+
+
+[hr]
+[big][b]2015 December 17 - Scelight 6.2.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.1.0 replays.
+
+-Changed LotV icon to the new Artanis.
+
+-Scelight External Module API and SDK 1.5.
+
+-Other minor changes and improvements.
+
+
+[hr]
+[big][b]2015 November 27 - Scelight 6.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]New File Operations: Copy / Move / Pack[/i][/red]
+The Replay list page now contains 3 additional icons in the tool bar: Copy, Move and Pack Selected Replays. They do what their name say.
+In all of those 3 operations you have the option to "Preserve subfolders relative to source Replay Folder".
+
+-New setting under the Replay Folder Monitor node:
+[red][i]Only pick up "Just Played" new replays[/i][/red]
+If this is enabled (it is by default), only games that were just played will be picked up as new replays.
+The advantage and consequence of this is that if you download replays from others or you copy / drop "old" replays into monitored replay folders, they will not be picked up and handled as "new replays". 
+This extends to everything under the Replay Folder Monitor node: renaming new replays, auto-opening them in the Replay Analyzer, showing Last Game Info Overlay, Auto backup, playing 'Replay saved' voice.
+
+-Fixed an issue where some LotV icons were not displayed properly (e.g. KD8 Charge), and Stasis Ward might even cause an error.
+
+-Other minor changes and improvements.
+
+
+[small][i]"The speed of light sucks."[/i][/small]
+
+
+[hr]
+[big][b]2015 November 18 - Scelight 6.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Added Archon mode support.[/i][/red]
+Archon mode replays are now supported (attempt to open them in the previous version caused an out of memory error and instability in Scelight).
+Archon mode support includes:[list]
+[*]Archon mode is indicated in the format property with value "Archon", and as such it is visible on the Game info tab in the Replay Analyzer, in the "Format" Replay list column and in the "[format]" name template symbol.
+[*]Build orders tab in the Replay Analyzer shows builds for the teams (not for individual users).
+[*]Map info tab in the Replay Analyzer displays full teams as "player names".
+[*]Player Stats chart and all sub-charts calculate and display data for the whole team only, these statistics have no meaning and cannot be broken down into individual users (as teams control one common base / player). These include SQ and Supply Capped %. Basically this is the same as turning on the "Teams As One" combo box for non-Archon replays. Other charts and metrics are still calculated individually for each user/player, but can be "merged" into one by enabling the "Teams As One" combo box (this also works for non-Archon replays).
+[*]"Archon" appears as a new tab in the Multi-replay analyzer where statistics are aggregated / grouped by format.[/list]
+-Scelight External Module API and SDK 1.5.1.
+
+-Other minor changes and improvements.
+
+
+[small][i]"The planet is always half light and half dark, and so are we."[/i][/small]
+
+
+[hr]
+[big][b]2015 November 12 - Scelight 6.0.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added official support for Legacy of the Void and 3.0.4 replays.
+
+
+[hr]
+[big][b]2015 November 12 - Scelight 6.0.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Fixed a bug which caused time-related metrics (game duration, APM, etc.) to be calculated incorrectly in LotV replays.
+The source of the issue was the time measurement change in LotV.
+
+
+[hr]
+[big][b]2015 October 28 - Scelight 6.0.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.0.3 replays.
+
+
+[hr]
+[big][b]2015 October 10 - Scelight 6.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Patch 3.0 replay support.[/i][/red]
+Added support for replays saved with patch 3.0.
+
+-[red][i]Preliminary Legacy of the Void support.[/i][/red]
+You can now open LotV beta replays, but displayed information is incomplete.
+
+-[red][i]Eased restrictions for non-registered users.[/i][/red]
+Wait time at startup is decreased from 15 seconds to 10.
+The [red][i]Merged Accounts[/i][/red] setting is not available to non-registered users too. This is particularly useful if you have multiple accounts and you want too see summarized statistics gained from all of them in the Multi-replay analyzer. 
+
+-Added support for the new map format (version=38).
+
+-Scelight External Module API and SDK 1.5.
+
+-Other minor changes and improvements.
+
+
+[small][i]"But you know happiness can be found even in the darkest of times, when one only remembers to turn on the light."[/i][/small]
+
+
+[hr]
+[big][b]2015 February 25 - SC2ReplayStatsUploader - The First Official External Module[/b][/big]
+
+[b]Today the first Official External Module called [red][i]SC2ReplayStatsUploader[/i][/red] is released![/b]
+
+This External Module uploads new replays to your SC2ReplayStats.com account automatically.
+
+[b]How to install the [red][i]SC2ReplayStatsUploader[/i][/red] External Module:[/b] 
+
+1. Go to the [red][i]Available Modules[/i][/red] page (below the News page), select [red][i]SC2ReplayStatsUploader[/i][/red] in the table and click on the [red][i]Install / Auto-upate Selected Modules[/i][/red] icon (above the table).
+
+2. Restart the Scelight Launcher. [red][i]SC2ReplayStatsUploader[/i][/red] will be automatically downloaded and installed.
+
+3. Go to the [red][i]Installed Modules[/i][/red] page, select [red][i]SC2ReplayStatsUploader[/i][/red] and click on the [red][i]Enable Selected Modules[/i][/red] icon (over the table).
+
+[b]You're done![/b] Start Scelight (with the START button) and the [red][i]SC2ReplayStatsUploader[/i][/red] External Module will be activated!
+
+[b]Disclaimer:[/b] The [red][i]SC2ReplayStatsUploader[/i][/red] External Module is not developed and maintained by me and I take zero credit and responsibility for how it works and what it does. 
+
+[hr]
+[big][b]2014 September 26 - Scelight 5.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Added support for replays with version 2.1.4.[/i][/red]
+
+-Fixed a bug which caused the Build Orders tab of the Replay Analyzer to not work with some custom replays.
+
+-Scelight External Module API and SDK 1.4.1.
+
+
+[small][i]"Shadow owes its birth to light."[/i][/small]
+
+[hr]
+[big][b]2014 May 16 - Scelight 5.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]This release comes with the option to run Scelight on Windows without Java having to be installed![/i][/red]
+On Windows Operating Systems if you can't or don't want to install Java on your system, you can download a prepared JRE (Java Runtime Environment) from the Scelight [url=https://sites.google.com/site/scelight/downloads]Downloads[/url] page and extract it into the Scelight folder.
+Doing so will allow you to run Scelight without having to install Java on your system. This has to be done only once.
+[i]The recommended way is still to install Java! Think of this as a last resort.[/i]
+
+-[red][i]Merged Accounts in Multi-Replay Analyzer[/i][/red]
+If you have multiple accounts and / or you play on multiple regions, you can specify all your accounts as [red][i]Merged Accounts[/i][/red] and that way you will see all your statistics summarized under one -arbitrarily chosen- main account in the Multi-Replay Analyzer. You can specify all your accounts on the Merged Accounts settings page.
+This setting requires registration to be edited / changed.
+
+-New player detail tab in the Multi-Replay Analyzer: [red][i]Region[/i][/red]
+This tab shows statistics grouped by the region of the player. Useful if you use the new Merged Accounts feature.
+
+-New player detail tab in the Multi-Replay Analyzer: [red][i]Account[/i][/red]
+This tab shows statistics grouped by the accounts that were merged. Useful if you use the new Merged Accounts feature.
+
+-Fixed a small progress bar rendering issue in tables (happened when only 1 row was added to a table).
+
+-Scelight External Module API and SDK 1.4.
+
+-Other minor changes and improvements.
+
+
+[small][i]"I will love the light for it shows me the way, yet I will endure the darkness because it shows me the stars."[/i][/small]
+
+[hr]
+[big][b]2014 April 10 - Scelight 4.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Selection Tracker[/i][/red]
+The Control Groups chart of the Replay Analyzer has been improved. If you move your mouse cursor over any control group number (both select and assign), the tool tip will now also display the unit selection being involved (including unit names and unit tags).
+
+-Added the 2 missing Smix recordings ("APM OK.", "Low APM!").
+
+-The session break between playing sessions was calculated wrongly which has been fixed.
+This slightly changes the session-related statistics in the Multi-Replay Analyzer.
+
+-Scelight External Module API and SDK 1.3.
+
+-Other minor changes and improvements.
+
+
+[small][i]"An age is called Dark not because the light fails to shine, but because people refuse to see it."[/i][/small]
+
+[hr]
+[big][b]2014 March 20 - Scelight 4.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Time trend tab in Multi-Replay Analyzer[/i][/red] 
+The Time trend tab encapsulates the previous Hour and Day tabs, and adds further Session, Date (day of month) and Month (month of year) tabs.
+The [red][i]Playing Session[/i][/red] (or simply [red][i]Session[/i][/red]) is a series of [red][i]subsequent[/i][/red] plays where the break between plays is not greater than a specified limit. This limit is the Max Session Break and can be viewed / changed on the Multi-Replay Analyzer settings page.
+The Time trend Session tab analyzes your Playing Sessions, and calculates statistics for the plays based on their [red][i]position[/i][/red] in their Playing Sessions.
+The value in the "Play # in session" column tells which play from each session is included in the row's statistics. For example the first row (Play # in session = 1) shows you statistics of your first plays from each session (this is when you sit down and start to play).
+You can use this Time trend Session statistics to analyze your [red][i]stamina[/i][/red] and decide how many practice plays you need before you go serious, or after how many plays you should take a break before your performance starts to deteriorate.
+
+-[red][i]Timelapse tab in Multi-Replay Analyzer[/i][/red] 
+The Timelapse tab has multiple sub-tabs: Session, Year, Month, Week, Day, Play. Each shows general stats aggregated for the specified time periods / granularity.
+The Timelapse Session tab lists all your playing sessions, and a session stats row shows statistics for all the plays of that particular session (contrary to the Time trend Session tab which takes one play from each session at the most based on the play's position).
+The final Play tab lists every single play of the player.
+This can be used to view your time development, improvement over time.
+
+-[red][i]Numeric columns[/i][/red] in Stats tables of the Multi-Replay Analyzer are now displayed as [red][i]progress bars[/i][/red] making the rows visually comparable.
+This basically turns all numeric columns into [red][i]vertical bar charts[/i][/red]; or more than that because the table (and thus the bar chart) can be filtered and sorted by any columns. 
+
+-Added new columns to Map stats tabs in the Multi-Replay Analyzer.
+New columns include the [red][i]Map size[/i][/red] column, which is sorted by the map area (width*height). Sorting by this you can check for example how game length relates to the map size.
+
+-The "Races %" column in the Multi-Replay Analyzer is now rendered as a [red][i]colored bar code[/i][/red].
+Each race has its color (based on SC2 itself: [blue]Blue[/blue] for Protoss, [green]Green[/green] for Terran and [red]Red[/red] for Zerg), and the race distribution is visualized with a multi-colored bar making the used races visually standing out.
+
+-The APM, SPM, SQ, SC % tabs have been grouped into a [red][i]"Metric trend"[/i][/red] tab.
+
+-Added a new "Multi-Replay Analyze Replays of the Selected Row" to the tool bar of all stats table.
+With this you can launch a new Multi-Replay Analyzer to analyze only the replays of the selected stats row.
+
+-Scelight External Module API and SDK 1.2.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Genius is not so much a light as it is a constant awareness of the surrounding gloom."[/i][/small]
+
+[hr]
+[big][b]2014 March 7 - Scelight 4.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Multi-Replay Analyzer[/i][/red]
+The major part of Sc2gears' Multi-replay analysis has been reimplemented, and many additional stats and calculations have been added (Calendar view, APM-SPM-SQ-SC% range stats; Expansion, Result, sum Race and League stats).
+Detects and displays [red][i]player name changes[/i][/red] (including both clan and character name changes).
+The new [red][i]Calendar view[/i][/red] shows stats grouped by day in a calendar layout, also uses different colors to indicate the total play time on each day (in Player details).
+In any stats table you can select a row and [red][i]list the replays that assemble the stats of the selected row[/i][/red] (this was a long awaited, missing feature in Sc2gears). The result Replay list can also be filtered further with the Scelight Replay filter system, and further filtered results can also be opened in a new Multi-Replay Analyzer.
+In the Multi-Replay Analyzer you also have the option to view / edit the filters that were used to perform the analysis, and you can fine-tune the filters to repeat the analysis in a new Multi-Replay Analyzer.
+The Replay Folders page now contains new 2 buttons to launch a Multi-Replay Analyzer for the selected Replay folder, with the attached or custom filters.
+The Replay list page also contains a new button to Multi-Replay Analyze all listed replays (using the same source and filters), and a new button to Multi-Replay Analyze only the selected replays.
+
+-The general table tool bar (with search and filter) now also shows the [red][i]Selected[/i][/red] rows count along with the Listed and All rows count.
+
+-Improved Replay parser engine to better support custom games (games that failed to parse before will most likely work now).
+
+-The Replay list column setup dialog now also shows an [red][i]icon[/i][/red] column.
+
+-Added many new icons.
+
+-Numbers with fraction parts are now displayed with 2 fraction digit precision (e.g. SPM, Supply-capped %).
+
+-Increased the default/initial size of the application dialogs and the launcher window.
+
+-Scelight External Module API and SDK 1.1.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Nature and Nature's laws lay hid in night; God said, "Let Newton be!" and all was light."[/i][/small]
+
+[hr]
+[big][b]2014 February 20 - Scelight 3.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]External Module API 1.0[/i][/red]
+The External Module API has reached version 1.0 and is now public. This means everyone can now create external modules for Scelight to extend its functionalities and capabilities. 
+The External Module API exposes advanced engines, components and libraries, the very [red][i]core[/i][/red] APIs that are used [red][i]internally[/i][/red] to build the UI and features of Scelight, making it possible for external modules to create UIs that are [red][i]consistent[/i][/red] with Scelight and to [red][i]deeply integrate[/i][/red] into Scelight. The Scelight External Module API is more than just an interface API: it is a [red][i]platform[/i][/red].
+This means the power is in your hands, but to utilize this power you have get familiar with certain aspects, concepts and interfaces of the API (the 1.0 API exposes [red][i]hundreds[/i][/red] of interfaces and classes).
+Main exposed components:[list]
+[*]Application logger.
+[*]Language and locale specific utilities.
+[*]Extended and custom Swing GUI component library.
+[*]Settings. External modules can specify settings and integrate into the Settings dialog; take advantage of setting dependent and bound components and listen to setting changes. 
+[*]Replay parser engine.
+[*]Replay processor engine.
+[*]Basic SC2 Balance Data.
+[*]Name template engine.
+[*]Replay search engine.
+[*]SC2 monitor (current game status, live APM, game status change listening).
+[*]Replay folder monitor (new replay listening).
+[*]Sound utilities (background sound player - including MP3 format).
+[*]General utilities to help implement any kind of code.[/list]
+More will be added / exposed in the future.
+The External Module API library also contains the source code of the interface. This means whenever you use the auto-complete feature of modern IDEs (like Eclipse) or you move your mouse cursor over different parts of your code, the Javadoc of the appropriate entity (e.g. a method or interface) will be displayed to you.
+The External Module API is part of the Scelight External Module SDK (see below), you can download it from the [url=https://sites.google.com/site/scelight/downloads]Downloads[/url] page.
+
+-[red][i]Scelight External Module SDK[/i][/red]
+I have created an SDK (Software Development Kit) to aid the development of Scelight External Modules. You can download the Scelight External Module SDK from the [url=https://sites.google.com/site/scelight/downloads]Downloads[/url] page.
+The SDK is a [red][i]complete Eclipse project[/i][/red] with an Ant build script which can build releases of the external module, make deployments, install / inject it into a Scelight installation and make project backups.
+The SDK also contains the External Module API library and its Javadoc.
+To get started with the SDK, first download it and extract it, then use the File / Import... menu in Eclipse, choose "Existing Projects into Workspace" and select the extracted ScelightExtModSDK folder which is the Eclipse project root.
+The External Module SDK also contains an example Hello World external module with source code.
+External Module API, SDK and general external module development info: [url=https://sites.google.com/site/scelight/external-modules]External Modules[/url]
+The Javadoc from the External Module API archive is also a number one source of information, and it is also available online for browsing here: [url=https://scelightop.appspot.com/scelight-ext-mod-api/]Scelight External Module API Javadoc[/url] 
+
+-The Components page of the About dialog now lists loaded and started external modules too, and a new "Type" column displays the type of the components.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Light itself is a great corrective. A thousand wrongs and abuses that are grown in darkness disappear, like owls and bats, before the light of day."[/i][/small]
+
+[hr]
+[big][b]2014 February 3 - Scelight 2.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Chart descriptions[/i][/red]
+The Charts tab of the Replay analyzer now adds a help icon for each chart type. This help always shows the description of the selected chart.
+These helps contain [red][i]invaluable[/i][/red] info about what info you can see on the different charts and how they are calculated. Recommended for everyone to check these out even if you already know what the different charts are.
+
+-[red][i]Supply-capped % becoming a first-class citizen.[/i][/red]
+Added "[avgSupplyCapped]", "[PIBsupplyCapped]" and "[supplyCappedX]" symbols to insert the average player supply-capped percent, the supply-capped percent in Player info block and the supply capped percent value of the Xth player. 
+Added "Avg SC%", "SC1%", "SC2%" Replay list columns which display the average supply-capped percent, and the first and second player's supply-capped percent values. 
+
+-Renamed the "SP%" (Supply-capped percent) column to "SC%" in the Last Game Info Overlay card.
+
+-Other minor changes and improvements.
+
+
+[small][i]"There's more to light than the opposite of dark."[/i][/small]
+
+[hr]
+[big][b]2014 January 31 - Scelight 2.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-A new chart under the Player stats chart: [red][i]Food Made+Used[/i][/red]
+This chart shows Food Made and Food Used charts at once, making it easy to see supply capped periods (when Food Used is greater than or equal to Food Made).
+
+-[red][i]Users tab improvements[/i][/red]
+A new column has been added: [red][i]Supply-capped %[/i][/red]. This shows the ratio of supply-capped time and the time of the last command of the user (this is much more informative than the supply-capped time which depends on the game length).
+Columns have been reordered based on importance and [red][i]comparable metrics are now displayed as progress bars[/i][/red], making the users visually comparable.
+These include the following columns: APM, SPM, SQ, Supply-capped %, Swarm Levels.
+
+-[red][i]Search engine improvements[/i][/red]
+Slightly rearranged filter properties based on importance and added new properties to filter by:
+
+[red][i]"Is Beta / PTR?"[/i][/red]: Using this new filter you can list only Beta / PTR replays, or exclude them.
+[red][i]"[Players Avg] Avg. Supply-capped %"[/i][/red]: Using this you can filter replays based on the average supply-capped percent of players.
+[red][i]"Supply-capped %"[/i][/red]: This is a player filter to be applied on a player (any, all or a specific player).
+
+The [red][i]"Is Competitive?"[/i][/red] filter now also accepts AutoMM games with version less than 2.0 (when there was no unranked games and AutoMM games were equal to ladder games).
+
+-[red][i]Last Game info Overlay card improvements[/i][/red]
+Rearranged columns based on importance and to be consistent with the Users tab, also added a new column: [red][i]SP%[/i][/red] (Supply-capped percent).
+
+-Fixed a rendering bug that happened sometimes when contents of sub-tabs of the Inspector tab (visible only on Developer skill level) of the Replay analyzer were scrolled with the mouse scroll wheel. 
+
+-The External Module API design and development got a boost and jumped to version 0.6, getting closer to public release.
+
+-Other minor changes and improvements.
+
+
+[small][i]"Remember: Always walk in the light. And if you feel like you're not walking in it, go find it. Love the light."[/i][/small]
+
+[hr]
+[big][b]2014 January 22 - Scelight 2.0.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 2.1 replays.
+
+
+[hr]
+[big][b]2014 January 20 - Scelight 2.0[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Filters and Replay Search[/i][/red]
+Powerful filters and advanced Replay Search have finally arrived. Predefined replay filters can be [red][i]attached[/i][/red] to Replay folders, and when you want to list the contents of a Replay folder, the attached filters will be applied [red][i]automatically[/i][/red].
+You can view/edit the attached Replay filters of a Replay folder by selecting the Replay folder and pressing the new "Edit Attached Filters" button. This will open the Replay Filters Editor (see below).
+You can also [red][i]search Replay folders[/i][/red] by pressing the "Search Replay Folders" button in which case a Replay Filters Editor will pop up where you can specify custom filters (instead of the attached filters).
+A new "Filters" column indicates the [i]active[/i] attached filters count for each Replay folder in the table. [i]Active[/i] means it is enabled and it is valid (contains no errors).
+The Replay list page now has a new [red][i]"View / Edit Filters and Repeat Search"[/i][/red] button. This opens a Replay Filters Editor where you can view the filters that were applied when replays were listed, and you can also modify these filters ([i]tune[/i] them) and repeat the search on the source Replay folder. Repeating the search will list the new results in a new Replay list page. 
+
+-[red][i]Replay Filters Editor[/i][/red]
+The Replay Filters Editor is used to view and edit Replay filters that are applied when searching / listing replays of a Replay folder.
+[red][i]It is table-based, equation-editor-like, easy but powerful filters editor.[/i][/red] It is easy to quickly add a few filters like Map name, Replay date, Version, Region etc.
+It is also possible to build complex queries as it supports [red][i]filter connections[/i][/red] like logical AND and logical OR, supports [red][i]parenthesis (grouping of filters)[/i][/red], and [red][i]advanced operators[/i][/red] like contains, starts with, ends with and [red][i]MATCHES[/i][/red] (regular expression matching).
+The search engine supports too many properties to enumerate them all. To easily find and pick the ones you're interested in, filter properties (called Filter by) are organized into groups (called Filter by Group).
+There are also special groups to filter by player properties. Special groups are at your disposal to filter by [red][i]aggregate values[/i][/red] of all players of a replay (e.g. weighted average APM of all players of a replay); to filter by a property of [red][i]any player[/i][/red], of [red][i]all players[/i][/red], or to specify filters on [red][i]different players[/i][/red] or [red][i]multiple filters on the same player[/i][/red]. 
+There is also a [red][i]Filters Structure Preview[/i][/red] which shows the structure of the filters in a [red][i]tree-like formatted table[/i][/red].
+Queries like this are easily possible (you can see exactly this query on the image):
+[i]"replays from the US or Europe region with HotS expansion that are longer than 10 min and were not played on any of the Daybreak maps and have a player named Dakota who is above Gold league and have another player with more than 50 APM with a clan tag in its name and have a player with Protoss race that could be anyone and average SPM of all players is at least 5 and all players have reached level 90"[/i]
+Specifying and editing filters is done via an editable table. Just click on any cell to view your options and to edit it.
+The constructed filters can also be [red][i]saved[/i][/red] to a file or previously saved filters can be [red][i]loaded[/i][/red] from a file. 
+
+-[red][i]A new Replay list column: "Played"[/i][/red]
+This column will show you the replay date in the form of played "xxx" ago ([red][i]relative[/i][/red] to the current time).
+Examples: "12m 30s" means 12 minutes and 30 sec ago, "7h 15m" means 7 hours and 15 min ago, "2w 1d" means 2 weeks and 1 day ago, "2y 2M" means 2 years and 2 months ago. 
+
+-Relative date is also displayed at many other locations.
+
+-Replay list progress bar now displays Added, Filtered out and Errors (renamed from Skipped).
+
+-[red][i]Unfocusable Overlay cards.[/i][/red]
+Overlay cards are now not focusable by default. This means they do not hijack focus when they are displayed, nor do they hijack focus when you click on them. Focus remains in SC2 (or in your active application).
+Of course you can still activate / open the Overlay config menu by clicking on it, but this also will not hijack the focus from SC2 (or your active application).
+This focusable state can be toggled in the config menu of the Overlay card.
+
+-[red][i]Moving Overlay cards outside the main screen.[/i][/red]
+By default Overlay cards cannot be moved outside the main screen, and this has not changed. But now the Overlay config menu contains a new option: "Allow outside the main screen". If you enable this, Scelight will not align the Overlay cards anymore, you will be able to position them outside the main screen, onto your additional screens if you have a multi-screen configuration.
+
+-Fixed a rendering bug that happened sometimes when the Events table or the Replay list table were scrolled with the mouse scroll wheel. 
+
+-Other minor changes and improvements.
+
+
+[small][i]"We realize the importance of light when we see darkness."[/i][/small]
+
+[hr]
+[big][b]2014 January 6 - Scelight 1.5[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]New Logo by Existor.[/i][/red]
+The application logo is replaced by a new logo created by [url=http://dexistor371.deviantart.com/]Existor[/url].
+
+-Player's full name is now indicated on the Map info tab of the Replay analyzer.
+It can also be toggled with a check box.
+
+-Added support to handle the updated 2.1 PTR replays.
+
+-Small improvements in the Replay processor engine to properly handle custom games where slots have been rearranged before start.
+
+-Other minor changes and improvements.
+
+
+[small][i]"When you can't make them see the light, make them feel the heat."[/i][/small]
+
+[hr]
+[big][b]2013 December 18 - Scelight 1.4[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Base Control chart[/i][/red]
+The Base Control chart is the successor to the Main Building Control of Sc2gears.
+It visualizes Spawn Larva, Chrono Boost, Calldown MULE, Scanner Sweep and Calldown Extra Supply commands, and calculates some metrics like the Average Spawning Ratio and Average Injection Gap, also broken down to Hatcheries.
+Moving the mouse cursor over any box will show details about the related command and clicking on it will jump to the corresponding command properly - as with any other chart object on any other charts.
+
+-[red][i]Improved Template Engine[/i][/red]
+New player-specific symbols which can be parameterized by a player index which must be outside of a Player Info Block and which insert the value only for the specified player.
+E.g. the symbol [red][i]player1[/i][/red] will insert the name of the first player, [red][i]apm1[/i][/red] will insert the APM of the first player etc. Useful for example if you add yourself to the Favored player list, and in 1v1 games you will always be the first player and your opponent the second player.
+The [red][i]mapWordsX[/i][/red], [red][i]counterX[/i][/red] and [red][i]repCounterX[/i][/red] symbols are now also parameterized and listed only once.
+Of course these can also be combined with the value range, so for example [leagueLong2{1-3}] will return the first 3 letters of the 2nd player's league (your opponent if you're on the favored list).
+
+-[red][i]New Replay list table columns: APM1, APM2, SPM1, SPM2, SQ1, SQ2, L1, L2 to return the corresponding value for the 1st and 2nd player only.[/i][/red]
+The Replay list table can be sorted by these columns properly. 
+
+-Other minor changes and improvements.
+
+
+[small][i]"In future, children won't perceive the stars as mere twinkling points of light: they'll learn that each is a 'Sun', orbited by planets fully as interesting as those in our Solar system."[/i][/small]
+
+[hr]
+[big][b]2013 December 14 - Scelight 1.3[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Command line and SC2Replay file association support[/i][/red]
+You can now pass replays as parameters when you start Scelight, and they will be opened in Replay analyzers.
+If an instance of Scelight is already running using the same Workspace, parameters will be passed on to it, and they will be opened in the running instance (which will also be focused / selected).
+[i]Recommended to associate *.SC2Replay files with Scelight.exe[/i], that way if you double click on an SC2 replay file, it will be opened in Scelight.
+
+-[red][i]New Window menu items:[/i][/red]
+"Restore default position" - Restores default window position and maximizes the window.
+"Maximize Window on Start"
+"Restore last Window position on Start"
+
+-New System Tray menu item: "Restore Main window to defaults".
+Restores the main window in default position and maximizes it.
+Useful if your display setup changes and you can't see the window on startup (e.g. display resolution is decreased or the display on which Scelight was last displayed is removed).
+
+-New [red][i]Launcher[/i][/red] settings page
+"Auto-start when Scelight is ready" - for registered only
+"Auto-start even if no connection" - for registered only
+
+-An "Offline" button is displayed in the Status bar if Scelight is started in [red][i]Offline[/i][/red] mode (without internet connection). 
+
+-A new button in the Replay list table tool bar: [red][i]Show Selected Replay In File Browser[/i][/red]
+
+-Reliable User Documents folder detection.
+Also on startup the derived Replay folder for the default SC2 replay folder is automatically adjusted. 
+
+-Other minor changes and improvements.
+
+
+[small][i]"Edison failed 10,000 times before he made the electric light. Do not be discouraged if you fail a few times."[/i][/small]
+
+[hr]
+[big][b]2013 December 11 - Scelight 1.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Added support for 2.1 PTR replays.[/i][/red]
+
+-[red][i]Added System Tray support.[/i][/red]
+A new [red][i]Window[/i][/red] menu in which you can [red][i]Minimize to Tray[/i][/red], set whether to [red][i]Minimize to Tray on Close[/i][/red]
+and whether to [red][i]Start Minimized to Tray[/i][/red].
+These settings are also available on the [red][i]Window[/i][/red] settings page.
+
+-[red][i]Overlay Cards:[/i][/red] They are info panels which are on top of all other windows and—most importantly—over of StarCraft II.
+Note: Overlay Cards are only visible over StarCraft II if you use the [i]"Fullscreen (Windowed)"[/i] or [i]"Windowed"[/i] display mode of StarCraft II.
+Overlay cards support [red][i]transparency[/i][/red] and [red][i]locked[/i][/red] mode.
+
+-[red][i]Live APM Overlay:[/i][/red] This overlay displays your current, live APM during games. It is available under the Tools menu / Live APM Overlay.
+There are 2 new settings on the "SC2 Game Monitor" settings page:
+"Show Live APM Overlay when game starts"
+"Hide Live APM Overlay when game ends"
+
+-[red][i]APM Alert:[/i][/red] During games the [red][i]APM Alert[/i][/red] feature of Scelight can notify or alert you [red][i]audibly[/i][/red] when your APM drops below a certain value specified by the [red][i]APM alert level[/i][/red].
+APM Alert settings can be found on the [red][i]Live APM[/i][/red] settings page.
+
+-[red][i]Last Game Info Overlay:[/i][/red] This overlay displays information about the [red][i]last replay[/i][/red]. It is available under the Tools menu / Last Game Info Overlay.
+There is a new settings on the "Replay Folder Monitor" settings page:
+"Show Last Game Info Overlay for new replays"
+
+-A new [red][i]Watch Selected Replay[/i][/red] button in the Replay list tool bar.
+Clicking on this button will open the first selected replay in StarCraft II.
+[i]StarCraft II must be running for this to work.[/i]
+
+-Spectator and Referee roles were reversed which is now corrected.
+
+
+[small][i]"Who is more foolish, the child afraid of the dark or the man afraid of the light?"[/i][/small]
+
+[hr]
+[big][b]2013 December 6 - Scelight 1.0.1[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added missing Smix recordings.
+
+-Fixed a bug where some Player Info Block template symbols might returned data in wrong player order in some cases when the replay was loaded from the Replay Processor cache.
+[i](This fix required the Replay Processor cache to be cleared.)[/i]
+
+
+[hr]
+[big][b]2013 December 5 - Scelight 1.0 - The first public release[/b][/big]
+
+[b]At last! The first public version of Scelight™ is released![/b]
+I still have a long way ahead, but the current version is already useful enough to be shared. It is also better for everyone to give / get feedback earlier.
+
+[b]Some highlights of Scelight:[/b]
+
+-Supports replays of [red][i]all versions[/i][/red] starting from 1.0; including all beta and PTR versions.
+
+-Supports replays of [red][i]all types[/i][/red]; including single player and all custom game replays.
+
+-A more advanced [red][i]name template engine[/i][/red] and [red][i]template editor[/i][/red] to rename new replays in their [i]original folder[/i], to [i]auto-backup[/i] them or [i]manually rename multiple replays[/i] at once. It comes with a [red][i]rich set of symbols[/i][/red] to use in name templates.
+
+-A more advanced [red][i]Replay listing[/i][/red] module with a [red][i]rich set of columns[/i][/red] to customize the replay list tables. You can even create [red][i]new custom columns[/i][/red] specified with flexible name templates.
+
+-[red][i]A new charts system[/i][/red] which is similar to Sc2gears' but is [red][i]way more powerful[/i][/red]: more presentation types, granularity in seconds instead of pixels (graphs remain immune to zoom and resize), zoom into arbitrary small time window, 3-state enlarging for wheel scroll click etc.
+
+-Charts showing [red][i]precise supply, workers, resources[/i][/red], broken down to Army, Economy, Technology, categorized by Current, Lost, Killed, In Progress.
+
+-A new [red][i]SPM (Screens / min)[/i][/red] metric and chart to visualize and measure the [red][i]multitasking skills[/i][/red] of players.
+
+-The [red][i]Spending Quotient (SQ)[/i][/red] has arrived to measure the [red][i]macro skills[/i][/red] of players, and not just as a calculated average metric, it has its own chart showing the spending skill throughout the entire game, optionally broken down to resource types.
+
+-[red][i]Build Orders table[/i][/red] showing exact build / upgrade activity of all players at once for the whole game.
+
+-[red][i]Scelight Launcher[/i][/red] which installs and automatically keeps your Scelight always up-to-date without intervention.
+
+-[red][i]Module system:[/i][/red] Official external modules are listed inside Scelight, and they can be installed with one click, and have kept auto-updated.
+
+-There is an option to choose your [red][i]computer skill level[/i][/red]. Based on this Scelight can hide or simplify some things which you might not need or might not understand, resulting in [red][i]clearer[/i][/red] user interface and [red][i]better[/i][/red] user experience.
+
+-[red][i]Hierarchical[/i][/red] settings presentation with [red][i]filters[/i][/red].
+
+-Nice formatted [red][i]context sensitive helps and tips[/i][/red] which aid to easily understand features and settings you don't know.
+
+-A fast, secure, central [red][i]Scelight Operator[/i][/red] server to serve Scelight clients based on Google's specialized, cloud based content serving.
+
+-Advanced tools for [red][i]inspecting replay internals[/i][/red] for developers.
+
+-...And last but not least comes with our [red][i]Smix's angelic voice[/i][/red].
+
+
+[small][i]"May it be a light to you in dark places, when all other lights go out."[/i][/small]
+
+[hr]
+
+[big][green][b]HOME PAGE [/b][/green][/big]
+
+[b][url=https://sites.google.com/site/scelight/]https://sites.google.com/site/scelight/[/url][/b]

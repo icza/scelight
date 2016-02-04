@@ -1,0 +1,27 @@
+New title:
+[------------------------------------------------]
+Scelight 2.2: Chart descriptions, Supp-cap% spread 
+
+
+[hr]
+
+[big][b]2014 February 3 - Scelight 2.2[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-[red][i]Chart descriptions[/i][/red]
+The Charts tab of the Replay analyzer now adds a help icon for each chart type. This help always shows the description of the selected chart.
+These helps contain [red][i]invaluable[/i][/red] info about what info you can see on the different charts and how they are calculated. Recommended for everyone to check these out even if you already know what the different charts are.
+
+-[red][i]Supply-capped % becoming a first-class citizen.[/i][/red]
+Added "[avgSupplyCapped]", "[PIBsupplyCapped]" and "[supplyCappedX]" symbols to insert the average player supply-capped percent, the supply-capped percent in Player info block and the supply capped percent value of the Xth player. 
+Added "Avg SC%", "SC1%", "SC2%" Replay list columns which display the average supply-capped percent, and the first and second player's supply-capped percent values. 
+
+-Renamed the "SP%" (Supply-capped percent) column to "SC%" in the Last Game Info Overlay card.
+
+-Other minor changes and improvements.
+
+
+[small][i]"There's more to light than the opposite of dark."[/i][/small]
+

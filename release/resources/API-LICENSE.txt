@@ -1,0 +1,4 @@
+
+Project Scelight External Module API
+
+LICENSE displayed inside Scelight applies.

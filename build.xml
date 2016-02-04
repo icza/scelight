@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Scelight Builder" basedir=".">
+	
+	<description>
+		Scelight Builder. Can build releases and modules (with deployments), generate dev javadoc and make project backup.
+	</description>
+	
+	
+	<!-- File and Folder properties -->
+	
+	<property name="projectName"                  value="Scelight" />
+	<property name="scelightOpName"               value="ScelightOp" />
+	<property name="appFolder"                    value="app-folder" />
+	<property name="releaseFolder"                value="release" />
+	<property name="releaseCompiledFolder"        value="${releaseFolder}/compiled-classes" />
+	<property name="releaseResourcesFolder"       value="${releaseFolder}/resources" />
+	<property name="launcherBuildPropertiesFile"  value="${releaseFolder}/launcher-build.properties" />
+	<property name="appBuildPropertiesFile"       value="${releaseFolder}/app-build.properties" />
+	<property name="appLibsBuildPropertiesFile"   value="${releaseFolder}/app-libs-build.properties" />
+	<property name="sc2TBuildPropertiesFile"      value="${releaseFolder}/sc2-t-build.properties" />
+	<property name="sc2BdBuildPropertiesFile"     value="${releaseFolder}/sc2-bd-build.properties" />
+	<property name="extModApiBuildPropertiesFile" value="${releaseFolder}/ext-mod-api-build.properties" />
+	<property name="releaseBuildFolder"           value="${releaseFolder}/Scelight" />
+	<property name="extModSDKProjectName"         value="ScelightExtModSDK" />
+	<property name="apiReleaseBuildFolder"        value="../${extModSDKProjectName}/Scelight-ext-mod-api" />
+	<property name="deploymentDevFolder"          value="${releaseFolder}/deployment-dev" />
+	<property name="deploymentPubFolder"          value="${releaseFolder}/deployment-pub" />
+	<property name="starterScriptsRawFolder"      value="${releaseResourcesFolder}/starter-scripts-raw" />
+	
+	<property name="javadocDestFolder"            value="docs/generated/javadoc" />
+	
+	<property name="launch4jFolder"               value="v:/launch4j" />
+	
+	<property name="javacExecutable"              value="c:/Program Files/Java/jdk1.7.0_80/bin/javac.exe" />
+	<property name="javadocExecutable"            value="c:/Program Files/Java/jdk1.7.0_80/bin/javadoc.exe" />
+	
+	
+	
+	<!-- Targets -->
+	
+	<target name="compileModules">
+		<!-- Compiles all modules, produces byte code intended to be released publicly. -->
+		
+		<!-- Always discard previous compilation because if classes were renamed, deleted or anonymous classes change, they are not deleted during compilation! -->
+		
+		<!-- Delete previous compilation -->
+		<delete dir="${releaseCompiledFolder}" />
+		<mkdir  dir="${releaseCompiledFolder}" />
+		
+		<!-- Compile launcher module -->
+		<copy todir="${releaseCompiledFolder}/bin-launcher" preservelastmodified="true">
+			<fileset dir="src-launcher" excludes="**/*.java,**/package.html" />
+		</copy>
+		<javac
+			compiler          = "javac1.7"
+			executable        = "${javacExecutable}"
+			fork              = "true"
+			includeantruntime = "false"
+			srcdir            = "src-launcher"
+			destdir           = "${releaseCompiledFolder}/bin-launcher"
+			source            = "1.7"
+			target            = "1.7"
+			encoding          = "UTF-8"
+			debug             = "true"
+			debuglevel        = "lines,source" />
+		
+		<!-- Compile sc2 textures module -->
+		<copy todir="${releaseCompiledFolder}/bin-sc2-textures" preservelastmodified="true">
+			<fileset dir="src-sc2-textures" excludes="**/*.java,**/package.html" />
+		</copy>
+		<javac
+			compiler          = "javac1.7"
+			executable        = "${javacExecutable}"
+			fork              = "true"
+			includeantruntime = "false"
+			srcdir            = "src-sc2-textures"
+			destdir           = "${releaseCompiledFolder}/bin-sc2-textures"
+			classpath         = "${releaseCompiledFolder}/bin-launcher"
+			source            = "1.7"
+			target            = "1.7"
+			encoding          = "UTF-8"
+			debug             = "true"
+			debuglevel        = "lines,source" />
+		
+		<!-- Compile sc2 balance data module -->
+		<copy todir="${releaseCompiledFolder}/bin-sc2-balance-data" preservelastmodified="true">
+			<fileset dir="src-sc2-balance-data" excludes="**/*.java,**/package.html" />
+		</copy>
+		<javac
+			compiler          = "javac1.7"
+			executable        = "${javacExecutable}"
+			fork              = "true"
+			includeantruntime = "false"
+			srcdir            = "src-sc2-balance-data"
+			destdir           = "${releaseCompiledFolder}/bin-sc2-balance-data"
+			classpath         = "${releaseCompiledFolder}/bin-launcher"
+			source            = "1.7"
+			target            = "1.7"
+			encoding          = "UTF-8"
+			debug             = "true"
+			debuglevel        = "lines,source" />
+		
+		<!-- External Module API, Application libs and application modules refer to each other, they must be compiled together first -->
+		<mkdir dir="${releaseCompiledFolder}/bin-temp" />
+		<javac
+			compiler          = "javac1.7"
+			executable        = "${javacExecutable}"
+			fork              = "true"
+			includeantruntime = "false"
+			srcdir            = "src-ext-mod-api;src-app-libs;src-app"
+			destdir           = "${releaseCompiledFolder}/bin-temp"
+			classpath         = "app-folder/mod/app-libs/0.0/registry.jar;app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar;${releaseCompiledFolder}/bin-launcher;${releaseCompiledFolder}/bin-sc2-textures;${releaseCompiledFolder}/bin-sc2-balance-data"
+			source            = "1.7"
+			target            = "1.7"
+			encoding          = "UTF-8"
+			debug             = "true"
+			debuglevel        = "lines,source" />
+		
+		<!-- Compile ext-mod api module -->
+		<copy todir="${releaseCompiledFolder}/bin-ext-mod-api" preservelastmodified="true">
+			<fileset dir="src-ext-mod-api" excludes="**/*.java,**/package.html,api-overview.html" />
+		</copy>
+		<javac
+			compiler          = "javac1.7"
+			executable        = "${javacExecutable}"
+			fork              = "true"
+			includeantruntime = "false"
+			srcdir            = "src-ext-mod-api"
+			destdir           = "${releaseCompiledFolder}/bin-ext-mod-api"
+			classpath         = "${releaseCompiledFolder}/bin-launcher;${releaseCompiledFolder}/bin-temp"
+			source            = "1.7"
+			target            = "1.7"
+			encoding          = "UTF-8"
+			debug             = "true"
+			debuglevel        = "lines,source" />
+		
+		<!-- Compile application libs module -->
+		<copy todir="${releaseCompiledFolder}/bin-app-libs" preservelastmodified="true">
+			<fileset dir="src-app-libs" excludes="**/*.java,**/package.html" />
+		</copy>
+		<javac
+			compiler          = "javac1.7"
+			executable        = "${javacExecutable}"
+			fork              = "true"
+			includeantruntime = "false"
+			srcdir            = "src-app-libs"
+			destdir           = "${releaseCompiledFolder}/bin-app-libs"
+			classpath         = "${releaseCompiledFolder}/bin-launcher;${releaseCompiledFolder}/bin-temp"
+			source            = "1.7"
+			target            = "1.7"
+			encoding          = "UTF-8"
+			debug             = "true"
+			debuglevel        = "lines,source" />
+		<!-- bin-temp isn't needed anymore, get rid of it --> 
+		<delete dir="${releaseCompiledFolder}/bin-temp" />
+		
+		<!-- Compile application module -->
+		<copy todir="${releaseCompiledFolder}/bin-app" preservelastmodified="true">
+			<fileset dir="src-app" excludes="**/*.java,**/package.html,overview.html" />
+		</copy>
+		<javac
+			compiler          = "javac1.7"
+			executable        = "${javacExecutable}"
+			fork              = "true"
+			includeantruntime = "false"
+			srcdir            = "src-app"
+			destdir           = "${releaseCompiledFolder}/bin-app"
+			classpath         = "app-folder/mod/app-libs/0.0/registry.jar;app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar;${releaseCompiledFolder}/bin-launcher;${releaseCompiledFolder}/bin-sc2-textures;${releaseCompiledFolder}/bin-sc2-balance-data;${releaseCompiledFolder}/bin-ext-mod-api;${releaseCompiledFolder}/bin-app-libs"
+			source            = "1.7"
+			target            = "1.7"
+			encoding          = "UTF-8"
+			debug             = "true"
+			debuglevel        = "lines,source" />
+	</target>
+	
+	
+	<target name="recreateModulesBean">
+		<!-- Recreates the modules bean in the dev deployment folder. -->
+		
+		<!-- Recreate modules bean and its digest: run hu.sltool.release.CreateModulesBean. -->
+		<java
+			fork      = "true"
+			classpath = "bin-tool;bin-launcher;bin-sc2-textures;bin-sc2-balance-data;bin-ext-mod-api;bin-app-libs;bin-app"
+			classname = "hu.sltool.release.CreateModulesBean">
+			
+			<arg file="${deploymentDevFolder}" />
+		</java>
+		
+		<echo>Modules bean recreated in folder: ${deploymentDevFolder}</echo>
+	</target>
+	
+	
+	<target name="assembleCompleteTestDevReleaseBuild">
+		<!-- Assembles a complete test dev release build by copying (unzipping) the dev deployments -->
+		
+		<!-- Read generated launcher properties -->
+		<property file="${launcherBuildPropertiesFile}" />
+		<unzip src="${deploymentDevFolder}/ScelightLauncher-${launcherVer}.zip" dest="${releaseBuildFolder}/.." />
+		
+		<!-- Read generated sc2 textures properties -->
+		<property file="${sc2TBuildPropertiesFile}" />
+		<unzip src="${deploymentDevFolder}/ScelightSc2T-${sc2TVer}.zip" dest="${releaseBuildFolder}/.." />
+		
+		<!-- Read generated sc2 balance data properties -->
+		<property file="${sc2BdBuildPropertiesFile}" />
+		<unzip src="${deploymentDevFolder}/ScelightSc2Bd-${sc2BdVer}.zip" dest="${releaseBuildFolder}/.." />
+		
+		<!-- Read generated ext-mod api properties -->
+		<property file="${extModApiBuildPropertiesFile}" />
+		<unzip src="${deploymentDevFolder}/ScelightExtModApi-${extModApiVer}.zip" dest="${releaseBuildFolder}/.." />
+		
+		<!-- Read generated app libs properties -->
+		<property file="${appLibsBuildPropertiesFile}" />
+		<unzip src="${deploymentDevFolder}/ScelightAppLibs-${appLibsVer}.zip" dest="${releaseBuildFolder}/.." />
+		
+		<!-- Read generated app properties -->
+		<property file="${appBuildPropertiesFile}" />
+		<unzip src="${deploymentDevFolder}/ScelightApp-${appVer}.zip" dest="${releaseBuildFolder}/.." />
+		
+		<!-- Copy the DEV starter script -->
+		<copy
+			file="${releaseResourcesFolder}/starter-scripts-compiled/${launcherVer}/Scelight-win-DEV.cmd"
+			todir="${releaseBuildFolder}"
+			preservelastmodified="true" />
+		
+		<echo>Complete test release assembled in folder: ${releaseBuildFolder}</echo>
+	</target>
+	
+	
+	<target name="performBuildReleasePostTasks"
+			depends="recreateModulesBean,assembleCompleteTestDevReleaseBuild">
+		<!-- Performs required post tasks after building a release of any module. -->
+		
+	</target>
+	
+	
+	<target name="clearReleaseBuildFolder">
+		<!-- Clears the release build folder -->
+		<delete dir="${releaseBuildFolder}" />
+		<mkdir  dir="${releaseBuildFolder}" />
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  B U I L D   L A U N C H E R   R E L E A S E  =======================================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="createAndLoadLauncherBuildProperties">
+		<!-- Creates and loads dynamic launcher build properties. -->
+		
+		<!-- Run hu.sltool.release.PrepNextLauncherRelease (increments and writes release build number+date+time,
+			 and creates launcher build properties file). -->
+		<java
+			fork      = "true"
+			classpath = "bin-tool;bin-launcher"
+			classname = "hu.sltool.release.PrepNextLauncherRelease" >
+			
+			<arg file="${launcherBuildPropertiesFile}" />
+		</java>
+		
+		<!-- Read generated launcher properties -->
+		<property file="${launcherBuildPropertiesFile}" />
+		
+		<property name="currentStarterScriptsCompiledFolder" value="${releaseResourcesFolder}/starter-scripts-compiled/${launcherVer}" />
+	</target>
+	
+	<target name="checkStarterScriptsCompiled">
+		<!-- Checks if starter scripts have been compiled for the current version of the launcher
+			 and if so, sets the starterScriptsCompiled property. -->
+		<available file="${currentStarterScriptsCompiledFolder}/Scelight.exe" property="starterScriptsCompiled" />
+	</target>
+	
+	<target name="compileStarterScripts" unless="starterScriptsCompiled">
+		<!-- Compiles starter scripts for the current version of the launcher. -->
+		
+		<!-- Delete older compiled starter scripts -->
+		<delete dir="${currentStarterScriptsCompiledFolder}/../" />
+		<mkdir  dir="${currentStarterScriptsCompiledFolder}" />
+		
+		<!-- Copy raw starter scripts -->
+		<copy todir="${currentStarterScriptsCompiledFolder}" preservelastmodified="true">
+			<fileset dir="${starterScriptsRawFolder}" excludes="exe/" />
+		</copy>
+		
+		<!-- Replace launcher version in copied raw starter scripts -->
+		<replace dir="${currentStarterScriptsCompiledFolder}" propertyfile="${launcherBuildPropertiesFile}">
+			<include name="/*.cmd"/>
+			<include name="/*.sh"/>
+			<include name="/*.command"/>
+			<replacefilter token="@launcherVer@" property="launcherVer" />
+		</replace>
+		
+		<!-- Create EXE files using Launch4j -->
+		<taskdef 
+			name      = "launch4j"
+			classname = "net.sf.launch4j.ant.Launch4jTask"
+			classpath = "${launch4jFolder}/launch4j.jar:${launch4j.dir}/lib/xstream.jar" />
+		
+		<!-- Scelight.exe -->
+		<launch4j>
+			<config
+				outfile     = "${currentStarterScriptsCompiledFolder}/Scelight.exe"
+				jarPath     = "mod/launcher/${launcherVer}/scelight-launcher.sldat"
+				dontwrapjar = "true"
+				headerType  = "gui"
+				manifest    = "${starterScriptsRawFolder}/exe/normal.uac.exe.manifest"
+				icon        = "${starterScriptsRawFolder}/exe/app-icon.ico"
+				chdir       = "."
+				errTitle    = "ScelightLauncher"
+				supportUrl  = "${homePageUrl}" >
+				
+				<classPath mainClass="hu.sllauncher.ScelightLauncher" cp="mod/launcher/${launcherVer}/scelight-launcher.sldat;mod/launcher/${launcherVer}/jl1.0.1.jar;mod/launcher/${launcherVer}/mp3spi1.9.5.jar;mod/launcher/${launcherVer}/tritonus_share.jar" />
+				<jre path="jre" minVersion="1.7.0"> <!-- Bundled JRE path: "jre" (relative) -->
+					<opt>-Xmx1024m</opt>
+					<opt>-Dfile.encoding=UTF-8</opt>
+					<opt>-Dhu.scelight.launched-with=Scelight.exe</opt>
+				</jre>
+				<versionInfo
+					fileVersion       = "1.0.0.0"
+					txtFileVersion    = "1.0.0.0"
+					fileDescription   = "${homePageUrl}"
+					copyright         = "Andras Belicza"
+					productVersion    = "1.0.0.0"
+					txtProductVersion = "1.0.0.0"
+					productName       = "Scelight"
+					companyName       = "Good Head Company"
+					internalName      = "Scelight"
+					originalFileName  = "Scelight.exe" />
+				<messages jreVersionErr="Scelight requires Java version" />
+			</config>
+		</launch4j>
+		
+		<!-- Scelight-admin.exe -->
+		<launch4j>
+			<config
+				outfile     = "${currentStarterScriptsCompiledFolder}/Scelight-admin.exe"
+				jarPath     = "mod/launcher/${launcherVer}/scelight-launcher.sldat"
+				dontwrapjar = "true"
+				headerType  = "gui"
+				manifest    = "${starterScriptsRawFolder}/exe/admin.uac.exe.manifest"
+				icon        = "${starterScriptsRawFolder}/exe/app-icon.ico"
+				chdir       = "."
+				errTitle    = "ScelightLauncher"
+				supportUrl  = "${homePageUrl}" >
+				
+				<classPath mainClass="hu.sllauncher.ScelightLauncher" cp="mod/launcher/${launcherVer}/scelight-launcher.sldat;mod/launcher/${launcherVer}/jl1.0.1.jar;mod/launcher/${launcherVer}/mp3spi1.9.5.jar;mod/launcher/${launcherVer}/tritonus_share.jar" />
+				<jre path="jre" minVersion="1.7.0"> <!-- Bundled JRE path: "jre" (relative) -->
+					<opt>-Xmx1024m</opt>
+					<opt>-Dfile.encoding=UTF-8</opt>
+					<opt>-Dhu.scelight.launched-with=Scelight-admin.exe</opt>
+				</jre>
+				<versionInfo
+					fileVersion       = "1.0.0.0"
+					txtFileVersion    = "1.0.0.0"
+					fileDescription   = "${homePageUrl}"
+					copyright         = "Andras Belicza"
+					productVersion    = "1.0.0.0"
+					txtProductVersion = "1.0.0.0"
+					productName       = "Scelight"
+					companyName       = "Good Head Company"
+					internalName      = "Scelight-admin"
+					originalFileName  = "Scelight-admin.exe" />
+				<messages jreVersionErr="Scelight requires Java version" />
+			</config>
+		</launch4j>
+	</target>
+	
+	<target name="1_BUILD_LAUNCHER_RELEASE"
+		depends="clearReleaseBuildFolder,createAndLoadLauncherBuildProperties,checkStarterScriptsCompiled,compileStarterScripts"
+		description="Creates a ScelightLauncher release and its deployment, and assembles a complete test release build">
+		
+		<!-- Copy static files -->
+		<copy todir="${releaseBuildFolder}" preservelastmodified="true">
+			<fileset dir="${appFolder}" excludes="mod/,mod-x/,workspace/,boot-settings.xml,boot-settings.xml_" />
+		</copy>
+		<copy todir="${releaseBuildFolder}" preservelastmodified="true">
+			<fileset dir="${appFolder}" includes="mod-x/*.*" />
+		</copy>
+		
+		<!-- Copy static libraries (jars) -->
+		<copy todir="${releaseBuildFolder}/mod/launcher/${launcherVer}" preservelastmodified="true">
+			<fileset dir="${appFolder}/mod/launcher/0.0" />
+		</copy>
+		
+		<!-- Copy current compiled starter scripts -->
+		<copy todir="${releaseBuildFolder}" preservelastmodified="true">
+			<fileset dir="${currentStarterScriptsCompiledFolder}" excludes="Scelight-win-DEV.cmd"/>
+		</copy>
+		
+		<!-- Create scelight-launcher.sldat -->
+		<antcall target="compileModules" />
+		<jar
+			basedir  = "${releaseCompiledFolder}/bin-launcher"
+			destfile = "${releaseBuildFolder}/mod/launcher/${launcherVer}/scelight-launcher.sldat" >
+			
+			<manifest>
+				<attribute name="Main-Class" value="hu.sllauncher.InfoMainClass"/>
+			</manifest>
+		</jar>
+		
+		<echo>Launcher release build successful, placed in folder: ${releaseBuildFolder}</echo>
+		
+		<!-- Delete previous launcher deployment -->
+		<delete>
+			<fileset dir="${deploymentDevFolder}" includes="ScelightLauncher-*.zip" />
+		</delete>
+		
+		<!-- Create launcher deployment -->
+		<zip
+			destfile = "${deploymentDevFolder}/ScelightLauncher-${launcherVer}.zip"
+			basedir  = "${releaseBuildFolder}/.."
+			includes = "Scelight/"
+			/>
+		
+		<antcall target="performBuildReleasePostTasks" />
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  B U I L D   A P P   R E L E A S E  =================================================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="createAndLoadAppBuildProperties">
+		<!-- Creates and loads dynamic app build properties. -->
+		
+		<!-- Run hu.sltool.release.PrepNextAppRelease (increments and writes release build number+date+time, and creates app build properties file). -->
+		<java
+			fork      = "true"
+			classpath = "bin-tool;bin-launcher;bin-sc2-textures;bin-sc2-balance-data;bin-ext-mod-api;bin-app-libs;bin-app"
+			classname = "hu.sltool.release.PrepNextAppRelease" >
+			
+			<arg file="${appBuildPropertiesFile}" />
+		</java>
+		
+		<!-- Read generated app properties -->
+		<property file="${appBuildPropertiesFile}" />
+		
+	</target>
+	
+	<target name="2_BUILD_APP_RELEASE"
+		depends="clearReleaseBuildFolder,createAndLoadAppBuildProperties"
+		description="Creates a Scelight release and its deployment, and assembles a complete test release build">
+		
+		<!-- Copy static libraries (jars) -->
+		<copy todir="${releaseBuildFolder}/mod/app/${appVer}" preservelastmodified="true">
+			<fileset dir="${appFolder}/mod/app/0.0" />
+		</copy>
+		
+		<!-- Create scelight.sldat -->
+		<antcall target="compileModules" />
+		<jar
+			basedir  = "${releaseCompiledFolder}/bin-app"
+			destfile = "${releaseBuildFolder}/mod/app/${appVer}/scelight.sldat">
+			
+			<manifest>
+				<attribute name="Main-Class" value="hu.scelight.InfoMainClass"/>
+			</manifest>
+		</jar>
+		
+		<echo>App release build successful, placed in folder: ${releaseBuildFolder}</echo>
+		
+		<!-- Delete previous app deployment -->
+		<delete>
+			<fileset dir="${deploymentDevFolder}" includes="ScelightApp-*.zip" />
+		</delete>
+		
+		<!-- Create app deployment -->
+		<zip
+			destfile = "${deploymentDevFolder}/ScelightApp-${appVer}.zip"
+			basedir  = "${releaseBuildFolder}/.."
+			includes = "Scelight/mod/app/"
+			/>
+		
+		<antcall target="performBuildReleasePostTasks" />
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  I M P L A N T   D E P L O Y M E N T   F I L E S  ===================================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	<target name="deploymentImplantationImpl">
+		<!-- Implementation of the deployment files implantation. Requires the ${deploymentSrcFolder} to be set. -->
+		
+		<echo>Using deployment source folder: ${deploymentSrcFolder}</echo>
+		
+		<!-- GZip modules bean into Scelight Operator and copy modules bean digest. -->
+		<delete file="../${scelightOpName}/war/bean/modules.xml.gz" />
+		<mkdir  dir="../${scelightOpName}/war/bean/" /> <!-- Make sure folder exists, else gzip throws error -->
+		<gzip
+			src      = "${deploymentSrcFolder}/modules.xml"
+			destfile = "../${scelightOpName}/war/bean/modules.xml.gz" />
+		<copy todir="../${scelightOpName}/war/bean/" overwrite="true" preservelastmodified="true" file="${deploymentSrcFolder}/modules.xml.digest" />
+		
+		<!-- Delete old release archives. -->
+		<delete>
+			<fileset dir="../${scelightOpName}/war/mod" includes="*.zip" />
+		</delete>
+		
+		<!-- Copy release archives. -->
+		<copy todir="../${scelightOpName}/war/mod" preservelastmodified="true">
+			<fileset dir="${deploymentSrcFolder}" includes="*.zip" />
+		</copy>
+		
+		<!-- Copy ext-mod-api.properties -->
+		<copy todir="../${scelightOpName}/war/mod/" overwrite="true" preservelastmodified="true" file="${deploymentSrcFolder}/ext-mod-api.properties" />
+		
+		<!-- Copy News. -->
+		<copy todir="../${scelightOpName}/war/news" preservelastmodified="true">
+			<fileset dir="war/news" includes="*.*" />
+		</copy>
+		
+		<!-- GZip latest news for Scelight (still need the uncompressed for browser viewing purposes). -->
+		<delete file="../${scelightOpName}/war/news/news.html.gz" />
+		<gzip
+			src      = "../${scelightOpName}/war/news/news.html"
+			destfile = "../${scelightOpName}/war/news/news.html.gz" />
+	</target>
+	
+	<target name="3_IMPLANT_DEV_DEPLOYMENT_FILES"
+		description="Implants the DEV deployment files and News into the ScelightOp project">
+		
+		<!-- Set deployment source to the DEV deployment folder. -->
+		<property name="deploymentSrcFolder" value="${deploymentDevFolder}" />
+		
+		<!-- And do the implantation: -->
+		<antcall target="deploymentImplantationImpl" />
+		
+		<echo>DEV deployment files implanted successfully.</echo>
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  B U I L D   S C 2   T E X T U R E S   R E L E A S E  ===============================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="createAndLoadSc2TBuildProperties">
+		<!-- Creates and loads dynamic sc2 textures build properties. -->
+		
+		<!-- Run hu.sltool.release.PrepNextSc2TRelease (increments and writes release build number+date+time, and creates sc2 textures build properties file). -->
+		<java
+			fork      = "true"
+			classpath = "bin-tool;bin-launcher;bin-sc2-textures;bin-app"
+			classname = "hu.sltool.release.PrepNextSc2TRelease" >
+			
+			<arg file="${sc2TBuildPropertiesFile}" />
+		</java>
+		
+		<!-- Read generated sc2 texture properties -->
+		<property file="${sc2TBuildPropertiesFile}" />
+		
+	</target>
+	
+	<target name="4_BUILD_SC2_T_RELEASE"
+		depends="clearReleaseBuildFolder,createAndLoadSc2TBuildProperties"
+		description="Creates an Sc2 Textures release and its deployment, and assembles a complete test release build">
+		
+		<!-- Copy static files and libraries (jars) -->
+		<copy todir="${releaseBuildFolder}/mod/sc2-t/${sc2TVer}" preservelastmodified="true">
+			<fileset dir="${appFolder}/mod/sc2-t/0.0" />
+		</copy>
+		
+		<!-- Create sc2-t.sldat -->
+		<antcall target="compileModules" />
+		<jar
+			basedir  = "${releaseCompiledFolder}/bin-sc2-textures"
+			destfile = "${releaseBuildFolder}/mod/sc2-t/${sc2TVer}/sc2-t.sldat">
+		</jar>
+		
+		<echo>SC2 Textures build successful, placed in folder: ${releaseBuildFolder}</echo>
+		
+		<!-- Delete previous sc2 textures deployment -->
+		<delete>
+			<fileset dir="${deploymentDevFolder}" includes="ScelightSc2T-*.zip" />
+		</delete>
+		
+		<!-- Create sc2 textures deployment -->
+		<zip
+			destfile = "${deploymentDevFolder}/ScelightSc2T-${sc2TVer}.zip"
+			basedir  = "${releaseBuildFolder}/.."
+			includes = "Scelight/mod/sc2-t/"
+			/>
+		
+		<antcall target="performBuildReleasePostTasks" />
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  B U I L D   S C 2   B A L A N C E   D A T A   R E L E A S E  =======================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="createAndLoadSc2BdBuildProperties">
+		<!-- Creates and loads dynamic sc2 balance data build properties. -->
+		
+		<!-- Run hu.sltool.release.PrepNextSc2BdRelease (increments and writes release build number+date+time, and creates sc2 balance data build properties file). -->
+		<java
+			fork      = "true"
+			classpath = "bin-tool;bin-launcher;bin-sc2-balance-data;bin-app"
+			classname = "hu.sltool.release.PrepNextSc2BdRelease" >
+			
+			<arg file="${sc2BdBuildPropertiesFile}" />
+		</java>
+		
+		<!-- Read generated sc2 balance data properties -->
+		<property file="${sc2BdBuildPropertiesFile}" />
+		
+	</target>
+	
+	<target name="5_BUILD_SC2_BD_RELEASE"
+		depends="clearReleaseBuildFolder,createAndLoadSc2BdBuildProperties"
+		description="Creates an Sc2 Balance Data release and its deployment, and assembles a complete test release build">
+		
+		<!-- Copy static files and libraries (jars) -->
+		<copy todir="${releaseBuildFolder}/mod/sc2-bd/${sc2BdVer}" preservelastmodified="true">
+			<fileset dir="${appFolder}/mod/sc2-bd/0.0" />
+		</copy>
+		
+		<!-- Create sc2-bd.sldat -->
+		<antcall target="compileModules" />
+		<jar
+			basedir  = "${releaseCompiledFolder}/bin-sc2-balance-data"
+			destfile = "${releaseBuildFolder}/mod/sc2-bd/${sc2BdVer}/sc2-bd.sldat">
+		</jar>
+		
+		<echo>SC2 Balance Data build successful, placed in folder: ${releaseBuildFolder}</echo>
+		
+		<!-- Delete previous sc2 balance data deployment -->
+		<delete>
+			<fileset dir="${deploymentDevFolder}" includes="ScelightSc2Bd-*.zip" />
+		</delete>
+		
+		<!-- Create sc2 balance data deployment -->
+		<zip
+			destfile = "${deploymentDevFolder}/ScelightSc2Bd-${sc2BdVer}.zip"
+			basedir  = "${releaseBuildFolder}/.."
+			includes = "Scelight/mod/sc2-bd/"
+			/>
+		
+		<antcall target="performBuildReleasePostTasks" />
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  B U I L D   E X T E R N A L   M O D U L E   A P I   A N D   S D K  =================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="createAndLoadExtModApiBuildProperties">
+		<!-- Creates and loads dynamic External Module API build properties. -->
+		
+		<!-- Run hu.sltool.release.PrepNextExtModApiRelease (increments and writes release build number+date+time, and creates Ext Mod API build properties file). -->
+		<java
+			fork      = "true"
+			classpath = "bin-tool;bin-launcher;bin-ext-mod-api"
+			classname = "hu.sltool.release.PrepNextExtModApiRelease" >
+			
+			<arg file="${extModApiBuildPropertiesFile}" />
+		</java>
+		
+		<!-- Read generated ext mod api properties -->
+		<property file="${extModApiBuildPropertiesFile}" />
+		
+	</target>
+	
+	<target name="6_BUILD_EXTERNAL_MODULE_API_AND_SDK"
+		depends="clearReleaseBuildFolder,createAndLoadExtModApiBuildProperties"
+		description="Creates an External module API release and its deployment, assembles a complete test release and creates an External Module SDK release">
+		
+		<!-- Copy static files and libraries (jars) -->
+		<copy todir="${releaseBuildFolder}/mod/mod-x-api/${extModApiVer}" preservelastmodified="true">
+			<fileset dir="${appFolder}/mod/mod-x-api/0.0" />
+		</copy>
+		
+		<!-- Create ext-mod-api.sldat -->
+		<antcall target="compileModules" />
+		<jar
+			basedir  = "${releaseCompiledFolder}/bin-ext-mod-api"
+			destfile = "${releaseBuildFolder}/mod/mod-x-api/${extModApiVer}/ext-mod-api.sldat">
+		</jar>
+		
+		<echo>External Module API build successful, placed in folder: ${releaseBuildFolder}</echo>
+		
+		<!-- Delete previous ext-mod api deployment -->
+		<delete>
+			<fileset dir="${deploymentDevFolder}" includes="ScelightExtModApi-*.zip" />
+		</delete>
+		
+		<!-- Create ext-mod api deployment -->
+		<zip
+			destfile = "${deploymentDevFolder}/ScelightExtModApi-${extModApiVer}.zip"
+			basedir  = "${releaseBuildFolder}/.."
+			includes = "Scelight/mod/mod-x-api/"
+			/>
+		
+		<antcall target="performBuildReleasePostTasks" />
+		
+		<!-- And now on to the SDK! -->
+		
+		<!-- Clear SDK's Ext Mod API Release build folder -->
+		<delete dir="${apiReleaseBuildFolder}" />
+		<mkdir  dir="${apiReleaseBuildFolder}" />
+		
+		<!-- Copy API-LICENSE.txt -->
+		<copy todir="${apiReleaseBuildFolder}/${extModApiVer}" preservelastmodified="true" file="${releaseResourcesFolder}/API-LICENSE.txt" />
+		
+		<!-- Create scelight-ext-mod-api.jar -->
+		<!-- Create jar from the "original" Eclipse-compiled classes becase they "contain" the variable attributes (e.g. method parameter names)
+			 while the compiled classes used to build module releases do not. -->
+		<jar destfile = "${apiReleaseBuildFolder}/${extModApiVer}/lib/scelight-ext-mod-api-${extModApiVer}.jar" >
+			<fileset dir="bin-launcher" includes="hu/scelightapibase/**"/>
+			<fileset dir="bin-ext-mod-api" includes="hu/scelightapi/**"/>
+			<!-- Also include source files so javadoc will be available in IDEs without additional work. -->
+			<fileset dir="src-launcher" includes="hu/scelightapibase/**/*.java"/>
+			<fileset dir="src-ext-mod-api" includes="hu/scelightapi/**/*.java"/>
+		</jar>
+		
+		<!-- Generate the public Scelight External Module API documentation -->
+		<javadoc
+			executable       = "${javadocExecutable}"
+			source           = "1.7"
+			sourcepath       = "src-launcher;src-sc2-textures;src-sc2-balance-data;src-ext-mod-api;src-app-libs;src-app"
+			classpath        = "app-folder/mod/app-libs/0.0/registry.jar;app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar"
+			packagenames     = "hu.scelightapibase.*,hu.scelightapi.*"
+			destdir          = "${apiReleaseBuildFolder}/${extModApiVer}/javadoc"
+			
+			encoding         = "UTF-8"
+			charset          = "UTF-8"
+			docencoding      = "UTF-8"
+			
+			doctitle         = "Scelight™ External Module API ${extModApiVer} Documentation"
+			windowtitle      = "External Module API ${extModApiVer} Documentation - Scelight™"
+			header           = "Scelight™ External Module API ${extModApiVer}"
+			footer           = "Scelight™ External Module API ${extModApiVer}"
+			bottom           = " &lt;br&gt;This API documentation is public and is intended for / allowed to be used by anyone.&lt;br&gt;Scelight home page: &lt;a href='https://sites.google.com/site/scelight/' target='_blank'&gt;https://sites.google.com/site/scelight/&lt;/a&gt;&lt;br&gt;Scelight is a trademark of András Belicza. Copyright © András Belicza, 2013-2015. All rights reserved."
+			overview         = "src-ext-mod-api/api-overview.html"
+			
+			access           = "protected"
+			author           = "true"
+			nodeprecated     = "false"
+			nodeprecatedlist = "false"
+			noindex          = "false"
+			nonavbar         = "false"
+			notree           = "false"
+			use              = "true"
+			version          = "true"
+			splitindex       = "false" />
+		
+		<echo>Developer External Module API release build successful, placed in folder: ${apiReleaseBuildFolder}</echo>
+		
+		<!-- Create and inject sdk-tools.jar into the Scelight External Module SDK Eclipse project. -->
+		<jar destfile = "../${extModSDKProjectName}/lib-sdk/sdk-tools.jar" >
+			<fileset dir="bin-tool" includes="hu/sltool/extmodsdk/**" excludes="**/package.html" />
+		</jar>
+		
+		<!-- Delete previous External Module SDK zip archive. -->
+		<delete>
+			<fileset dir="${deploymentDevFolder}" includes="${extModSDKProjectName}-*.zip" />
+		</delete>
+		
+		<!-- Create External Module SDK zip archive. -->
+		<zip
+			destfile = "${deploymentDevFolder}/${extModSDKProjectName}-${extModApiVer}.zip"
+			basedir  = "../"
+			includes = "${extModSDKProjectName}/"
+			excludes = "${extModSDKProjectName}/bin,${extModSDKProjectName}/bin-tool"
+			/>
+		
+		<!-- Write External module API version to a property file, will be needed by the Servlet that serves the javadoc. -->
+		<propertyfile file="${deploymentDevFolder}/ext-mod-api.properties">
+			<entry key="extModApiVer" value="${extModApiVer}" />
+		</propertyfile>
+		
+		<echo>WARNING! When the SDK's BUILD_RELEASE task is run, it generates new files (e.g. example ext mod's deployment) + increments example ext mod's build number, so SDK should be re-packaged by running this task again!</echo>
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  B U I L D   A P P   L I B S   R E L E A S E  =======================================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="createAndLoadAppLibsBuildProperties">
+		<!-- Creates and loads dynamic app libs build properties. -->
+		
+		<!-- Run hu.sltool.release.PrepNextAppLibsRelease (increments and writes release build number+date+time, and creates app libs build properties file). -->
+		<java
+			fork      = "true"
+			classpath = "bin-tool;bin-launcher;bin-app-libs;bin-app"
+			classname = "hu.sltool.release.PrepNextAppLibsRelease" >
+			
+			<arg file="${appLibsBuildPropertiesFile}" />
+		</java>
+		
+		<!-- Read generated app libs properties -->
+		<property file="${appLibsBuildPropertiesFile}" />
+		
+	</target>
+	
+	<target name="7_BUILD_APP_LIBS_RELEASE"
+		depends="clearReleaseBuildFolder,createAndLoadAppLibsBuildProperties"
+		description="Creates a Scelight Libs release and its deployment, and assembles a complete test release build">
+		
+		<!-- Copy static files and libraries (jars) -->
+		<copy todir="${releaseBuildFolder}/mod/app-libs/${appLibsVer}" preservelastmodified="true">
+			<fileset dir="${appFolder}/mod/app-libs/0.0" />
+		</copy>
+		
+		<!-- Create app-libs.sldat -->
+		<antcall target="compileModules" />
+		<jar
+			basedir  = "${releaseCompiledFolder}/bin-app-libs"
+			destfile = "${releaseBuildFolder}/mod/app-libs/${appLibsVer}/app-libs.sldat">
+		</jar>
+		
+		<echo>App Libs release build successful, placed in folder: ${releaseBuildFolder}</echo>
+		
+		<!-- Delete previous app libs deployment -->
+		<delete>
+			<fileset dir="${deploymentDevFolder}" includes="ScelightAppLibs-*.zip" />
+		</delete>
+		
+		<!-- Create app libs deployment -->
+		<zip
+			destfile = "${deploymentDevFolder}/ScelightAppLibs-${appLibsVer}.zip"
+			basedir  = "${releaseBuildFolder}/.."
+			includes = "Scelight/mod/app-libs/"
+			/>
+		
+		<antcall target="performBuildReleasePostTasks" />
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  M A K E   D E V   D E P L O Y M E N T S   P U B L I C  =============================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="8_COPY_DEPLOYMENTS__DEV_TO_PUB"
+		description="Makes the dev deployments public by copying the DEV deployment folder content to the PUB deployment folder">
+		
+		<!-- Delete old pub deployment files. -->
+		<delete>
+			<fileset dir="${deploymentPubFolder}" includes="*.*" />
+		</delete>
+		
+		<!-- Copy dev deployment folder content to the pub deployment folder. -->
+		<copy todir="${deploymentPubFolder}" preservelastmodified="true">
+			<fileset dir="${deploymentDevFolder}" includes="*.*" />
+		</copy>
+		
+		<echo>DEV deployment files successfully copied to the PUB deployment folder.</echo>
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  I M P L A N T   P U B   D E P L O Y M E N T   F I L E S  ===========================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	<target name="9_IMPLANT_PUB_DEPLOYMENT_FILES"
+		description="Implants the PUB deployment files and News into the ScelightOp project">
+		
+		<!-- Set deployment source to the PUB deployment folder. -->
+		<property name="deploymentSrcFolder" value="${deploymentPubFolder}" />
+		
+		<!-- And do the implantation: -->
+		<antcall target="deploymentImplantationImpl" />
+		
+		<echo>PUB deployment files implanted successfully.</echo>
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  G E N E R A T E   D E V   J A V A D O C  ===========================================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="A_GENERATE_DEV_JAVADOC" description="Generates the private Scelight Developer Documentation">
+		<javadoc
+			executable       = "${javadocExecutable}"
+			source           = "1.7"
+			sourcepath       = "src-launcher;src-sc2-textures;src-sc2-balance-data;src-app-libs;src-app;src-tool"
+			classpath        = "app-folder/mod/app-libs/0.0/registry.jar;app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar"
+			destdir          = "${javadocDestFolder}"
+			
+			encoding         = "UTF-8"
+			charset          = "UTF-8"
+			docencoding      = "UTF-8"
+			
+			doctitle         = "Scelight™ Developer Documentation"
+			windowtitle      = "Developer Documentation - Scelight™"
+			header           = "Scelight™ Developer Documentation"
+			footer           = "Scelight™ Developer Documentation"
+			bottom           = "This developer documentation is for private use only!&lt;br&gt;Scelight home page: &lt;a href='https://sites.google.com/site/scelight/' target='_blank'&gt;https://sites.google.com/site/scelight/&lt;/a&gt;&lt;br&gt;Scelight is a trademark of András Belicza. Copyright © András Belicza, 2013-2015. All rights reserved."
+			overview         = "src-app/overview.html"
+			
+			access           = "private"
+			author           = "true"
+			nodeprecated     = "false"
+			nodeprecatedlist = "false"
+			noindex          = "false"
+			nonavbar         = "false"
+			notree           = "false"
+			use              = "true"
+			version          = "true"
+			splitindex       = "false" />
+		
+		<!-- Copy icons and images because they are linked in the java doc so they can appear in the generated HTML pages -->
+		<copy todir="${javadocDestFolder}" preservelastmodified="true" >
+			<fileset dir="src-launcher/">
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+		<copy todir="${javadocDestFolder}" preservelastmodified="true" >
+			<fileset dir="src-app/">
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  P R E P A R E   J R E 8  ===========================================================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="B_PREPARE_JRE8" description="Prepares a custom JRE bundle for the application">
+		
+		<property name="workFolder" value="w:" />
+		<property name="tempJreFolder" value="${workFolder}/jre" />
+		<property name="outputFile" value="${workFolder}/jre-8u60-windows-i586.zip" />
+		
+		<!--
+			Copy the source JRE8. Exclude unnecessary optional files. The list is gathered from:
+			http://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html
+			(referenced indirectly from jre8\README.txt) 
+		-->
+		<copy todir="${tempJreFolder}" preservelastmodified="true">
+			<fileset dir="C:/Program Files (x86)/Java/jre1.8.0_60"> <!-- 32-bit JRE8 -->
+				<exclude name="bin/rmid.exe" />
+				<exclude name="bin/rmid.dll" />
+				<exclude name="bin/rmiregistry.exe" />
+				<exclude name="bin/tnameserv.exe" />
+				<exclude name="bin/keytool.exe" />
+				<exclude name="bin/kinit.exe" />
+				<exclude name="bin/klist.exe" />
+				<exclude name="bin/ktab.exe" />
+				<exclude name="bin/policytool.exe" />
+				<exclude name="bin/orbd.exe" />
+				<exclude name="bin/servertool.exe" />
+				<exclude name="bin/javaws.exe" />
+				<exclude name="lib/javaws.jar" />
+				
+				<exclude name="lib/jfr/**" />
+				<exclude name="lib/jfr.jar" />
+				
+				<exclude name="bin/javacpl.exe" />
+				<exclude name="bin/jucheck.exe" />
+				<exclude name="bin/jabswitch.exe" />
+				<exclude name="bin/java_crw_demo.dll" />
+				<exclude name="bin/JavaAccessBridge-32.dll" />
+				<exclude name="bin/JavaAccessBridge.dll" />
+				<exclude name="bin/JAWTAccessBridge-32.dll" />
+				<exclude name="bin/JAWTAccessBridge.dll" />
+				<exclude name="bin/WindowsAccessBridge-32.dll" />
+				<exclude name="bin/WindowsAccessBridge.dll" />
+				<exclude name="bin/wsdetect.dll" />
+				<exclude name="bin/dtplugin/**" />
+				<exclude name="bin/plugin2/**" />
+				<exclude name="bin/deploy.dll" />
+				<exclude name="bin/jfr.dll" />
+				<exclude name="bin/javacpl.cpl" />
+				<exclude name="lib/deploy.jar" />
+				<exclude name="lib/plugin.jar" />
+				<exclude name="lib/deploy/**" />
+			</fileset>
+		</copy>
+		
+		<!-- Pack the JRE -->
+		<!-- Delete previous JRE pack. -->
+		<delete file="${outputFile}" />
+		<zip
+			destfile = "${outputFile}"
+			basedir  = "${workFolder}"
+			includes = "jre/"
+			/>
+		
+		<checksum file="${outputFile}" algorithm="SHA-256" forceOverwrite="yes"/>
+		
+		<!-- Delete temp JRE8 folder -->
+		<delete dir="${tempJreFolder}" />
+		
+		<echo>Custom JRE prepared in file: ${outputFile}</echo>
+		
+	</target>
+	
+	
+	<!-- =========================================================================================================
+		 =========================================================================================================
+		 ===================  B A C K U P   P R O J E C T  =======================================================
+		 =========================================================================================================
+		 ========================================================================================================= -->
+	
+	
+	<target name="Z_BACKUP_PROJECT" description="Creates a project backup. Zips the files of the project (excluding bin folders, release build folder and javadoc folder).">
+		<!-- Read generated app build properties -->
+		<property file="${appBuildPropertiesFile}" />
+		
+		<property name="destBackupFile" value="w:/${projectName}-${appVer}-project.zip" />
+		
+		<!-- Delete previous backup file. -->
+		<delete file="${destBackupFile}" />
+		
+		<!-- Zip project folder. -->
+		<zip
+			destfile = "${destBackupFile}"
+			basedir  = ".."
+			includes = "${projectName}/"
+			excludes = "${projectName}/bin-launcher/,${projectName}/bin-sc2-textures/,${projectName}/bin-sc2-balance-data/,${projectName}/bin-app-libs/,${projectName}/bin-ext-mod-api/,${projectName}/bin-app/,${projectName}/bin-tool/,${projectName}/${releaseCompiledFolder}/,${projectName}/${releaseBuildFolder}/,${projectName}/${apiReleaseBuildFolder}/,${projectName}/${javadocDestFolder}/" />
+		
+		<echo>Project backup ready in file: ${destBackupFile}</echo>
+	</target>
+	
+	
+	
+</project>

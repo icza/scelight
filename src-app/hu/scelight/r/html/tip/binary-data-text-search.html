@@ -1,0 +1,51 @@
+Texts found in binary data are usually
+<span class="h">UTF-8</span>
+encoded.
+<br>
+<br>
+<b>Concept:</b>
+This text search first converts the searched text to bytes using the same encoding (UTF-8), and this byte sequence will be searched. Therefore it will find the
+searched text in the binary data even though looking at the displayed characters you might see a different text (because it is not UTF-8 decoded but rather a
+simple
+<span class="h">one-byte &rArr; one-char projection</span>
+).
+<br>
+<br>
+Additionally to the concept, the search is case insenstive. The searched text is first lower-cased before converting to byte sequence. If a compared byte is in
+the range of
+<code>'A'..'Z'</code>
+, the corresponding lower-cased byte from the range of
+<code>'a'..'z'</code>
+will also be accepted.
+<br>
+<br>
+<div class="E">
+	<b>Example:</b> Searching for the text:
+	<blockquote>
+		<code>"Bär"</code>
+	</blockquote>
+	Will search for the byte sequences:
+	<blockquote>
+		<code>62 c3 a4 72</code>
+		&nbsp;&nbsp;&nbsp;
+		<code>"&#98;&#195;&#164;&#114;"</code>
+		<br>
+		<code>42 c3 a4 72</code>
+		&nbsp;&nbsp;&nbsp;
+		<code>"&#66;&#195;&#164;&#114;"</code>
+		<br>
+		<code>62 c3 a4 52</code>
+		&nbsp;&nbsp;&nbsp;
+		<code>"&#98;&#195;&#164;&#82;"</code>
+		<br>
+		<code>42 c3 a4 52</code>
+		&nbsp;&nbsp;&nbsp;
+		<code>"&#66;&#195;&#164;&#82;"</code>
+		<br>
+	</blockquote>
+	(the character
+	<code>"ä"</code>
+	is mapped to 2 bytes in the UTF-8 charset:
+	<code>c3 a4</code>
+	).
+</div>

@@ -1,0 +1,65 @@
+Rows listed in the table can be filtered using the filter components above the table.
+<br>
+<br>
+You can enter a
+<span class="h">filter term</span>
+to the filter text fields, and the listed rows will be
+<span class="h">filtered</span>
+,
+<span class="h">narrowed down</span>
+immediately.
+<br>
+<br>
+<div class="D">
+	There are 2 kinds of table filters:
+	<ul style='margin-bottom: 0px'>
+		<li><span class="s">Filter:</span> this is an <span class="h">include</span> filter, used to specify what rows you want to include (to be listed).</li>
+		<li><span class="s">Filter Out</span> this is an <span class="h">exclude</span> filter, used to specify what rows you want to exclude (not to be listed).</li>
+	</ul>
+</div>
+<br>
+When the include filter is
+<span class="h">active</span>
+, only the rows that
+<span class="h">match</span>
+the filter term will be listed; when the exclude filter is
+<span class="h">active</span>
+, only the rows that
+<span class="h">do not match</span>
+the filter term will be listed.
+<span class="h">Green</span>
+background will notify you if a filter is active and that the listed rows are filtered and you might see an incomplete row list.
+<br>
+<br>
+<div class="N">
+	<b>Note:</b> The <span class="s">Filter Out</span> filter has higher precedence: if a row matches this filter term, it will not be listed even if it also
+	matches the include filter term.
+</div>
+<br>
+<div class="D">
+	The <span class="h">filter term</span> is a list of words, and is case insensitive. By default these words are in logical <span class="h">AND</span>
+	connection: a table row matches the filter term if <i>all</i> the words are contained in the row. The word 'AND' is not required but can be put between words
+	(e.g. these 2 terms are equivalent:
+	<code>'Probe Drone'</code>
+	=
+	<code>'Probe and Drone'</code>
+	). <br> If you put 'OR' between words (or group of words), they will be in logical <span class="h">OR</span> connection: a table row matches the filter
+	term if <i>any</i> of the words (or group of words) is contained in the row.<br> To filter by an exact phrase which contains spaces or the words 'or'
+	'and', put it in <span class="h">quotes</span>, e.g.
+	<code>"warp in probe"</code>
+	.
+</div>
+<br>
+You can clear the filters by
+<span class="h">clearing the filter terms</span>
+, or clicking on the
+<span class="h">cross</span>
+icon next to the filter text fields, or by pressing the
+<span class="k">[ESC]</span>
+key.
+<br>
+<br>
+<div class="T">
+	<i>Tip:</i> You can focus the include filter text field by pressing <span class="k">[CTRL+F]</span> , and focus the exclude filter text field by pressing <span
+		class="k">[CTRL+T]</span> .
+</div>
