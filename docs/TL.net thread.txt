@@ -8,9 +8,16 @@ Its main features are replay management and replay analysis.
 The program is written in Java so everyone can use it: Windows, MAC OS-X and Linux users (and others where you can install Java).
 
 
-[big][green][b]HOME PAGE [/b][/green][/big]
+[big][green][b]HOME PAGE[/b][/green][/big]
 
 [b][url=https://sites.google.com/site/scelight/]https://sites.google.com/site/scelight/[/url][/b]
+
+
+[big][green][b]OPEN SOURCE [/b][/green][/big]
+
+Scelight is now (as of February 4, 2016) open source:
+
+[b][url=https://github.com/icza/scelight]https://github.com/icza/scelight[/url][/b]
 
 
 [big][green][b]SCREENSHOTS[/b][/green][/big] [i](click for more and larger versions)[/i]
