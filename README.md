@@ -45,4 +45,4 @@ Scelight home page: https://sites.google.com/site/scelight/
 
 ## Project Status
 
-Project is under development.
+Project is active and under development.
