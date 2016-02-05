@@ -46,3 +46,7 @@ Scelight home page: https://sites.google.com/site/scelight/
 ## Project Status
 
 Project is active and under development.
+
+## License
+
+Open-sourced under the [Apache License 2.0](https://github.com/icza/scelight/blob/master/LICENSE).
