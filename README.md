@@ -6,6 +6,8 @@ Scelight home page: https://sites.google.com/site/scelight/
 
 (The Github project counts [127,000 lines](https://github.com/icza/scelight/graphs/contributors). And this is without development history, just  the snapshot of the current state of the project.)
 
+Visit the [Scelight Wiki](https://github.com/icza/scelight/wiki) to see [how to contribute](https://github.com/icza/scelight/wiki/Way-of-Contributions) or [how to setup your environment](https://github.com/icza/scelight/wiki/Environment-Setup) for developing Scelight.
+
 ## Directory Structure
 
 [directory-info.html](https://github.com/icza/scelight/blob/master/directory-info.html) in the root explains / details the main folders / files:
