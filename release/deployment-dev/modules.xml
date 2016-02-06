@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<modulesBean v="1">
+    <reqMinLauncherVer major="1" minor="0" revision="0" v="1"/>
+    <launcherMod v="1">
+        <name>Scelight Launcher</name>
+        <version major="3" minor="1" revision="3" v="1"/>
+        <folder>launcher</folder>
+        <archiveFile path="ScelightLauncher-3.1.3.zip" sha256="4f166342debe11955d9f0a4bd36b7117e4d1cd6f1ad36a90806b054bd540bbf8" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightLauncher-3.1.3.zip</urlList>
+        <archiveSize>1450828</archiveSize>
+        <fileList path="Scelight/README.txt" sha256="5a25c43112652c8b56267bd15fb2e3e2f80ea540fb92fad4073f88a2000c9553" v="1"/>
+        <fileList path="Scelight/Scelight-admin.exe" sha256="a941dc2adaeae277ad21bf0a5447db36145fc4b94a9625a39c03256654640c86" v="1"/>
+        <fileList path="Scelight/Scelight-linux.sh" sha256="4f25b801deb50f202204306398de20b7164a627617efe2e09b0f589d49b3df78" v="1"/>
+        <fileList path="Scelight/Scelight-os-x.command" sha256="7998537614c1a78ceaa33ca94056b0713581a86904f9d541529d37593adc92ab" v="1"/>
+        <fileList path="Scelight/Scelight-win.cmd" sha256="9b7062f408450e47da63493fdccb11d97b18ea3335b4de373a9e079520fa81ca" v="1"/>
+        <fileList path="Scelight/Scelight.exe" sha256="f7c80d99d5e102a1a8f460d7102c6199ad480f77327150f19a78161deb0ff12d" v="1"/>
+        <fileList path="Scelight/mod-x/README.txt" sha256="21d236e5eb099f33150049b1c4625c0a1edf355e38ad908b8d6cb0bb6797b459" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.3/jl1.0.1.jar" sha256="eabaa070e57a204d441cd9b20200f74c165c4dd9cfb9dbf37eeabb3b713c6fac" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.3/mp3spi1.9.5.jar" sha256="ce19a131c541e127cbaeaf972b1cbafc13f0b7f20ecb8af814ae95047fae550f" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.3/scelight-launcher.sldat" sha256="90be51dd4becb49ecc7bf09751adba88467b2f0d86fe2263a53da2d944c8d4c8" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.3/tritonus_share.jar" sha256="bb6de6849695aaffe5706fef4c9ca3061a7ecd2056493cfdb55dab93d18946b3" v="1"/>
+    </launcherMod>
+    <modList v="1">
+        <name>SC2 Textures</name>
+        <version major="1" minor="2" revision="1" v="1"/>
+        <folder>sc2-t</folder>
+        <archiveFile path="ScelightSc2T-1.2.1.zip" sha256="b777cf3e86f3edfd5ca18b5d5753dea61ad2f3f0acf12147cfeee2702fb22510" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightSc2T-1.2.1.zip</urlList>
+        <archiveSize>1296101</archiveSize>
+        <fileList path="Scelight/mod/sc2-t/1.2.1/sc2-t.sldat" sha256="5acde024daf8db25ad5f84e6876b278e998cae73025948ebff83a9f3594e6bda" v="1"/>
+    </modList>
+    <modList v="1">
+        <name>SC2 Balance Data</name>
+        <version major="1" minor="2" revision="0" v="1"/>
+        <folder>sc2-bd</folder>
+        <archiveFile path="ScelightSc2Bd-1.2.zip" sha256="c72ccd7b784e3885541daf6e8c4f21397be1ad7e1bd291a34a6871f868d0b0b2" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightSc2Bd-1.2.zip</urlList>
+        <archiveSize>562425</archiveSize>
+        <fileList path="Scelight/mod/sc2-bd/1.2/sc2-bd.sldat" sha256="9210b9692004acd5d95f7ad082160eecf640b3c01bc06989755cab089d782956" v="1"/>
+    </modList>
+    <modList v="1">
+        <name>External Module API</name>
+        <version major="1" minor="5" revision="2" v="1"/>
+        <folder>mod-x-api</folder>
+        <archiveFile path="ScelightExtModApi-1.5.2.zip" sha256="c70862836d16723ff39b346c49a5b2ee233140d16602ffc7cb9314e822d8d5d1" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightExtModApi-1.5.2.zip</urlList>
+        <archiveSize>67020</archiveSize>
+        <fileList path="Scelight/mod/mod-x-api/1.5.2/ext-mod-api.sldat" sha256="a443adfc7bb7766fe5e7c8f3e5163ea1f2fe69a2d06b88f46ef7a1f9182bb047" v="1"/>
+    </modList>
+    <modList v="1">
+        <name>Scelight Libs</name>
+        <version major="1" minor="5" revision="2" v="1"/>
+        <folder>app-libs</folder>
+        <archiveFile path="ScelightAppLibs-1.5.2.zip" sha256="2e161381e1a3c1ac084f016f711b760b4f28929c2e03972661450761fa74f128" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightAppLibs-1.5.2.zip</urlList>
+        <archiveSize>463064</archiveSize>
+        <fileList path="Scelight/mod/app-libs/1.5.2/ICE_JNIRegistry32.dll" sha256="d8181567cadeaa63d38086fc1234e31e7f8e64bb7d161465b3a05fe893a0e765" v="1"/>
+        <fileList path="Scelight/mod/app-libs/1.5.2/ICE_JNIRegistry64.dll" sha256="81d601cdea6fe8eb1565fdd90a895061d880521ad3e13e81585743464f72534d" v="1"/>
+        <fileList path="Scelight/mod/app-libs/1.5.2/app-libs.sldat" sha256="f6e2b78f7731df019643e9a5895775c4cf2330f66b208c584c3d9937a7e9cd24" v="1"/>
+        <fileList path="Scelight/mod/app-libs/1.5.2/mailapi-1.5.0.jar" sha256="adc487b04171d45f6f1e3ebd207b97341cf00e67aba6140d393f5c169a74121f" v="1"/>
+        <fileList path="Scelight/mod/app-libs/1.5.2/registry.jar" sha256="81cdaaa1c6d1b6296a214073469fee84f11ea986738b4c5b4bde90cf5c4a6197" v="1"/>
+        <fileList path="Scelight/mod/app-libs/1.5.2/smtp-1.5.0.jar" sha256="f7bf5bd565dbd393f31fbdacbcbcec47f2796a87f9fd9791afcf9cb097621ac8" v="1"/>
+    </modList>
+    <modList v="1">
+        <name>Scelight</name>
+        <version major="6" minor="2" revision="3" v="1"/>
+        <folder>app</folder>
+        <archiveFile path="ScelightApp-6.2.3.zip" sha256="8657175a9b0f61e77392e50d25120e637ed04072782b21a2f40c973e2c57d2d5" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightApp-6.2.3.zip</urlList>
+        <archiveSize>1317379</archiveSize>
+        <fileList path="Scelight/mod/app/6.2.3/scelight.sldat" sha256="5ab2c95f3b626c8d6223a8a86846b1fc19e98417d1031e75e971c6ddf8af4fdd" v="1"/>
+    </modList>
+    <extModRefList v="1">
+        <name>SC2ReplayStatsUploader</name>
+        <folder>sc2replaystats</folder>
+        <iconImgData>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACCklEQVQ4y+WSS0hUcRSHv/+dO8b1UTDjjGJqmXdsJqckGY2iDLEMcRHkylato0WbWkW0CaIoFC1qp4hNuumBWhFpQhMaKEiODfYSEkWlNJq3zpwWYuDOXYu+1VkcPn6c84N/jdoYHj19J8GvETRWqavKpeZotdqKQAe48SAg9/p10ikDpeVQ7Fz+u/BqeEzmFiJ4SnKorjqoOnsDEo5GOeS14/NVKn18IiQXW7+TnZHk8rldJJIp8mzbAbjaOiTXOsIoTedC4w8GA1Ny5+EsKxGNwfdT6wmi8RRrKQ1ZC+PYoSgvr1AAfa8n5FbvKp6dSzSfKqTA4UDXLfTdrVddTyakrScKgJZvN/AUa8Ssbi61fKCr57kATH6Jg6Q4WWml7th+5XGXKZdZqgBm5mJkWhPrAtPco843FbDbvkLEspf2xzEGXr4Rq9WC0jQSycSmo70dnZSBkd801zs2f2H602fpfrHI8FQW3twQtYdLaO/PJF8Pcvq4E3epA8MwuHJ/hix9hY6bTQpA2xCUuUx1wpeFkgTLEZ2KMhsHCn8yGymi7RnMzi0yPP6LpZidbwsWjjT7BUAfHfsoLd0h8mzbuO2fJ42TSnc2pmkqgKFAUOJJoaHWq0bGQuK0JREpRSTFGT+oocCkXO+cJ5rUMTLS1HgVZxuKcLlcastNDIWmJRxPY2RA+T634v/iD+7IxOXwpVBrAAAAAElFTkSuQmCC</iconImgData>
+        <authorList v="1">
+            <personName v="1">
+                <first>Chris</first>
+                <last>Kerslake</last>
+            </personName>
+            <contact v="1">
+                <email>contact_us@sc2replaystats.com</email>
+            </contact>
+        </authorList>
+        <homePage>http://sc2replaystats.com/</homePage>
+        <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
+        <moduleBeanUrl>https://sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
+    </extModRefList>
+    <digest>370373ae64731f611a97fd686dd8a670db5547ebb2d92bbb600e0757c4b58b87</digest>
+</modulesBean>

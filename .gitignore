@@ -9,6 +9,7 @@ app-folder/boot-settings.xml
 app-folder/boot-settings.xml_
 app-folder/mod-x/hello-world/
 release/compiled-classes/
-release/deployment-dev/
+release/deployment-dev/*
+!release/deployment-dev/modules.xml
 release/deployment-pub/
 release/Scelight/
