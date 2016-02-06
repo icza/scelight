@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Scelight Javadoc Builder" basedir=".">
+	
+	<description>
+		Scelight Development Javadoc Builder.
+	</description>
+	
+	<property name="javadocDestFolder" value="docs/generated/javadoc" />
+	<property name="javadocExecutable" value="C:/Program Files/Java/jdk1.7.0_80/bin/javadoc.exe" />
+	
+	<target name="GenerateDevJavadoc" description="Generates the Scelight Developer Documentation">
+		<javadoc
+			executable       = "${javadocExecutable}"
+			source           = "1.7"
+			sourcepath       = "src-launcher;src-sc2-textures;src-sc2-balance-data;src-app-libs;src-app;src-tool;src-ext-mod-api"
+			classpath        = "app-folder/mod/app-libs/0.0/registry.jar;app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar"
+			destdir          = "${javadocDestFolder}"
+			
+			encoding         = "UTF-8"
+			charset          = "UTF-8"
+			docencoding      = "UTF-8"
+			
+			doctitle         = "Scelight™ Developer Documentation"
+			windowtitle      = "Developer Documentation - Scelight™"
+			header           = "Scelight™ Developer Documentation"
+			footer           = "Scelight™ Developer Documentation"
+			bottom           = "Scelight home page: &lt;a href='https://sites.google.com/site/scelight/' target='_blank'&gt;https://sites.google.com/site/scelight/&lt;/a&gt;&lt;br&gt;Scelight is a trademark of András Belicza. Copyright © András Belicza, 2013-2015. All rights reserved."
+			overview         = "src-app/overview.html"
+			
+			access           = "private"
+			author           = "true"
+			nodeprecated     = "false"
+			nodeprecatedlist = "false"
+			noindex          = "false"
+			nonavbar         = "false"
+			notree           = "false"
+			use              = "true"
+			version          = "true"
+			splitindex       = "false" />
+		
+		<!-- Copy icons and images because they are linked in the java doc so they can appear in the generated HTML pages -->
+		<copy todir="${javadocDestFolder}" preservelastmodified="true" >
+			<fileset dir="src-launcher/">
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+		<copy todir="${javadocDestFolder}" preservelastmodified="true" >
+			<fileset dir="src-app/">
+				<include name="**/*.png"/>
+				<include name="**/*.gif"/>
+				<include name="**/*.jpg"/>
+			</fileset>
+		</copy>
+	</target>
+	
+</project>

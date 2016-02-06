@@ -8,8 +8,10 @@ bin-tool/
 app-folder/boot-settings.xml
 app-folder/boot-settings.xml_
 app-folder/mod-x/hello-world/
+docs/generated/
 release/compiled-classes/
 release/deployment-dev/*
 !release/deployment-dev/modules.xml
 release/deployment-pub/
 release/Scelight/
+build-release.xml

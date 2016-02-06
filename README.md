@@ -31,12 +31,13 @@ Scelight home page: https://sites.google.com/site/scelight/
 	<tr><td rowspan=7><a href="https://github.com/icza/scelight/tree/master/release">/release</a></td><td><a href="https://github.com/icza/scelight/tree/master/release">/</a></td><td>Target folder for creating releases.</td>
 	<tr><td><a href="https://github.com/icza/scelight/tree/master/release/resources">/resources</a></td><td>Static resource files needed to create releases.</td>
 	<tr><td>/compiled-classes</td><td>Target folder for compiled classes of releases (used during module build).</td>
-	<tr><td>/deployment-dev</td><td>Deployment files (packaed modules) of the development version.</td>
-	<tr><td>/deployment-pub</td><td>Deployment files (packaed modules) of the public version.</td>
+	<tr><td><a href="https://github.com/icza/scelight/tree/master/release/deployment-dev">/deployment-dev</a></td><td>Deployment files (packaged modules) of the development version.</td>
+	<tr><td>/deployment-pub</td><td>Deployment files (packaged modules) of the public version.</td>
 	<tr><td>/Scelight</td><td>Complete Scelight version assembled after module builds.</td>
 	<tr><td>/*.properties</td><td>*.properties files holding latest build numbers and build timestamps of different modules.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/tree/master/war/news">/war/news</a></td><td>News content for the Scelight Operator web application.</td>
-	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/build.xml">/build.xml</a></td><td>Scelight Builder. Can build releases and modules (with deployments), generate dev javadoc and make project backup.</td>
+	<tr><td colspan=2>/build.xml</td><td>Scelight Builder. Can build releases and modules (with deployments) and make project backup.</td>
+	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/build-javadoc.xml">/build-javadoc.xml</a></td><td>Scelight Development Javadoc Builder.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/directory-info.html">/directory-info.html</a></td><td>This document.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/Scelight.launch">/Scelight.launch</a></td><td>Eclipse launch configuration to run Scelight.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/Scelight-dev.launch">/Scelight-dev.launch</a></td><td>Eclipse launch configuration to run Scelight in development mode.</td>
