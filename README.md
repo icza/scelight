@@ -36,7 +36,7 @@ Scelight home page: https://sites.google.com/site/scelight/
 	<tr><td>/Scelight</td><td>Complete Scelight version assembled after module builds.</td>
 	<tr><td>/*.properties</td><td>*.properties files holding latest build numbers and build timestamps of different modules.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/tree/master/war/news">/war/news</a></td><td>News content for the Scelight Operator web application.</td>
-	<tr><td colspan=2>/build.xml</td><td>Scelight Builder. Can build releases and modules (with deployments) and make project backup.</td>
+	<tr><td colspan=2>/build-release.xml</td><td>Scelight Builder. Can build releases and modules (with deployments) and make project backup.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/build-javadoc.xml">/build-javadoc.xml</a></td><td>Scelight Development Javadoc Builder.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/directory-info.html">/directory-info.html</a></td><td>This document.</td>
 	<tr><td colspan=2><a href="https://github.com/icza/scelight/blob/master/Scelight.launch">/Scelight.launch</a></td><td>Eclipse launch configuration to run Scelight.</td>
