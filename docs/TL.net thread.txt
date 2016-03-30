@@ -36,6 +36,15 @@ Scelight is now (as of February 4, 2016) open source:
 
 
 [hr]
+[big][b]2016 March 30 - Scelight 6.2.4[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.2 replays.
+
+
+[hr]
 [big][b]2016 January 29 - Scelight 6.2.3[/b][/big]
 
 [b]Changes and new features:[/b]
