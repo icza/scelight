@@ -1,0 +1,14 @@
+New title:
+[------------------------------------------------]
+Scelight 6.2.6: 
+
+
+[hr]
+[big][b]2016 May 18 - Scelight 6.2.6[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.3 replays.
+
+-Added support for some old beta replays.
