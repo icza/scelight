@@ -1,0 +1,13 @@
+New title:
+[------------------------------------------------]
+Scelight 6.2.7: 
+
+
+[hr]
+[big][b]2016 June 15 - Scelight 6.2.7[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.3.2 replays.
+
