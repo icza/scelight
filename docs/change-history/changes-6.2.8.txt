@@ -1,0 +1,15 @@
+New title:
+[------------------------------------------------]
+Scelight 6.2.8: 
+
+
+[hr]
+[big][b]2016 July 13 - Scelight 6.2.8[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.4 replays.
+
+-Balance data and textures have been updated for Patch 3.4.
+
