@@ -54,7 +54,8 @@ public class AboutPage extends BasePage< AboutPage.AboutPageComp > {
 			final Browser browser = new Browser();
 			browser.setText( new RHtml( "About page", "html/about.html", "appVersion", Consts.APP_VERSION.toString(), "appBuildNumber", Env.APP_BUILD_INFO
 			        .getBuildNumber().toString(), "copyrightYears", Env.COPYRIGHT_YEARS, "authorName", Consts.APP_AUTHOR.getPersonName().toString(),
-			        "authorEmail", Consts.APP_AUTHOR.getContact().getEmail(), "urlHomePage", Consts.URL_HOME_PAGE.toString() ).get() );
+			        "authorEmail", Consts.APP_AUTHOR.getContact().getEmail(), "urlHomePage", Consts.URL_HOME_PAGE.toString(),
+			        "urlProjectPage", Consts.URL_PROJECT_PAGE.toString()).get() );
 			addCenter( new XScrollPane( browser ) );
 		}
 		

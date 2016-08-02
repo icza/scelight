@@ -40,7 +40,7 @@ public class Protocol {
 	
 	/** Set of base builds that belong to beta/PTR releases. */
 	public static final Set< Integer >			  BETA_BASE_BUILD_SET = Utils.asNewSet( 17266, 18468, 19458, 19595, 21955, 24764, 27950, 28272, 34784, 34835,
-	        36442, 38535, 38624, 39117, 39948, 40384, 40977, 41128, 41219, 41973, 44169, 44293 );
+	        36442, 38535, 38624, 39117, 39948, 40384, 40977, 41128, 41219, 41973, 44169, 44293, 44743, 44765 );
 			
 	/** Cache of the already instantiated protocol handlers (they are reusable). */
 	private static final Map< Integer, Protocol > BBUILD_PROTOCOL_MAP = new HashMap< >();
@@ -75,7 +75,7 @@ public class Protocol {
 	 * This protocol handler is used to decode the replay header. Recommended to use the protocol handler for the latest supported base build because it's the
 	 * most likely needed).
 	 */
-	public static final Protocol DEFAULT = get( 44401 );
+	public static final Protocol DEFAULT = get( 44983 );
 	
 	
 	

@@ -9,6 +9,9 @@
  */
 package hu.scelight;
 
+import java.net.URL;
+
+import hu.scelight.util.Utils;
 import hu.scelightapi.XConsts;
 import hu.sllauncher.LConsts;
 import hu.sllauncher.bean.VersionBean;
@@ -29,7 +32,7 @@ import hu.slsc2textures.TConsts;
 public interface Consts extends LConsts, TConsts, BConsts, AConsts, XConsts {
 	
 	/** Application version. */
-	VersionBean	APP_VERSION					 = new VersionBean( 6, 2, 8 );
+	VersionBean	APP_VERSION					 = new VersionBean( 6, 2, 9 );
 											 
 	/** Application full name (app name + app version). */
 	String		APP_NAME_FULL				 = APP_NAME + " " + APP_VERSION;
@@ -37,5 +40,8 @@ public interface Consts extends LConsts, TConsts, BConsts, AConsts, XConsts {
 											 
 	/** Time between scheduled update checks, in milliseconds. */
 	int			SCHEDULED_UPDATE_CHECK_DELAY = 60 * 60 * 1000;
+											 
+	/** Project page URL (source code). */
+	URL			URL_PROJECT_PAGE			 = Utils.createUrl( "https://github.com/icza/scelight" );
 											 
 }
