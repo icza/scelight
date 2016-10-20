@@ -108,7 +108,7 @@ public class RepParserEngine {
 		
 		final Protocol p = Protocol.get( replay.header.getBaseBuild() );
 		if ( p == null ) {
-			Env.LOGGER.debug( "Unsupported Replay version: " + replay.header.versionString() + " (base build: " + replay.header.getBaseBuild() + ")"
+			Env.LOGGER.info( "Unsupported Replay version: " + replay.header.versionString() + " (base build: " + replay.header.getBaseBuild() + ")"
 			        + ( mpqParser.getFileName() == null ? "!" : ": " + mpqParser.getFileName() ) );
 			return null;
 		}

@@ -73,8 +73,10 @@ public class Player extends StructView implements IPlayer {
 		
 		// The name contains optional formatting tags (in mark-up format).
 		// Example: "[RA]<sp/>SvnthSyn"
+		// Starting with 3.1, it looks like this: "<RA><sp/>SvnthSyn"
+		// Starting with 3.6, it looks like this: "&lt;RA&gt;<sp/>SvnthSyn"
 		// Strip these off
-		name = Utils.stripOffMarkupFormatting( get( F_NAME ).toString() );
+		name = Utils.stripOffMarkupFormatting( get( F_NAME ).toString().replace( "&lt;", "<" ).replace( "&gt;", ">" ) );
 		raceString = get( F_RACE ).toString();
 		race = Race.fromLocalizedValue( raceString );
 		recordedResult = Result.VALUES[ get( F_RESULT ) ];

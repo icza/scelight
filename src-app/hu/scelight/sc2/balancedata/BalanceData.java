@@ -77,8 +77,11 @@ public class BalanceData implements IBalanceData {
 		try ( final BufferedReader in = new BufferedReader( new InputStreamReader( BR.getStream( "list.txt" ), Env.UTF8 ) ) ) {
 			
 			String line;
-			while ( ( line = in.readLine() ) != null )
+			while ( ( line = in.readLine() ) != null ) {
+				if ( line.startsWith( "#" ) )
+					continue; // Comment line
 				BD_RES_LIST.add( new BDRes( line ) );
+			}
 			
 		} catch ( final IOException ie ) {
 			throw new RuntimeException( "Failed to read SC2 balance data resource list!", ie );

@@ -44,7 +44,7 @@ public class TRIcon extends LRIcon {
 	                                                            "btn-ability-terran-gather.dds", "btn-ability-zerg-gather.dds",
 	                                                            "btn-ability-terran-setrallypoint.dds", "btn-ability-zerg-setworkerrallypoint.dds",
 	                                                            "btn-ability-terran-load.dds", "btn-ability-terran-unloadall.dds",
-	                                                            "btn-ability-terran-repair.dds", "btn-ability-terran-salvage.dds" );
+	                                                            "btn-ability-terran-repair.dds", "btn-ability-terran-salvage.dds", "btn-command-spray.dds" );
 	
 	
 	/**

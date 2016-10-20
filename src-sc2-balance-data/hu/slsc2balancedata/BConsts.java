@@ -27,6 +27,6 @@ public interface BConsts {
 	String      SC2_BALANCE_DATA_NAME    = "SC2 Balance Data";
 	
 	/** SC2 Balance Data version. */
-	VersionBean SC2_BALANCE_DATA_VERSION = new VersionBean( 1, 3 );
+	VersionBean SC2_BALANCE_DATA_VERSION = new VersionBean( 1, 4 );
 	
 }

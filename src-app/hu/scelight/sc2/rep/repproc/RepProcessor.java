@@ -72,7 +72,7 @@ import hu.sllauncher.util.DurationFormat;
 public class RepProcessor implements IRepProcessor {
 	
 	/** Implementation version bean. */
-	public static final VersionBean						VERSION			 = new VersionBean( 1, 4 );
+	public static final VersionBean						VERSION			 = new VersionBean( 1, 4, 1 );
 																		 
 																		 
 	/** Game events included in APM calculation. */
