@@ -642,7 +642,7 @@ public interface Settings extends LSettings {
 	                                                                               NODE_REP_PROCESSOR,
 	                                                                               GROUP_REP_PROCESSOR,
 	                                                                               ADVANCED,
-	                                                                               "<html>Initial time to exclude form <i>per-minute</i> calculations:<br>(e.g. APM, SPM; specified in game-time)</html>",
+	                                                                               "<html>Initial time to exclude from <i>per-minute</i> calculations:<br>(e.g. APM, SPM; specified in game-time)</html>",
 	                                                                               new VHB().help( Helps.INITIAL_PER_MIN_CALC_EXCL_TIME ).sstext( "sec" )
 	                                                                                       .build(), 110, 0, 999 );
 	
