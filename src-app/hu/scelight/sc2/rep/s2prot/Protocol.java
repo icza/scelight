@@ -76,7 +76,7 @@ public class Protocol {
 	 * This protocol handler is used to decode the replay header. Recommended to use the protocol handler for the latest supported base build because it's the
 	 * most likely needed).
 	 */
-	public static final Protocol DEFAULT = get( 48645 );
+	public static final Protocol DEFAULT = get( 49716 );
 	
 	
 	

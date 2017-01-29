@@ -63,12 +63,12 @@
     </modList>
     <modList v="1">
         <name>Scelight</name>
-        <version major="6" minor="2" revision="13" v="1"/>
+        <version major="6" minor="2" revision="14" v="1"/>
         <folder>app</folder>
-        <archiveFile path="ScelightApp-6.2.13.zip" sha256="700d99915d8c0e15c26142b8732788ea46ccf8379570ac6c7e7d2606e9b665ad" v="1"/>
-        <urlList>https://scelightop.appspot.com/mod/ScelightApp-6.2.13.zip</urlList>
-        <archiveSize>1343724</archiveSize>
-        <fileList path="Scelight/mod/app/6.2.13/scelight.sldat" sha256="9b162ef88a1fd09f6645781ead0a0eece6399eb03b50b312da53956e9321af94" v="1"/>
+        <archiveFile path="ScelightApp-6.2.14.zip" sha256="814618f2b7672bb948759d48201bbb70727e1f2668575c15384160018ba108fb" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightApp-6.2.14.zip</urlList>
+        <archiveSize>1343901</archiveSize>
+        <fileList path="Scelight/mod/app/6.2.14/scelight.sldat" sha256="780723b55d1684d7155485a7d78fe2223ca148b49e8f93c94aeafb4446ed28da" v="1"/>
     </modList>
     <extModRefList v="1">
         <name>SC2ReplayStatsUploader</name>
@@ -87,5 +87,5 @@
         <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
         <moduleBeanUrl>https://sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
     </extModRefList>
-    <digest>d33704c9b8c0601689ef34558f045a1ae6ff923811edd557f5a73b6c6df2d807</digest>
+    <digest>abf5fcd930a75e39105c8e6d18c01c0d6621e761b27482ff19d88f2a7d2827ab</digest>
 </modulesBean>
