@@ -32,7 +32,7 @@ import hu.slsc2textures.TConsts;
 public interface Consts extends LConsts, TConsts, BConsts, AConsts, XConsts {
 	
 	/** Application version. */
-	VersionBean	APP_VERSION					 = new VersionBean( 6, 2, 15 );
+	VersionBean	APP_VERSION					 = new VersionBean( 6, 2, 16 );
 											 
 	/** Application full name (app name + app version). */
 	String		APP_NAME_FULL				 = APP_NAME + " " + APP_VERSION;
