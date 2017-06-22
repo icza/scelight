@@ -299,6 +299,9 @@ public class MapParser {
 	private static Point2D.Float parsePoint( final String text ) {
 		final int i = text.indexOf( ',' );
 		final int j = text.indexOf( ',', i + 1 );
+		if ( i == -1 || j == -1 ) {
+			return new Point2D.Float( 0,  0 ); // In Co-op games text may be an empty string
+		}
 		
 		return new Point2D.Float( Float.parseFloat( text.substring( 0, i ) ), Float.parseFloat( text.substring( i + 1, j ) ) );
 	}

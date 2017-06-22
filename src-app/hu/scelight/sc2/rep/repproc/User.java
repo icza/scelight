@@ -175,7 +175,14 @@ public class User implements IUser {
 	
 	@Override
 	public Toon getToon() {
-		return player != null ? player.toon : slot.getToonHandle() != null ? new Toon( slot.getToonHandle() ) : null;
+		if ( player != null ) {
+			return player.toon;
+		}
+		final String th = slot.getToonHandle();
+		if ( th != null && th.length() > 0 ) {
+			return new Toon( th ); // In Co-op games toon might be empty string
+		}
+		return null;
 	}
 	
 	@Override
