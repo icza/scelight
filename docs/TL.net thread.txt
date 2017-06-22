@@ -36,6 +36,95 @@ Scelight is now (as of February 4, 2016) open source:
 
 
 [hr]
+[big][b]2017 June 22 - Scelight 6.2.19[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.15 and 3.15.1 replays.
+
+-Finally updated the SC2 balance data, which makes actions and all charts properly functioning again.
+This fixes the "famous" [url=https://github.com/icza/scelight/issues/8]Preliminary replay support issue[/url] for all previous versions too (yay).
+
+-Added new SC2 textures (many Co-op related).
+
+-Fixed an issue that caused an error on the Users tab of the Replay Analyzer with Co-op replays.
+
+-Fixed an issue that caused an error on the Map info tab of the Replay Analyzer with Co-op replays.
+
+-Other minor changes and improvements.
+
+
+[hr]
+[big][b]2017 May 24 - Scelight 6.2.18[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added [url=https://github.com/icza/scelight/issues/8]preliminary[/url] support for 3.14 replays.
+
+
+[hr]
+[big][b]2017 May 7 - Scelight 6.2.17[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added [url=https://github.com/icza/scelight/issues/8]preliminary[/url] support for 3.13 replays.
+
+
+[hr]
+[big][b]2017 April 1 - Scelight 6.2.16[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added [url=https://github.com/icza/scelight/issues/8]preliminary[/url] support for 3.12 replays.
+
+
+[hr]
+[big][b]2017 March 15 - Scelight 6.2.15[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added [url=https://github.com/icza/scelight/issues/8]preliminary[/url] support for 3.11 replays.
+
+
+[hr]
+[big][b]2017 January 29 - Scelight 6.2.14[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added [url=https://github.com/icza/scelight/issues/8]preliminary[/url] support for 3.10 replays.
+
+
+[hr]
+[big][b]2016 December 16 - Scelight 6.2.13[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added [url=https://github.com/icza/scelight/issues/8]preliminary[/url] support for 3.9 replays.
+
+-Textures have been updated for Patch 3.9.
+
+-Other minor changes and improvements.
+
+
+[hr]
+[big][b]2016 November 26 - Scelight 6.2.12[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.8 replays.
+
+-Textures have been updated for Patch 3.8.
+
+
+[hr]
 [big][b]2016 October 20 - Scelight 6.2.11[/b][/big]
 
 [b]Changes and new features:[/b]
