@@ -470,6 +470,8 @@ public class RepProcessor implements IRepProcessor {
 					break;
 				case IGameEvents.ID_PLAYER_LEAVE : {
 					// Observers are also recorded leaving, with higher player ids than the "real" players
+					if ( event.getPlayerId() == null )
+						break; // This might happen if game was saved and resumed, see issue #10.
 					if ( event.getPlayerId() >= usersByPlayerId.length )
 						break; // Do not track (we could find out the user from Replay.getPlayerIdUserIdMap() but no need)
 					final User u = usersByPlayerId[ event.getPlayerId() ];
