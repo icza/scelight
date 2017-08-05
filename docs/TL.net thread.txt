@@ -36,6 +36,17 @@ Scelight is now (as of February 4, 2016) open source:
 
 
 [hr]
+[big][b]2017 August 5 - Scelight 6.2.21[/b][/big]
+
+[b]Changes and new features:[/b]
+-------------------------------------------
+
+-Added support for 3.16.1 replays.
+
+-Fixed a bug which caused opening some replays of resumed games fail (see [url=https://github.com/icza/scelight/issues/10]issue #10[/url]).
+
+
+[hr]
 [big][b]2017 July 23 - Scelight 6.2.20[/b][/big]
 
 [b]Changes and new features:[/b]
