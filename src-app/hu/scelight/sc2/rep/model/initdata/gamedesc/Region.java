@@ -33,19 +33,19 @@ import java.util.Set;
 public enum Region implements IRegion {
 	
 	/** US */
-	US( "US", "US", 1, Icons.C_UNITED_STATES, "http://usb.depot.battle.net:1119/", "http://us.battle.net/", BnetLang.ENGLISH, EnumSet.of( BnetLang.ENGLISH,
+	US( "US", "US", 1, Icons.C_UNITED_STATES, "http://us.depot.battle.net:1119/", "http://us.battle.net/", BnetLang.ENGLISH, EnumSet.of( BnetLang.ENGLISH,
 	        BnetLang.SPANISH, BnetLang.PORTUGUESE ), Realm.NORTH_AMERICA, Realm.LATIN_AMERICA ),
 	
 	/** Europe */
-	EUROPE( "Europe", "EU", 2, Icons.C_EUROPE, "http://eub.depot.battle.net:1119/", "http://eu.battle.net/", BnetLang.ENGLISH, EnumSet.of( BnetLang.ENGLISH,
+	EUROPE( "Europe", "EU", 2, Icons.C_EUROPE, "http://eu.depot.battle.net:1119/", "http://eu.battle.net/", BnetLang.ENGLISH, EnumSet.of( BnetLang.ENGLISH,
 	        BnetLang.GERMAN, BnetLang.FRENCH, BnetLang.SPANISH, BnetLang.RUSSIAN, BnetLang.ITALIAN, BnetLang.POLISH ), Realm.EUROPE, Realm.RUSSIA ),
 	
 	/** Korea */
-	KOREA( "Korea", "KR", 3, Icons.C_KOREA, "http://krb.depot.battle.net:1119/", "http://kr.battle.net/", BnetLang.KOREAN, EnumSet.of( BnetLang.KOREAN,
+	KOREA( "Korea", "KR", 3, Icons.C_KOREA, "http://kr.depot.battle.net:1119/", "http://kr.battle.net/", BnetLang.KOREAN, EnumSet.of( BnetLang.KOREAN,
 	        BnetLang.CHINESE_TRADITIONAL ), Realm.KOREA, Realm.TAIWAN ),
 	
 	/** China */
-	CHINA( "China", "CN", 5, Icons.C_CHINA, "http://cnb.depot.battle.net:1119/", "http://www.battlenet.com.cn/", BnetLang.CHINESE_TRADITIONAL, EnumSet
+	CHINA( "China", "CN", 5, Icons.C_CHINA, "http://cn.depot.battle.net:1119/", "http://www.battlenet.com.cn/", BnetLang.CHINESE_TRADITIONAL, EnumSet
 	        .of( BnetLang.CHINESE_TRADITIONAL ), Realm.CHINA ),
 	
 	/** South East Asia */
