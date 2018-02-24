@@ -72,7 +72,7 @@ import hu.sllauncher.util.DurationFormat;
 public class RepProcessor implements IRepProcessor {
 	
 	/** Implementation version bean. */
-	public static final VersionBean						VERSION			 = new VersionBean( 1, 4, 1 );
+	public static final VersionBean						VERSION			 = new VersionBean( 1, 4, 2 );
 																		 
 																		 
 	/** Game events included in APM calculation. */
@@ -435,12 +435,16 @@ public class RepProcessor implements IRepProcessor {
 				apmActionsById[ event.userId ]++;
 			}
 			
+			final User user = usersByUserId[ event.userId ];
+			if (user == null)
+				continue;
+			
 			switch ( event.id ) {
 				case IGameEvents.ID_CAMERA_UPDATE : {
 					final CameraUpdateEvent cue = (CameraUpdateEvent) event;
 					final TargetPoint point = cue.getTargetPoint();
-					if ( usersByUserId[ event.userId ].firstCamUpdateEvent == null && point != null )
-						usersByUserId[ event.userId ].firstCamUpdateEvent = cue;
+					if ( user.firstCamUpdateEvent == null && point != null )
+						user.firstCamUpdateEvent = cue;
 					if ( event.loop >= initialPerMinCalcExclLoops ) {
 						// Count actions for SPM calculation
 						final TargetPoint prevPoint = prevCamEvents[ event.userId ] == null ? null : prevCamEvents[ event.userId ].getTargetPoint();
@@ -460,12 +464,12 @@ public class RepProcessor implements IRepProcessor {
 					break;
 				}
 				case IGameEvents.ID_CMD :
-					usersByUserId[ event.userId ].lastCmdLoop = event.loop;
+					user.lastCmdLoop = event.loop;
 					// Actions counted up to this point are now to be included in the APM calculation
-					usersByUserId[ event.userId ].apmActions += apmActionsById[ event.userId ];
+					user.apmActions += apmActionsById[ event.userId ];
 					apmActionsById[ event.userId ] = 0; // Reset counter
 					// Actions counted up to this point are now to be included in the SPM calculation
-					usersByUserId[ event.userId ].spmActions += spmActionsById[ event.userId ];
+					user.spmActions += spmActionsById[ event.userId ];
 					spmActionsById[ event.userId ] = 0; // Reset counter
 					break;
 				case IGameEvents.ID_PLAYER_LEAVE : {
@@ -474,16 +478,13 @@ public class RepProcessor implements IRepProcessor {
 						break; // This might happen if game was saved and resumed, see issue #10.
 					if ( event.getPlayerId() >= usersByPlayerId.length )
 						break; // Do not track (we could find out the user from Replay.getPlayerIdUserIdMap() but no need)
-					final User u = usersByPlayerId[ event.getPlayerId() ];
-					if ( u != null ) {
-						u.leaveLoop = event.loop;
-						trackPlayerLeave( teamMemberListMap, event.getPlayerId() );
-					}
+					user.leaveLoop = event.loop;
+					trackPlayerLeave( teamMemberListMap, event.getPlayerId() );
 					break;
 				}
 				case IGameEvents.ID_GAME_USER_LEAVE :
-					usersByUserId[ event.userId ].leaveLoop = event.loop;
-					if ( usersByUserId[ event.userId ].player != null ) // Is it a player leaving? (else obs)
+					user.leaveLoop = event.loop;
+					if ( user.player != null ) // Is it a player leaving? (else obs)
 						trackPlayerLeave( teamMemberListMap, usersByUserId[ event.userId ].playerId );
 					break;
 			}
