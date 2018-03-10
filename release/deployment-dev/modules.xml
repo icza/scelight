@@ -22,21 +22,21 @@
     </launcherMod>
     <modList v="1">
         <name>SC2 Textures</name>
-        <version major="1" minor="7" revision="0" v="1"/>
+        <version major="1" minor="8" revision="0" v="1"/>
         <folder>sc2-t</folder>
-        <archiveFile path="ScelightSc2T-1.7.zip" sha256="abec78a9e62d94b1ac81b136b14d96771966aa8566b71e17ab4fef4d17afef2e" v="1"/>
-        <urlList>https://scelightop.appspot.com/mod/ScelightSc2T-1.7.zip</urlList>
-        <archiveSize>2240545</archiveSize>
-        <fileList path="Scelight/mod/sc2-t/1.7/sc2-t.sldat" sha256="53ac4dcfb1dc68e93ec3f89028c20fd681bfd317505e29245e423f2e69d34785" v="1"/>
+        <archiveFile path="ScelightSc2T-1.8.zip" sha256="1315f1a1736a8a286840d70f8454d660f3421c23e2b01d3eca2919bc48842e64" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightSc2T-1.8.zip</urlList>
+        <archiveSize>2240544</archiveSize>
+        <fileList path="Scelight/mod/sc2-t/1.8/sc2-t.sldat" sha256="18601dac2f76fc475843f40fd889be206646874ff6d7b114cb58bdd7f8364ebb" v="1"/>
     </modList>
     <modList v="1">
         <name>SC2 Balance Data</name>
-        <version major="1" minor="5" revision="0" v="1"/>
+        <version major="1" minor="6" revision="0" v="1"/>
         <folder>sc2-bd</folder>
-        <archiveFile path="ScelightSc2Bd-1.5.zip" sha256="406e82e63de2f50a24cf4249f6e03782d2e735c3c14f559cf085aa2a3e248b5c" v="1"/>
-        <urlList>https://scelightop.appspot.com/mod/ScelightSc2Bd-1.5.zip</urlList>
-        <archiveSize>1052591</archiveSize>
-        <fileList path="Scelight/mod/sc2-bd/1.5/sc2-bd.sldat" sha256="a53db7cb55a45a47893b06dd20b80051fa0ffc25023de2db3b3b79bfcebe5dbc" v="1"/>
+        <archiveFile path="ScelightSc2Bd-1.6.zip" sha256="f4d55bdd6bcf748420eedef6a3c950cc555fbc1c6a3f8c99ddab306d9a7d0aa9" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightSc2Bd-1.6.zip</urlList>
+        <archiveSize>1052598</archiveSize>
+        <fileList path="Scelight/mod/sc2-bd/1.6/sc2-bd.sldat" sha256="37ebc32e9b6475b38202b9e40f6c936af8a67a5f54347d324ae1f54a671c8ceb" v="1"/>
     </modList>
     <modList v="1">
         <name>External Module API</name>
@@ -87,5 +87,5 @@
         <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
         <moduleBeanUrl>https://sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
     </extModRefList>
-    <digest>f262a99f3a8de2c0b097ce8f230d65823c11b23915f32396bed4119e6fabd9b9</digest>
+    <digest>79bae25a875899fa9f0820417f55643dddf3d90b62a99f5ed2a7d308125312cd</digest>
 </modulesBean>
