@@ -26,22 +26,22 @@ public enum Race implements IRace {
 	
 	/**
 	 * Terran.<br>
-	 * English, German, Portuguese, Korean, Chinese, Russian, Polish, Mandarin (Chinese)
+	 * English, German, Portuguese, Korean, Chinese, Russian, Russian (variant?), Polish, Mandarin (Chinese)
 	 */
 	TERRAN( "Terran", Icons.SC2_TERRAN, new Color( 200, 255, 200 ), new Color( 117, 160, 117 ), Utils.asNewSet( "Terran", "Terraner", "Terrano", "테란", "人類",
-	        "Терран", "Terrani", "人类" ) ),
+	        "Терран", "Терраны", "Terrani", "人类" ) ),
 	
 	/**
 	 * Zerg.<br>
-	 * English, Korean, Chinese, Russian, Polish, Mandarin (Chinese)
+	 * English, Korean, Chinese, Russian, Russian (variant?), Polish, Mandarin (Chinese)
 	 */
-	ZERG( "Zerg", Icons.SC2_ZERG, new Color( 255, 200, 200 ), new Color( 180, 125, 125 ), Utils.asNewSet( "Zerg", "저그", "蟲族", "Зерг", "Zergi", "异虫" ) ),
+	ZERG( "Zerg", Icons.SC2_ZERG, new Color( 255, 200, 200 ), new Color( 180, 125, 125 ), Utils.asNewSet( "Zerg", "저그", "蟲族", "Зерг", "Зерги", "Zergi", "异虫" ) ),
 	
 	/**
 	 * Protoss.<br>
-	 * English, Korean, Chinese, Russian, Polish, Mandarin (Chinese)
+	 * English, Korean, Chinese, Russian, Russian (variant?), Polish, Mandarin (Chinese)
 	 */
-	PROTOSS( "Protoss", Icons.SC2_PROTOSS, new Color( 200, 200, 255 ), new Color( 125, 125, 180 ), Utils.asNewSet( "Protoss", "프로토스", "神族", "Протосс",
+	PROTOSS( "Protoss", Icons.SC2_PROTOSS, new Color( 200, 200, 255 ), new Color( 125, 125, 180 ), Utils.asNewSet( "Protoss", "프로토스", "神族", "Протосс", "Протоссы",
 	        "Protosi", "星灵" ) ),
 	
 	/** Random. */
