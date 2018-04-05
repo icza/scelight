@@ -10,6 +10,6 @@
 	<classpathentry kind="lib" path="app-folder/mod/app-libs/0.0/registry.jar"/>
 	<classpathentry kind="lib" path="app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar"/>
 	<classpathentry kind="lib" path="app-folder/mod/app-libs/0.0/smtp-1.5.0.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin-app"/>
 </classpath>
