@@ -129,9 +129,7 @@ public class MainFrame extends XFrame implements IMainFrame {
 			@Override
 			public void valuesChanged( final ISettingChangeEvent event ) {
 				if ( event.affected( LSettings.PERSON_NAME_FORMAT ) ) {
-					setTitle( Consts.APP_NAME_FULL
-					        + ( Env.REG_MANAGER.isOk() ? " - " + Env.LANG.formatPersonName( Env.REG_MANAGER.getRegInfo().getPerson().getPersonName() )
-					                : " - NOT REGISTERED!" ) + ( Env.DEV_MODE ? " - [BUILD: " + Env.APP_BUILD_INFO.getBuildNumber() + "]" : "" ) );
+					setTitle( Consts.APP_NAME_FULL );
 				}
 			}
 		};
@@ -347,7 +345,6 @@ public class MainFrame extends XFrame implements IMainFrame {
 		Actions.LIVE_APM_OVERLAY.addToMenu( toolsMenu );
 		Actions.LAST_GAME_INFO_OVERLAY.addToMenu( toolsMenu );
 		toolsMenu.addSeparator();
-		Actions.DL_REGISTRATION_FILE.addToMenu( toolsMenu );
 		toolsMenu.addSeparator();
 		Actions.RUNNING_JOBS.addToMenu( toolsMenu );
 		mb.add( toolsMenu );
@@ -367,7 +364,6 @@ public class MainFrame extends XFrame implements IMainFrame {
 		helpMenu.addSeparator();
 		Actions.ABOUT_NEWS.addToMenu( helpMenu );
 		Actions.ABOUT_LICENSE.addToMenu( helpMenu );
-		Actions.ABOUT_REGINFO.addToMenu( helpMenu );
 		Actions.ABOUT_LOGS.addToMenu( helpMenu );
 		Actions.ABOUT_SYS_INFO.addToMenu( helpMenu );
 		helpMenu.addSeparator();

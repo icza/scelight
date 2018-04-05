@@ -34,7 +34,6 @@ import hu.sllauncher.gui.help.LHelps;
 import hu.sllauncher.gui.icon.LIcons;
 import hu.sllauncher.gui.page.LicensePage;
 import hu.sllauncher.gui.page.NewsPage;
-import hu.sllauncher.gui.page.RegInfoPage;
 import hu.sllauncher.gui.page.TipsPage;
 import hu.sllauncher.gui.page.WelcomePage;
 import hu.sllauncher.gui.page.extmods.LAvailExtModsPage;
@@ -122,9 +121,7 @@ public class LauncherFrame extends XFrame {
 			@Override
 			public void valuesChanged( final ISettingChangeEvent event ) {
 				if ( event.affected( LSettings.PERSON_NAME_FORMAT ) ) {
-					setTitle( LConsts.LAUNCHER_NAME_FULL
-					        + ( LEnv.REG_MANAGER.isOk() ? " - " + LEnv.LANG.formatPersonName( LEnv.REG_MANAGER.getRegInfo().getPerson().getPersonName() )
-					                : " - NOT REGISTERED!" ) + ( LEnv.DEV_MODE ? " - [BUILD " + LEnv.LAUNCHER_BUILD_INFO.getBuildNumber() + "]" : "" ) );
+					setTitle( LConsts.LAUNCHER_NAME_FULL );
 				}
 			}
 		};
@@ -171,7 +168,6 @@ public class LauncherFrame extends XFrame {
 		pageList.add( newsPage = new NewsPage() );
 		pageList.add( new LicensePage() );
 		pageList.add( new TipsPage() );
-		pageList.add( new RegInfoPage() );
 		pageList.add( new LAvailExtModsPage() );
 		pageList.add( logsPage = new LLogsPage() );
 		final MultiPageComp multiPageComp = new MultiPageComp( pageList, LEnv.LAUNCHER_SETTINGS.get( LSettings.WELCOME_ON_STARTUP ) ? welcomePage : newsPage,

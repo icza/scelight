@@ -61,19 +61,7 @@ import javax.swing.event.DocumentListener;
  */
 public class LSettingsGui {
 	
-	/**
-	 * Checks if editing the specified setting requires registration and if so and registration is not OK, disables the specified setting component and sets a
-	 * tool tip to it stating that editing it requires registration.
-	 * 
-	 * @param setting setting to be checked
-	 * @param settingComponent setting component to be disabled if registration requirement is not met
-	 */
-	public static void checkRegistration( final ISetting< ? > setting, final JComponent settingComponent ) {
-		if ( setting.getViewHints().isEditRequiresRegistration() && !LEnv.REG_MANAGER.isOk() ) {
-			settingComponent.setEnabled( false );
-			settingComponent.setToolTipText( "Editing / changing this field requires registration!" );
-		}
-	}
+
 	
 	/**
 	 * Creates an {@link XComboBox} whose values and initial selected value is initialized from the specified {@link IFixedValuesSetting} and settings bean.
@@ -98,7 +86,7 @@ public class LSettingsGui {
 	        final ActionListener customListener ) {
 		
 		final XComboBox< T > comboBox = new XComboBox<>( setting.getValues() );
-		checkRegistration( setting, comboBox );
+
 		
 		comboBox.setSelectedItem( settings.get( setting ) );
 		comboBox.addActionListener( new ActionAdapter() {
@@ -135,7 +123,6 @@ public class LSettingsGui {
 	public static XCheckBox createSettingCheckBox( final IBoolSetting setting, final ISettingsBean settings, final ActionListener customListener ) {
 		
 		final XCheckBox checkBox = new XCheckBox( setting.getName(), settings.get( setting ) );
-		checkRegistration( setting, checkBox );
 		
 		checkBox.addActionListener( new ActionAdapter() {
 			@Override
@@ -177,7 +164,6 @@ public class LSettingsGui {
 		spinner.setToolTipText( "Valid range: " + LEnv.LANG.formatNumber( setting.getMinValue() ) + ".." + LEnv.LANG.formatNumber( setting.getMaxValue() )
 		        + "; Default: " + LEnv.LANG.formatNumber( setting.getDefaultValue() ) );
 		
-		checkRegistration( setting, spinner );
 		
 		spinner.addChangeListener( new ChangeListener() {
 			@Override
@@ -214,7 +200,6 @@ public class LSettingsGui {
 		
 		final XTextField textField = new XTextField( settings.get( setting ), 20 );
 		
-		checkRegistration( setting, textField );
 		
 		textField.getDocument().addDocumentListener( new DocumentAdapter() {
 			@Override
@@ -251,8 +236,6 @@ public class LSettingsGui {
 		
 		final XTextArea textArea = new XTextArea( settings.get( setting ), 3, 20 );
 		
-		checkRegistration( setting, textArea );
-		
 		textArea.getDocument().addDocumentListener( new DocumentAdapter() {
 			@Override
 			public void handleEvent( final DocumentEvent event ) {
@@ -288,9 +271,6 @@ public class LSettingsGui {
 		
 		final PathField pathField = new PathField( settings.get( setting ) );
 		pathField.textField.setColumns( 20 );
-		
-		checkRegistration( setting, pathField.textField );
-		checkRegistration( setting, pathField.button );
 		
 		pathField.textField.getDocument().addDocumentListener( new DocumentAdapter() {
 			@Override
@@ -329,7 +309,6 @@ public class LSettingsGui {
 		final IndicatorTextField indicatorTextField = new IndicatorTextField( settings.get( setting ) );
 		indicatorTextField.textField.setColumns( 20 );
 		
-		checkRegistration( setting, indicatorTextField.textField );
 		
 		indicatorTextField.textField.getDocument().addDocumentListener( new DocumentAdapter() {
 			@Override

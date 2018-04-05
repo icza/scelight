@@ -196,16 +196,7 @@ public class SettingsBean extends Bean implements ISettingsBean {
 	
 	@Override
 	public < T > T get( final ISetting< T > setting ) {
-		// If editing setting requires registration and registration is not OK,
-		// I do not reset the value, only return the default value.
-		// Advantages: if registration being not OK is temporarily (e.g. reg file expired but will be dowloaded again)
-		// custom setting values will be kept this way and restored when the new (valid) reg will is restored/redownloaded.
-		// Returning the default value will also work when making a copy of the settings bean e.g. in the settings dialog.
-		// Also when default value is returned, even the restore default value is disabled so the setting value will not
-		// be changeable, so when copying back settings to the original (from the temporary edited one) and saving
-		// will not overwrite custom value (that was set when registration was ok).
-		if ( setting.getViewHints().isEditRequiresRegistration() && LEnv.REG_MANAGER != null && !LEnv.REG_MANAGER.isOk() )
-			return setting.getDefaultValue();
+
 		
 		@SuppressWarnings( "unchecked" )
 		final T value = (T) settingValueMap.get( setting );

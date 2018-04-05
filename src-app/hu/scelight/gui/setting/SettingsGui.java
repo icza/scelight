@@ -63,9 +63,7 @@ public class SettingsGui extends LSettingsGui {
 		
 		final TemplateField templateField = new TemplateField( settings.get( setting ) );
 		templateField.textField.setColumns( 20 );
-		
-		checkRegistration( setting, templateField.textField );
-		checkRegistration( setting, templateField.button );
+
 		
 		templateField.textField.getDocument().addDocumentListener( new DocumentAdapter() {
 			@Override
@@ -105,7 +103,6 @@ public class SettingsGui extends LSettingsGui {
 		indicatorTextArea.textArea.setRows( 3 );
 		indicatorTextArea.textArea.setColumns( 20 );
 		
-		checkRegistration( setting, indicatorTextArea.textArea );
 		
 		indicatorTextArea.textArea.getDocument().addDocumentListener( new DocumentAdapter() {
 			@Override

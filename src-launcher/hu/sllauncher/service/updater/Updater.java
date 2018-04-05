@@ -26,7 +26,6 @@ import hu.sllauncher.gui.icon.LIcons;
 import hu.sllauncher.gui.page.extmods.OffExtModConfBean;
 import hu.sllauncher.gui.page.extmods.OffExtModConfsBean;
 import hu.sllauncher.service.env.LEnv;
-import hu.sllauncher.service.registration.RegStatus;
 import hu.sllauncher.service.settings.LSettings;
 import hu.sllauncher.service.sound.LSounds;
 import hu.sllauncher.service.sound.Sound;
@@ -125,8 +124,7 @@ public class Updater {
 		} finally {
 			launcherFrame.setProgressIndeterminate( false );
 		}
-		
-		checkStartDelay();
+
 		
 		// Enable/allow start
 		launcherFrame.setProceedText( "<html><h2>_START</h2></html>" );
@@ -183,11 +181,7 @@ public class Updater {
 				
 				final UrlBuilder urlBuilder = new UrlBuilder( LEnv.URL_MODULES_BEAN_GZ );
 				urlBuilder.addParam( ScelightOpApiBase.PARAM_MODULES_BEAN_SKILL_LEVEL, LEnv.LAUNCHER_SETTINGS.get( LSettings.SKILL_LEVEL ).name() );
-				urlBuilder.addParam( ScelightOpApiBase.PARAM_MODULES_BEAN_REG_STAT, LEnv.REG_MANAGER.regStatus.name() );
-				if ( LEnv.REG_MANAGER.regStatus.compareTo( RegStatus.EXPIRED ) >= 0 ) {
-					urlBuilder.addParam( ScelightOpApiBase.PARAM_MODULES_BEAN_GOOGLE_ACC, LEnv.REG_MANAGER.getRegInfo().getGoogleAccount() );
-					urlBuilder.addParam( ScelightOpApiBase.PARAM_MODULES_BEAN_TICKET, LEnv.REG_MANAGER.getRegInfo().getTicket() );
-				}
+
 				urlBuilder.addTimestamp();
 				
 				try ( final InputStream in = new GZIPInputStream( urlBuilder.toUrl().openStream() ) ) {
@@ -856,25 +850,7 @@ public class Updater {
 		// No connection, could not retrieve modules bean.
 		Sound.play( LSounds.SCELIGHT_ERR_NO_CONNECTION );
 		
-		// Do not allow start if not registered!
-		if ( !LEnv.REG_MANAGER.isOk() ) {
-			LEnv.LOGGER.info( "Not registered, denying start." );
-			launcherFrame.setProceedText( "<html><h2>_START</h2></html>" );
-			launcher.setProceedAction( new Runnable() {
-				@Override
-				public void run() {
-					Sound.play( LSounds.PLEASE_REGISTER );
-					// This is called from the EDT (proceed button's action listener) so no need to run it in EDT!
-					final Browser browser = new Browser();
-					browser.setText( new LRHtml( "Reg note deny start page", "html/reg-note-deny-start.html", "urlReginfoPage", LConsts.URL_REGINFO_PAGE
-					        .toString() ).get() );
-					JOptionPane.showMessageDialog( launcherFrame, new XScrollPane( browser, false ), "Not Registered!", JOptionPane.INFORMATION_MESSAGE,
-					        LIcons.F_LICENCE_KEY.size( 64 ) );
-				}
-			} );
-			launcherFrame.setProceedEnabled( true );
-			return false;
-		}
+
 		
 		// Need to create a "fake" modules bean which is required to determine the class path!
 		modules = createFakeModulesBean();
@@ -899,41 +875,7 @@ public class Updater {
 		return true;
 	}
 	
-	/**
-	 * Checks if start has to be delayed (for non-registered users), and if so, delays the start. Returns only after the delay.
-	 */
-	private void checkStartDelay() {
-		// Check for registration
-		if ( LEnv.ECLIPSE_MODE || LEnv.REG_MANAGER.isOk() )
-			return;
-		
-		// If not registered, kick off a count-down timer
-		final int DELAY_SEC = 10;
-		LEnv.LOGGER.debug( "Not registered, delaying start by " + DELAY_SEC + " sec..." );
-		launcher.setProceedAction( new Runnable() {
-			@Override
-			public void run() {
-				Sound.play( LSounds.PLEASE_REGISTER );
-				// This is called from the EDT (proceed button's action listener) so no need to run it in EDT!
-				final Browser browser = new Browser();
-				browser.setText( new LRHtml( "Reg note delay start page", "html/reg-note-delay-start.html", "urlReginfoPage", LConsts.URL_REGINFO_PAGE
-				        .toString() ).get() );
-				JOptionPane.showMessageDialog( launcherFrame, new XScrollPane( browser, false ), "Not Registered!", JOptionPane.INFORMATION_MESSAGE,
-				        LIcons.F_LICENCE_KEY.size( 64 ) );
-			}
-		} );
-		
-		launcherFrame.setProceedEnabled( true );
-		for ( int sec = DELAY_SEC; sec > 0; sec-- ) {
-			launcherFrame.setProceedText( "<html><center>Not registered!<h2 style=\"margin:0px\">_START</h2>Wait " + sec + " sec...</center></html>" );
-			try {
-				Thread.sleep( 1000 );
-			} catch ( final InterruptedException ie ) {
-				LEnv.LOGGER.error( "Thread interrupted!", ie );
-			}
-		}
-		launcherFrame.setProceedEnabled( false );
-	}
+
 	
 	/**
 	 * Acknowledges that a module has been checked. Increments checked modules count and publishes the new mods count.
