@@ -17,6 +17,7 @@ import hu.scelight.sc2.rep.model.trackerevents.TrackerEventFactory;
 import hu.scelight.sc2.rep.s2prot.type.Attribute;
 import hu.scelight.sc2.rep.s2prot.type.TypeInfo;
 import hu.scelight.service.env.Env;
+import hu.scelight.service.settings.Settings;
 import hu.scelight.util.Utils;
 import hu.sllauncher.util.Pair;
 
@@ -52,7 +53,11 @@ public class Protocol {
 	 * @param baseBuild base build to return a protocol handler for
 	 * @return a suitable protocol handler for the specified base build; or <code>null</code> if the specified base build is not supported
 	 */
-	public static Protocol get( final Integer baseBuild ) {
+	public static Protocol get( Integer baseBuild ) {
+		if ( baseBuild > LATEST_BASE_BUILD  && Env.APP_SETTINGS.get( Settings.USE_LATEST_S2PROTOCOL ) ) {
+			baseBuild = LATEST_BASE_BUILD;
+		}
+		
 		Protocol p = BBUILD_PROTOCOL_MAP.get( baseBuild );
 		
 		if ( p == null && !BBUILD_PROTOCOL_MAP.containsKey( baseBuild ) ) {
@@ -71,12 +76,15 @@ public class Protocol {
 		return p;
 	}
 	
+	/** This is the base build number of the latest bundled S2Protocol. */
+	public static final int LATEST_BASE_BUILD = 62848;
+	
 	/**
 	 * The default protocol handler.<br>
 	 * This protocol handler is used to decode the replay header. Recommended to use the protocol handler for the latest supported base build because it's the
 	 * most likely needed).
 	 */
-	public static final Protocol DEFAULT = get( 62848 );
+	public static final Protocol DEFAULT = get( LATEST_BASE_BUILD );
 	
 	
 	

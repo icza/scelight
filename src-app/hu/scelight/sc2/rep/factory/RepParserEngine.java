@@ -41,7 +41,7 @@ import java.util.Set;
 public class RepParserEngine {
 	
 	/** Version of the replay parser engine. */
-	public static final VersionBean VERSION = new VersionBean( 1, 2, 2 );
+	public static final VersionBean VERSION = new VersionBean( 1, 2, 3 );
 	
 	
 	
