@@ -632,6 +632,10 @@ public interface Settings extends LSettings {
 	SettingsGroup                     GROUP_REP_PROCESSOR                  = new SettingsGroup( "Replay Processor" );
 	
 	/** Use real-time time measurement. */
+	BoolSetting                       USE_LATEST_S2PROTOCOL                = new BoolSetting( "USE_LATEST_S2PROTOCOL", NODE_REP_PROCESSOR, GROUP_REP_PROCESSOR, NORMAL,
+	                                                                               "Use latest S2Protocol definition for newer, unknown versions", VHB.help_( Helps.USE_LATEST_S2PROTOCOL ),
+	                                                                               Boolean.TRUE );
+	/** Use real-time time measurement. */
 	BoolSetting                       USE_REAL_TIME                        = new BoolSetting( "USE_REAL_TIME", NODE_REP_PROCESSOR, GROUP_REP_PROCESSOR, NORMAL,
 	                                                                               "Use real-time time measurement", VHB.help_( Helps.GAME_TIME_REAL_TIME ),
 	                                                                               Boolean.TRUE );

@@ -122,6 +122,9 @@ public interface Helps {
 	/** Back up New Replays help. */
 	RHtml BACK_UP_NEW_REPLAYS                   = new RHtml( "Back up New Replays", s( "back-up-new-replays" ) );
 	
+	/** Use Latest S2Protocol help. */
+	RHtml USE_LATEST_S2PROTOCOL                  = new RHtml( "Use Latest S2Protocol", s( "use-latest-s2protocol" ) );
+	
 	/** Game-time Real-time help. */
 	RHtml GAME_TIME_REAL_TIME                   = new RHtml( "Game-time Real-time", s( "game-time-real-time" ) );
 	

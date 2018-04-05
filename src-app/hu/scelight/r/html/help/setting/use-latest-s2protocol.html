@@ -1,0 +1,18 @@
+When Blizzard upgrades the replay version, most of the times a new <span class="h">S2Protocol</span> definition
+is required which describes how to parse the new replay version.
+<br>
+<br>
+The release of the new <span class="h">S2Protocol</span> might be delayed for an unknown time,
+and even when / if it is released, it takes time to release a new ${appName} version
+that contains the new <span class="h">S2Protocol</span> definition.
+<br>
+<br>
+At the same time, often there is no change in the <span class="h">S2Protocol</span> definition
+that is used to parse the new replay version, so often the latest known
+<span class="h">S2Protocol</span> is enough / valid to use to parse the newer replay version.
+However, it cannot be told in advance if the new <span class="h">S2Protocol</span> definition
+contains any changes. If it does, parsing these new replays will most likely fail.
+<br>
+<br>
+With the <span class="s">Use latest S2Protocol definition</span> setting you can instruct ${appName} to use the latest available (bundled) S2Protocol
+for parsing when a newer, unknown replay version is encountered.
