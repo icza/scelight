@@ -15,7 +15,6 @@ import hu.scelightopapi.ScelightOpApi;
 import hu.sllauncher.ScelightLauncher;
 import hu.sllauncher.service.env.LEnv;
 import hu.sllauncher.service.job.Job;
-import hu.sllauncher.service.registration.RegStatus;
 import hu.sllauncher.service.settings.LSettings;
 import hu.sllauncher.util.UrlBuilder;
 
@@ -79,10 +78,7 @@ public class UpdateCheckerJob extends Job {
 			urlBuilder.addParam( ScelightOpApi.PARAM_MODULES_DIGEST_TYPE, type.name() );
 			urlBuilder.addParam( ScelightOpApi.PARAM_MODULES_DIGEST_MINS, minsToReport );
 			urlBuilder.addParam( ScelightOpApi.PARAM_MODULES_BEAN_SKILL_LEVEL, Env.LAUNCHER_SETTINGS.get( LSettings.SKILL_LEVEL ).name() );
-			if ( Env.REG_MANAGER.regStatus.compareTo( RegStatus.EXPIRED ) >= 0 ) {
-				urlBuilder.addParam( ScelightOpApi.PARAM_MODULES_BEAN_GOOGLE_ACC, Env.REG_MANAGER.getRegInfo().getGoogleAccount() );
-				urlBuilder.addParam( ScelightOpApi.PARAM_MODULES_BEAN_TICKET, Env.REG_MANAGER.getRegInfo().getTicket() );
-			}
+
 			urlBuilder.addTimestamp();
 			
 			try ( final BufferedReader in = new BufferedReader( new InputStreamReader( urlBuilder.toUrl().openStream(), Env.UTF8 ) ) ) {

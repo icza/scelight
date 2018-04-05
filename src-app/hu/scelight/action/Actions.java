@@ -13,7 +13,6 @@ import hu.scelight.Consts;
 import hu.scelight.Scelight;
 import hu.scelight.gui.dialog.AboutDialog;
 import hu.scelight.gui.dialog.JobsDialog;
-import hu.scelight.gui.dialog.dlregfile.DlRegistrationFileDialog;
 import hu.scelight.gui.icon.Icons;
 import hu.scelight.gui.overlaycard.ApmOverlay;
 import hu.scelight.gui.overlaycard.LastGameInfoOverlay;
@@ -35,7 +34,6 @@ import hu.sllauncher.action.XAction;
 import hu.sllauncher.gui.comp.XFileChooser;
 import hu.sllauncher.gui.page.LicensePage;
 import hu.sllauncher.gui.page.NewsPage;
-import hu.sllauncher.gui.page.RegInfoPage;
 import hu.sllauncher.service.env.OpSys;
 import hu.sllauncher.service.sound.Sound;
 
@@ -197,19 +195,7 @@ public interface Actions {
 		                                      }
 	                                      };
 	
-	/** Download Registration file. */
-	XAction DL_REGISTRATION_FILE          = new XAction( Icons.F_LICENCE_KEY, "_Download Registration File..." ) {
-		                                      @Override
-		                                      public void actionPerformed( final ActionEvent event ) {
-			                                      if ( Env.REG_MANAGER.isOk() ) {
-				                                      Sound.play( Sounds.THANKS_FOR_REGISTERING );
-				                                      GuiUtils.showInfoMsg( "You already have a valid registration file.", " ",
-				                                              GuiUtils.linkForAction( "View Registration info...", ABOUT_REGINFO ) );
-				                                      return;
-			                                      }
-			                                      new DlRegistrationFileDialog();
-		                                      }
-	                                      };
+
 	
 	/** Running jobs. */
 	XAction RUNNING_JOBS                  = new XAction( KeyStroke.getKeyStroke( KeyEvent.VK_ESCAPE, InputEvent.SHIFT_MASK ), Icons.F_HARD_HAT,
@@ -271,9 +257,7 @@ public interface Actions {
 	
 	/** License About page. */
 	XAction ABOUT_LICENSE                 = new AboutPageAction( new LicensePage() );
-	
-	/** Registration info About page. */
-	XAction ABOUT_REGINFO                 = new AboutPageAction( new RegInfoPage() );
+
 	
 	/** Logs About page. */
 	XAction ABOUT_LOGS                    = new AboutPageAction( new LogsPage() );

@@ -754,16 +754,7 @@ public class Services implements IServices, IUtils, IGuiUtils, ISettingsUtils, I
 	public Link createSettingLink( final INodeSetting nodeSetting, final String text ) {
 		return SettingsGui.createSettingLink( nodeSetting, text );
 	}
-	
-	@Override
-	public void checkRegistration( final ISetting< ? > setting, final JComponent settingComponent ) {
-		SettingsGui.checkRegistration( setting, settingComponent );
-	}
-	
-	@Override
-	public < T > XComboBox< T > createSettingComboBox( final IFixedValuesSetting< T > setting, final ISettingsBean settings, final ActionListener customListener ) {
-		return SettingsGui.createSettingComboBox( setting, settings, customListener );
-	}
+
 	
 	@Override
 	public XCheckBox createSettingCheckBox( final IBoolSetting setting, final ISettingsBean settings, final ActionListener customListener ) {
