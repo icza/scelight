@@ -21,7 +21,6 @@ import hu.sllauncher.service.env.bootsettings.WorkspaceLocationType;
 import hu.sllauncher.service.job.Jobs;
 import hu.sllauncher.service.lang.Language;
 import hu.sllauncher.service.log.Logger;
-import hu.sllauncher.service.registration.RegManager;
 import hu.sllauncher.service.settings.LSettings;
 import hu.sllauncher.util.LUtils;
 import hu.sllauncher.util.SkillLevel;
@@ -454,10 +453,7 @@ public class LEnv {
 		} else
 			ECLIPSE_MODE = false;
 	}
-	
-	
-	/** Registration info bean. */
-	public static final RegManager                REG_MANAGER            = new RegManager();
+
 	
 	
 	/** Launcher and application language. */

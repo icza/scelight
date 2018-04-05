@@ -22,7 +22,6 @@ import hu.sllauncher.gui.comp.XDialog;
 import hu.sllauncher.gui.comp.multipage.MultiPageComp;
 import hu.sllauncher.gui.page.LicensePage;
 import hu.sllauncher.gui.page.NewsPage;
-import hu.sllauncher.gui.page.RegInfoPage;
 import hu.sllauncher.gui.page.TipsPage;
 import hu.sllauncher.gui.page.WelcomePage;
 
@@ -72,7 +71,6 @@ public class AboutDialog extends XDialog {
 		pageList.add( new NewsPage() );
 		pageList.add( new LicensePage() );
 		pageList.add( new TipsPage() );
-		pageList.add( new RegInfoPage() );
 		pageList.add( new AvailExtModsPage() );
 		pageList.add( new LogsPage() );
 		

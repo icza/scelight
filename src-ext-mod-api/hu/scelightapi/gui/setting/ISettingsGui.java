@@ -77,28 +77,6 @@ public interface ISettingsGui {
 	 * @param setting setting to be checked
 	 * @param settingComponent setting component to be disabled if registration requirement is not met
 	 */
-	void checkRegistration( ISetting< ? > setting, JComponent settingComponent );
-	
-	/**
-	 * Creates an {@link IComboBox} whose values and initial selected value is initialized from the specified {@link IFixedValuesSetting} and settings bean.
-	 * 
-	 * <p>
-	 * Changing the selected value of the combo box will update the setting value at the specified settings bean.
-	 * </p>
-	 * 
-	 * <p>
-	 * <i>Warning!</i> Updating the setting is done via a registered {@link ActionListener}. In Swing the execution order of registered listeners is not
-	 * specified. Custom listeners added to the returned combo box might be called before the setting is updated! If it is required that the new setting be
-	 * updated when a custom listener is called, pass the custom listener as the <code>customListener</code> argument here.
-	 * </p>
-	 * 
-	 * @param <T> type of the setting values
-	 * @param setting setting to create the combo box for
-	 * @param settings settings bean storing the setting value
-	 * @param customListener action listener which is guaranteed to be called <b>after</b> the specified setting has been updated
-	 * @return a combo box for the specified setting
-	 */
-	< T > IComboBox< T > createSettingComboBox( IFixedValuesSetting< T > setting, ISettingsBean settings, ActionListener customListener );
 	
 	/**
 	 * Creates an {@link ICheckBox} whose initial value is initialized from the specified {@link IBoolSetting} and settings bean.
