@@ -133,8 +133,13 @@ public class RepParserEngine {
 		
 		// Optionally parsed contents:
 		
-		if ( contentSet.contains( RepContent.MESSAGE_EVENTS ) )
-			replay.messageEvents = new MessageEvents( p.decodeMessageEvents( mpqParser.getFile( RepContent.MESSAGE_EVENTS ), replay ) );
+		if ( contentSet.contains( RepContent.MESSAGE_EVENTS ) ) {
+			data = mpqParser.getFile( RepContent.MESSAGE_EVENTS );
+			if ( data == null ) { // Might be missing in case of anonymized replays
+				data = new byte[0];
+			}
+			replay.messageEvents = new MessageEvents( p.decodeMessageEvents( data, replay ) );
+		}
 			
 		if ( contentSet.contains( RepContent.GAME_EVENTS ) )
 			replay.gameEvents = new GameEvents( p.decodeGameEvents( mpqParser.getFile( RepContent.GAME_EVENTS ), replay ) );
