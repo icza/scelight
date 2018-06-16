@@ -41,7 +41,7 @@ import java.util.Set;
 public class RepParserEngine {
 	
 	/** Version of the replay parser engine. */
-	public static final VersionBean VERSION = new VersionBean( 1, 2, 3 );
+	public static final VersionBean VERSION = new VersionBean( 1, 3, 0 );
 	
 	
 	
@@ -115,9 +115,19 @@ public class RepParserEngine {
 		
 		// Contents that are always parsed:
 		
-		replay.details = new Details( p.decodeDetails( mpqParser.getFile( RepContent.DETAILS ) ) );
+		byte[] data = mpqParser.getFile( RepContent.DETAILS );
+		if ( data == null ) {
+			// Try to open anonymized version:
+			data = mpqParser.getFile( RepContent.DETAILS_BACKUP );
+		}
+		replay.details = new Details( p.decodeDetails( data ) );
 		
-		replay.initData = new InitData( p.decodeInitData( mpqParser.getFile( RepContent.INIT_DATA ) ) );
+		data =  mpqParser.getFile( RepContent.INIT_DATA );
+		if ( data == null ) {
+			// Try to open anonymized version:
+			data = mpqParser.getFile( RepContent.INIT_DATA_BACKUP );
+		}
+		replay.initData = new InitData( p.decodeInitData( data ) );
 		
 		replay.attributesEvents = new AttributesEvents( p.decodeAttributesEvents( mpqParser.getFile( RepContent.ATTRIBUTES_EVENTS ) ) );
 		

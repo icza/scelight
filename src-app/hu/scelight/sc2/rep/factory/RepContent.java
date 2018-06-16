@@ -42,6 +42,14 @@ public enum RepContent implements IMpqContent {
 	/** <code>"replay.tracker.events"</code> file. */
 	TRACKER_EVENTS( null, "replay.tracker.events", 1501940595, -31863906, 1648390237 ),
 	
+	/** <code>"replay.details.backup"</code> file.
+	 * It is used in place of <code>"replay.details"</code> in anonymized replays. */
+	DETAILS_BACKUP( null, "replay.details.backup", 1421087648, -704002642, -894906023 ),
+	
+	/** <code>"replay.initData.backup"</code> file.
+	 * It is used in place of <code>"replay.initData"</code> in anonymized replays. */
+	INIT_DATA_BACKUP( null, "replay.initData.backup", 868899905, 1282002788, 1614930827 ),
+	
 	// Non-processed ones...
 	
 	/** <code>"replay.sync.events"</code> file. */
