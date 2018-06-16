@@ -190,16 +190,28 @@ public class RepProcCache {
 			writeByteArray( mpqParser.getUserData().userData, out );
 			
 			// Details
-			writeByteArray( mpqParser.getFile( RepContent.DETAILS ), out );
+			byte[] data = mpqParser.getFile( RepContent.DETAILS );
+			if ( data == null ) {
+				data = mpqParser.getFile( RepContent.DETAILS_BACKUP );
+			}
+			writeByteArray( data, out );
 			
 			// Init data
-			writeByteArray( mpqParser.getFile( RepContent.INIT_DATA ), out );
+			data = mpqParser.getFile( RepContent.INIT_DATA );
+			if ( data == null ) {
+				data = mpqParser.getFile( RepContent.INIT_DATA_BACKUP );
+			}
+			writeByteArray( data, out );
 			
 			// Attributes events
 			writeByteArray( mpqParser.getFile( RepContent.ATTRIBUTES_EVENTS ), out );
 			
 			// Message events
-			writeByteArray( mpqParser.getFile( RepContent.MESSAGE_EVENTS ), out );
+			data = mpqParser.getFile( RepContent.MESSAGE_EVENTS );
+			if ( data == null ) {
+				data = new byte[0];
+			}
+			writeByteArray( data, out );
 			
 			// Write derived repproc data (must use original users, RepProcessor's constructor reorders users, and the order
 			// might differ from the order at the time it was saved!)
