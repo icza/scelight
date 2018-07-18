@@ -133,7 +133,7 @@ public class CreateModulesBean {
 			extModRef.setAuthorList( authorList );
 			extModRef.setHomePage( "http://sc2replaystats.com/" );
 			extModRef.setShortDesc( "Uploads new replays to your SC2ReplayStats.com account automatically." );
-			extModRef.setModuleBeanUrl( "https://sc2replaystats.com/scelight/module.xml" );
+			extModRef.setModuleBeanUrl( "https://s3.amazonaws.com/sc2replaystats.com/scelight/module.xml" );
 			extModRefList.add( extModRef );
 			
 			modules.setExtModRefList( extModRefList );
