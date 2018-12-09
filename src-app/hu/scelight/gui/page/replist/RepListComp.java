@@ -194,7 +194,7 @@ public class RepListComp extends BorderPanel implements IPageClosingListener {
 			                                                int errors = 0;
 			                                                final XTableModel model = table.getXTableModel();
 			                                                @SuppressWarnings( "unchecked" )
-			                                                final Vector< Vector< Object > > data = model.getDataVector();
+			                                                final Vector< Vector > data = model.getDataVector();
 			                                                for ( final int row : rows ) {
 				                                                final Path file = (Path) data.get( row ).get( fileColIdx );
 				                                                try {

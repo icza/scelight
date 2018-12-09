@@ -184,7 +184,7 @@ class XTableToolBar extends XToolBar {
 						@Override
 						public boolean include( final Entry< ? extends TableModel, ? extends Integer > entry ) {
 							@SuppressWarnings( "unchecked" )
-							final Vector< Vector< Object > > dataVector = params.getTable().getXTableModel().getDataVector();
+							final Vector< Vector > dataVector = params.getTable().getXTableModel().getDataVector();
 							
 							rowStringBuilder.setLength( 0 );
 							
