@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'maven'
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 8
+    targetCompatibility = 8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+        compile group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.1'
+        implementation fileTree(dir: 'app-folder/mod', include: ['*.jar'])
+        runtime fileTree(dir: 'app-folder/mod', include: ['*.jar'])
+        compile files("app-folder/mod/app-libs/0.0/registry.jar", "app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar", "app-folder/mod/app-libs/0.0/smtp-1.5.0.jar")
+        runtime files("app-folder/mod/app-libs/0.0/registry.jar", "app-folder/mod/app-libs/0.0/mailapi-1.5.0.jar", "app-folder/mod/app-libs/0.0/smtp-1.5.0.jar")
+        compile files("app-folder/mod/launcher/0.0/jl1.0.1.jar", "app-folder/mod/launcher/0.0/mp3spi1.9.5.jar", "app-folder/mod/launcher/0.0/tritonus_share.jar")
+        runtime files("app-folder/mod/launcher/0.0/jl1.0.1.jar", "app-folder/mod/launcher/0.0/mp3spi1.9.5.jar", "app-folder/mod/launcher/0.0/tritonus_share.jar")
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src-app', 'src-app-libs', 'src-ext-mod-api', 'src-launcher', 'src-sc2-balance-data', 'src-sc2-textures']
+        }
+        resources {
+            srcDirs = ['src-app', 'src-app-libs', 'src-ext-mod-api', 'src-launcher', 'src-sc2-balance-data', 'src-sc2-textures']
+        }
+    }
+}
+
+mainClassName = 'hu.sllauncher.ScelightLauncher'
