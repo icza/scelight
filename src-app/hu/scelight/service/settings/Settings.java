@@ -54,6 +54,7 @@ import hu.sllauncher.bean.settings.type.viewhints.VHB;
 import hu.sllauncher.gui.comp.IndicatorTextField;
 import hu.sllauncher.service.settings.LSettings;
 
+import java.awt.*;
 import java.nio.file.Paths;
 
 import javax.swing.JComponent;
@@ -133,7 +134,7 @@ public interface Settings extends LSettings {
 	
 	/** Minimize to Tray on Close. */
 	BoolSetting                       MINIMIZE_TO_TRAY_ON_CLOSE            = new BoolSetting( "MINIMIZE_TO_TRAY_ON_CLOSE", NODE_WINDOW, GROUP_WINDOW, NORMAL,
-	                                                                               "Minimize to Tray on Close", null, Boolean.TRUE );
+	                                                                               "Minimize to Tray on Close", null, SystemTray.isSupported());
 	
 	/** Start Minimized to Tray. */
 	BoolSetting                       START_MINIMIZED_TO_TRAY              = new BoolSetting( "START_MINIMIZED_TO_TRAY", NODE_WINDOW, GROUP_WINDOW, NORMAL,
