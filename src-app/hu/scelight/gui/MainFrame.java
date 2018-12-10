@@ -119,7 +119,7 @@ public class MainFrame extends XFrame implements IMainFrame {
 	private final ISettingChangeListener scl;
 	
 	/** Button to show updates available info. */
-	private final XButton                updatesAvailabeButton = new XButton( "Updates Available!", Icons.F_ARROW_CIRCLE_DOUBLE.get() );
+	private final XButton                updatesAvailableButton = new XButton( "Updates Available!", Icons.F_ARROW_CIRCLE_DOUBLE.get() );
 	
 	/**
 	 * Creates a new {@link MainFrame}, and makes it visible.
@@ -224,8 +224,11 @@ public class MainFrame extends XFrame implements IMainFrame {
 	
 	@Override
 	public void close() {
+		System.out.println("BBBBBBBBB 1");
 		final XAction action = Env.APP_SETTINGS.get( Settings.MINIMIZE_TO_TRAY_ON_CLOSE ) ? Actions.MINIMIZE_TO_TRAY : Actions.EXIT;
+		System.out.println("BBBBBBBBB 2" + Env.APP_SETTINGS.get( Settings.MINIMIZE_TO_TRAY_ON_CLOSE ));
 		action.actionPerformed( null );
+		System.out.println("BBBBBBBBB 3");
 	}
 	
 	/**
@@ -686,9 +689,9 @@ public class MainFrame extends XFrame implements IMainFrame {
 		statusBar.add( new BorderPanel() ); // Consume remaining space
 		
 		if ( Env.ONLINE ) {
-			GuiUtils.boldFont( updatesAvailabeButton );
-			updatesAvailabeButton.setForeground( Color.MAGENTA );
-			updatesAvailabeButton.addActionListener( new ActionAdapter() {
+			GuiUtils.boldFont( updatesAvailableButton );
+			updatesAvailableButton.setForeground( Color.MAGENTA );
+			updatesAvailableButton.addActionListener( new ActionAdapter() {
 				boolean dialogVisible;
 				
 				@Override
@@ -703,8 +706,8 @@ public class MainFrame extends XFrame implements IMainFrame {
 					}
 				}
 			} );
-			updatesAvailabeButton.setVisible( false );
-			statusBar.add( updatesAvailabeButton );
+			updatesAvailableButton.setVisible( false );
+			statusBar.add( updatesAvailableButton );
 		} else {
 			final XButton offlineButton = new XButton( "Offline", Icons.F_NETWORK_STATUS_OFFLINE.get() );
 			offlineButton.addActionListener( new ActionAdapter() {
@@ -731,8 +734,8 @@ public class MainFrame extends XFrame implements IMainFrame {
 	 * Activates the updates available button. Also "clicks" on it.
 	 */
 	public void activateUpdatesAvailable() {
-		updatesAvailabeButton.setVisible( true );
-		updatesAvailabeButton.doClick( 0 );
+		updatesAvailableButton.setVisible( true );
+		updatesAvailableButton.doClick( 0 );
 	}
 	
 	/**
