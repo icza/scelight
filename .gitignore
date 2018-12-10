@@ -15,3 +15,12 @@ release/deployment-dev/*
 release/deployment-pub/
 release/Scelight/
 build-release.xml
+
+# Ignore IntelliJ files:
+# https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems
+workspace.xml
+usage.statistics.xml
+tasks.xml
+.idea/libraries
+.idea/**/*.iml
+boot-settings.xml*
