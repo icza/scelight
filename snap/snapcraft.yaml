@@ -17,7 +17,7 @@ apps:
     command: sh $SNAP/bin/scelight
     desktop: usr/share/applications/scelight.desktop
     environment:
-      JAVA_HOME: $SNAP/usr/lib/jvm/default-java
+      JAVA_HOME: $SNAP/usr/lib/jvm/java-11-openjdk-amd64
     plugs:
       - desktop
       - home
@@ -29,8 +29,11 @@ parts:
   scelight:
     plugin: dump
     source: build/distributions/scelight.tar
+    build-packages:
+      - ca-certificates-java
     stage-packages:
-      - default-jre
+      - ca-certificates-java
+      - openjdk-11-jre
       - fontconfig
 
 # Useful commands for snapping:
