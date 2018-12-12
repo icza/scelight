@@ -234,7 +234,7 @@ public class LGuiUtils {
 				SwingUtilities.invokeAndWait( task );
 			} catch ( final Exception e ) {
 				e.printStackTrace();
-				LEnv.LOGGER.error( "Exeption thrown while executing task in EDT!", e );
+				LEnv.LOGGER.error( "Exception thrown while executing task in EDT!", e );
 				return e;
 			}
 		}
