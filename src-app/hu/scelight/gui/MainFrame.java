@@ -224,11 +224,8 @@ public class MainFrame extends XFrame implements IMainFrame {
 	
 	@Override
 	public void close() {
-		System.out.println("BBBBBBBBB 1");
 		final XAction action = Env.APP_SETTINGS.get( Settings.MINIMIZE_TO_TRAY_ON_CLOSE ) ? Actions.MINIMIZE_TO_TRAY : Actions.EXIT;
-		System.out.println("BBBBBBBBB 2" + Env.APP_SETTINGS.get( Settings.MINIMIZE_TO_TRAY_ON_CLOSE ));
 		action.actionPerformed( null );
-		System.out.println("BBBBBBBBB 3");
 	}
 	
 	/**
