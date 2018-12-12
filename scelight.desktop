@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Scelight
+Comment=StarCraft® II replay management and replay analysis utility
+Exec=scelight %U
+Icon=${SNAP}/usr/share/icons/hicolor/256x256/apps/scelight.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Encoding=UTF-8
+Categories=Game;Application;
+MimeType=application/x-wine-extension-sc2replay;

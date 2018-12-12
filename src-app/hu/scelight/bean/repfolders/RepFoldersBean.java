@@ -13,6 +13,7 @@ import hu.scelight.service.env.Env;
 import hu.scelight.service.settings.Settings;
 import hu.sllauncher.bean.Bean;
 
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,46 @@ public class RepFoldersBean extends Bean {
 	
 	/** Current bean version. */
 	public static final int BEAN_VER = 1;
+	
+	/**
+	 * The replay folder paths will be like
+	 * /home/my_username/Games/overwatch/drive_c/users/my_username/My Documents/StarCraft II/Accounts
+	 *
+	 * @return The list of replay folders in Lutris games folders.
+	 */
+	private static List< RepFolderBean > getLutrisFolders() {
+		Path lutrisGamesPath = Env.OS.getDefLutrisGamesPath();
+		List< RepFolderBean > repFolderBeanList = new ArrayList<>();
+		try (DirectoryStream<Path> stream = Files.newDirectoryStream(lutrisGamesPath)) {
+			if (Files.isDirectory(lutrisGamesPath)) {
+				for (Path lutrisGamePath: stream) {
+					if (Files.isDirectory(lutrisGamePath)) {
+						String lutrisGameName = lutrisGamePath.getFileName().toString();
+						Path gameUsersPath = lutrisGamePath.resolve("drive_c/users");
+						if (Files.isDirectory(gameUsersPath)) {
+							for (Path gameUserPath: Files.newDirectoryStream(gameUsersPath)) {
+								String lutrisUserName = gameUserPath.getFileName().toString();
+								Path gameAccountPath = gameUserPath.resolve("My Documents/StarCraft II/Accounts");
+								if (Files.isDirectory(gameAccountPath)) {
+									RepFolderBean rf = new RepFolderBean();
+									rf.setOrigin( RepFolderOrigin.USER );
+									rf.setPath( gameAccountPath );
+									rf.setRecursive( true );
+									rf.setMonitored( true );
+									rf.setComment( "Lutris SC2 Replay Folder (" + lutrisGameName + "/" + lutrisUserName + ")" );
+									repFolderBeanList.add( rf );
+								}
+							}
+						}
+					}
+				}
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			// It's fine if we can't enumerate the contents of Lutris' ~/Games folder.
+		}
+		return repFolderBeanList;
+	}
 	
 	/**
 	 * Factory method to return the default replay folder beans.
@@ -54,6 +95,8 @@ public class RepFoldersBean extends Bean {
 		rf.setRecursive( true );
 		rf.setComment( "Replay Backup Folder" );
 		repFolderBeanList.add( rf );
+		
+		repFolderBeanList.addAll( getLutrisFolders() );
 		
 		rfs.setReplayFolderBeanList( repFolderBeanList );
 		

@@ -36,6 +36,7 @@ import hu.sllauncher.util.LUtils;
 import hu.sllauncher.util.UrlBuilder;
 import hu.sllauncher.util.gui.LGuiUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -101,6 +102,8 @@ public class Updater {
 			
 			checkEclipseMode();
 			
+			checkLinuxSnap();
+			
 			retrieveModulesBean();
 			
 			checkReqMinLauncherVer();
@@ -155,6 +158,24 @@ public class Updater {
 		
 		modules = JAXB.unmarshal( Paths.get( "../release/deployment-dev/modules.xml" ).toFile(), ModulesBean.class );
 		modules.setOrigin( ModulesBeanOrigin.ECLIPSE_MODULES_XML );
+		launcher.setModules( modules );
+		
+		publishModCounts();
+		
+		throw new FinishException();
+	}
+	
+	private void checkLinuxSnap() {
+		String snapRoot = System.getenv( "SNAP" );
+		if ( snapRoot == null )
+			return;
+		
+		File modulesFile = Paths.get( "./release/deployment-dev/modules.xml" ).toFile();
+		if (!modulesFile.exists()) {
+			modulesFile = Paths.get( snapRoot, "usr/share/scelight/modules.xml" ).toFile();
+		}
+		modules = JAXB.unmarshal( modulesFile, ModulesBean.class );
+		modules.setOrigin( ModulesBeanOrigin.UPDATER_FAKE );
 		launcher.setModules( modules );
 		
 		publishModCounts();
@@ -375,17 +396,7 @@ public class Updater {
 		
 		throw new FinishException();
 	}
-
-	/**
-	 * Checks the SNAP environmental variable to determine if this application is running as a Linux snap package
-	 *
-	 * @return true if we're running in a snap package.
-	 */
-	private static boolean isSnap() {
-		String snapEnv = System.getenv("SNAP");
-		return snapEnv != null && !"".equals(snapEnv);
-	}
-
+	
 	/**
 	 * Checks the launcher module (and also updates/repairs it).
 	 * 
@@ -393,12 +404,10 @@ public class Updater {
 	 */
 	private void checkLauncherMod() {
 		// Launcher module
-        if (!isSnap()) {
-			if ( LConsts.LAUNCHER_VERSION.equals( modules.getLauncherMod().getVersion() ) )
-				validateModule( modules.getLauncherMod(), false );
-			else
-				updateModule( modules.getLauncherMod(), false, false );
-        }
+		if ( LConsts.LAUNCHER_VERSION.equals( modules.getLauncherMod().getVersion() ) )
+			validateModule( modules.getLauncherMod(), false );
+		else
+			updateModule( modules.getLauncherMod(), false, false );
 		
 		acknowledgeModChecked();
 	}
@@ -414,12 +423,11 @@ public class Updater {
 		
 		for ( final ModuleBean mod : modules.getModList() ) {
 			final Path intModPath = LEnv.PATH_MODS.resolve( mod.getFolder() ).resolve( mod.getVersion().toString() );
-			if (!isSnap()) {
-				if ( Files.exists( intModPath ) && Files.isDirectory( intModPath ) )
-					validateModule( mod, false );
-				else
-					updateModule( mod, false, false );
-			}
+			
+			if ( Files.exists( intModPath ) && Files.isDirectory( intModPath ) )
+				validateModule( mod, false );
+			else
+				updateModule( mod, false, false );
 			
 			acknowledgeModChecked();
 		}
@@ -435,34 +443,32 @@ public class Updater {
 			return;
 		
 		for ( final ExtModRefBean extModRef : modules.getExtModRefList() ) {
-			if (!isSnap()) {
-				// Is ext mod set to auto-update?
-				final OffExtModConfBean conf = offExtModConfsBean.getModuleConfForFolder( extModRef.getFolder() );
-				if ( conf == null || !Boolean.TRUE.equals( conf.getAutoUpdate() ) )
-					continue;
-				
-				launcherFrame.setProgressIndeterminate( true );
-				final ModuleBean mod = retrieveExtModuleBean( extModRef );
-				if ( mod == null ) {
-					failedExtMods = true;
-					continue;
-				}
-				
-				if ( modules.getRetrievedExtModList() == null )
-					modules.setRetrievedExtModList( new ArrayList< ModuleBean >() );
-				modules.getRetrievedExtModList().add( mod );
-				
-				final Path extModPath = LEnv.PATH_EXT_MODS.resolve( mod.getFolder() ).resolve( mod.getVersion().toString() );
-				// Do not abort update if an external module fails...
-				try {
-					if ( Files.exists( extModPath ) && Files.isDirectory( extModPath ) )
-						validateModule( mod, true );
-					else
-						updateModule( mod, true, false );
-				} catch ( final FinishException fe ) {
-					// ...just signal the fact.
-					failedExtMods = true;
-				}
+			// Is ext mod set to auto-update?
+			final OffExtModConfBean conf = offExtModConfsBean.getModuleConfForFolder( extModRef.getFolder() );
+			if ( conf == null || !Boolean.TRUE.equals( conf.getAutoUpdate() ) )
+				continue;
+			
+			launcherFrame.setProgressIndeterminate( true );
+			final ModuleBean mod = retrieveExtModuleBean( extModRef );
+			if ( mod == null ) {
+				failedExtMods = true;
+				continue;
+			}
+			
+			if ( modules.getRetrievedExtModList() == null )
+				modules.setRetrievedExtModList( new ArrayList< ModuleBean >() );
+			modules.getRetrievedExtModList().add( mod );
+			
+			final Path extModPath = LEnv.PATH_EXT_MODS.resolve( mod.getFolder() ).resolve( mod.getVersion().toString() );
+			// Do not abort update if an external module fails...
+			try {
+				if ( Files.exists( extModPath ) && Files.isDirectory( extModPath ) )
+					validateModule( mod, true );
+				else
+					updateModule( mod, true, false );
+			} catch ( final FinishException fe ) {
+				// ...just signal the fact.
+				failedExtMods = true;
 			}
 			
 			acknowledgeModChecked();
@@ -845,7 +851,7 @@ public class Updater {
 	 * @return true if application start is allowed; false otherwise
 	 */
 	private boolean allowToStart( final FinishException fe ) {
-		if ( LEnv.ECLIPSE_MODE ) {
+		if ( LEnv.ECLIPSE_MODE || System.getenv("SNAP") != null ) {
 			setReady();
 			return true;
 		}
