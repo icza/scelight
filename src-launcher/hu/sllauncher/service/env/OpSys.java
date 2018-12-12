@@ -49,6 +49,9 @@ public enum OpSys implements IOpSys {
 	/** Default user dependent SC2-replay path on the OS. */
 	private Path defSc2ReplayPath;
 	
+	/** Default user dependent path for games installed by Lutris. */
+	private Path defLutrisGamesPath;
+	
 	/** Default SC2 maps cache path on the OS. */
 	private Path defSc2MapsPath;
 	
@@ -113,6 +116,16 @@ public enum OpSys implements IOpSys {
 	}
 	
 	/**
+	 * Returns the default user dependent path to the Lutris games folder. The default value is ~/Games
+	 *
+	 * @return Path to the Lutris games folder.
+	 */
+	public Path getDefLutrisGamesPath() {
+		initPaths();
+		return defLutrisGamesPath;
+	}
+	
+	/**
 	 * Returns the default SC2 maps cache path.
 	 * 
 	 * <p>
@@ -137,6 +150,7 @@ public enum OpSys implements IOpSys {
 		final String programFilesFolder, baseMapsFolder;
 		
 		userDocumentsPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toPath();
+		defLutrisGamesPath = Paths.get ( System.getProperty("user.home"), "Games" );
 		
 		switch ( this ) {
 			case WINDOWS :
@@ -164,7 +178,12 @@ public enum OpSys implements IOpSys {
 			default :
 				defSc2ReplayPath = Paths.get( System.getProperty( "user.home" ), "Documents", "StarCraft II/Accounts" );
 				programFilesFolder = "/Applications";
-				baseMapsFolder = "/Documents/Blizzard Entertainment";
+				String snapUserDataDir = System.getenv("SNAP_USER_DATA");
+				if (snapUserDataDir != null) {
+					baseMapsFolder = Paths.get( snapUserDataDir, "Blizzard Entertainment" ).normalize().toString();
+				} else {
+					baseMapsFolder = Paths.get( System.getProperty( "user.home" ), "Documents", "Blizzard Entertainment").normalize().toString();
+				}
 				break;
 		}
 		

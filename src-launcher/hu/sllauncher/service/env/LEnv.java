@@ -133,7 +133,15 @@ public class LEnv {
 			final WorkspaceLocationType wlt = BOOT_SETTINGS.get( BootSettings.WS_LOCATION_TYPE );
 			switch ( wlt ) {
 				case USER_HOME :
-					PATH_WORKSPACE_ = Paths.get( System.getProperty( "user.home" ), ".Scelight/workspace" );
+					String snapDataDir = System.getenv( "SNAP_USER_DATA" );
+					Path configPath = Paths.get( System.getProperty("user.home"), ".config" );
+					if (snapDataDir != null) {
+						PATH_WORKSPACE_ = Paths.get( snapDataDir );
+					} else if (Files.exists(configPath)) {
+						PATH_WORKSPACE_ = configPath.resolve("scelight");
+					} else {
+						PATH_WORKSPACE_ = Paths.get( System.getProperty( "user.home" ), ".Scelight/workspace" );
+					}
 					break;
 				case APP_FOLDER :
 					PATH_WORKSPACE_ = PATH_APP.resolve( "workspace" );

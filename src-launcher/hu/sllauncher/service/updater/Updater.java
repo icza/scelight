@@ -36,6 +36,7 @@ import hu.sllauncher.util.LUtils;
 import hu.sllauncher.util.UrlBuilder;
 import hu.sllauncher.util.gui.LGuiUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -101,6 +102,8 @@ public class Updater {
 			
 			checkEclipseMode();
 			
+			checkLinuxSnap();
+			
 			retrieveModulesBean();
 			
 			checkReqMinLauncherVer();
@@ -155,6 +158,24 @@ public class Updater {
 		
 		modules = JAXB.unmarshal( Paths.get( "../release/deployment-dev/modules.xml" ).toFile(), ModulesBean.class );
 		modules.setOrigin( ModulesBeanOrigin.ECLIPSE_MODULES_XML );
+		launcher.setModules( modules );
+		
+		publishModCounts();
+		
+		throw new FinishException();
+	}
+	
+	private void checkLinuxSnap() {
+		String snapRoot = System.getenv( "SNAP" );
+		if ( snapRoot == null )
+			return;
+		
+		File modulesFile = Paths.get( "./release/deployment-dev/modules.xml" ).toFile();
+		if (!modulesFile.exists()) {
+			modulesFile = Paths.get( snapRoot, "usr/share/scelight/modules.xml" ).toFile();
+		}
+		modules = JAXB.unmarshal( modulesFile, ModulesBean.class );
+		modules.setOrigin( ModulesBeanOrigin.UPDATER_FAKE );
 		launcher.setModules( modules );
 		
 		publishModCounts();
@@ -830,7 +851,7 @@ public class Updater {
 	 * @return true if application start is allowed; false otherwise
 	 */
 	private boolean allowToStart( final FinishException fe ) {
-		if ( LEnv.ECLIPSE_MODE ) {
+		if ( LEnv.ECLIPSE_MODE || System.getenv("SNAP") != null ) {
 			setReady();
 			return true;
 		}

@@ -1,0 +1,44 @@
+name: scelight
+version: '3.1.3'
+summary: StarCraft® II replay management and replay analysis utility
+description: |
+  Scelight™ is a free general StarCraft® II utility for literally everyone
+  who is interested in the game (either a player ranging from newbie to pro,
+  a developer, team manager, league organizer, commentator or just a game
+  analyzer). Its main features are replay management and replay analysis.
+
+base: core18
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+icon: ./icon/scelight.png
+
+apps:
+  scelight:
+    command: sh $SNAP/bin/scelight
+    desktop: usr/share/applications/scelight.desktop
+    environment:
+      JAVA_HOME: $SNAP/usr/lib/jvm/java-11-openjdk-amd64
+    plugs:
+      - desktop
+      - home
+      - network
+      - pulseaudio
+      - x11
+
+parts:
+  scelight:
+    plugin: dump
+    source: build/distributions/scelight.tar
+    build-packages:
+      - ca-certificates-java
+    stage-packages:
+      - ca-certificates-java
+      - openjdk-11-jre
+      - fontconfig
+
+# Useful commands for snapping:
+# gradle build && ( rm -rf ~/test/scelight tar; tar -x -f snap/build/distributions/scelight.tar -C ~/test/ )
+# docker run -v "$PWD":/build -w /build snapcore/snapcraft
+# time ( snapcraft clean && snapcraft )
+# time sudo snap remove scelight && sudo snap install --dangerous scelight_3.1.3_amd64.snap
+# sudo tail -f /var/log/syslog

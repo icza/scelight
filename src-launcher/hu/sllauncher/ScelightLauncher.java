@@ -83,9 +83,13 @@ public class ScelightLauncher {
 		
 		setUserAgent();
 		
-		final Exception e = LGuiUtils.setLaf( "Nimbus" );
-		if ( e != null )
-			LEnv.LOGGER.error( "Failed to set Nimbus Look and Feel!", e );
+		if (System.getenv("SNAP") != null) {
+			// Crashes on Linux
+			
+			final Exception e = LGuiUtils.setLaf( "Nimbus" );
+			if ( e != null )
+				LEnv.LOGGER.error( "Failed to set Nimbus Look and Feel!", e );
+		}
 		
 		new ScelightLauncher( arguments );
 	}

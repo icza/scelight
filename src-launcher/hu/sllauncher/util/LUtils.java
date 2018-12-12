@@ -395,7 +395,7 @@ public class LUtils {
 				cmdArray = new String[] { "rundll32", "url.dll,FileProtocolHandler", url.toString() };
 			} else {
 				// Linux
-				final String[] browsers = { "firefox", "google-chrome", "opera", "konqueror", "epiphany", "mozilla", "netscape" };
+				final String[] browsers = { "xdg-open", "firefox", "google-chrome", "opera", "konqueror", "epiphany", "mozilla", "netscape" };
 				for ( final String browser : browsers )
 					if ( Runtime.getRuntime().exec( new String[] { "which", browser } ).waitFor() == 0 ) {
 						cmdArray = new String[] { browser, url.toString() };

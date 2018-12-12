@@ -161,7 +161,7 @@ public class RenameRepsDialog extends XDialog {
 				
 				final int[] selectedRows = srcTable.getSelectedModelRows();
 				@SuppressWarnings( "unchecked" )
-				final Vector< Vector< Object > > data = srcTable.getXTableModel().getDataVector();
+				final Vector< Vector > data = srcTable.getXTableModel().getDataVector();
 				
 				int errors = 0;
 				
