@@ -7,6 +7,6 @@ docker run \
   -e LOCAL_GROUP_ID=$(id -g $USER) \
   -v $PWD:/home/snapbuild/work \
   -w=/home/snapbuild/work \
-  snapbuild bash
+  snapbuild bash \
   --rm \
 
