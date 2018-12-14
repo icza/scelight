@@ -15,7 +15,6 @@ import snapcraft
 from snapcraft import file_utils, formatting_utils
 from snapcraft.internal import errors, sources
 
-print("AAAAAAAAAAAAAAA")
 logger = logging.getLogger(__name__)
 
 
@@ -70,7 +69,8 @@ class GradlePlugin(snapcraft.BasePlugin):
             "default": "",
         }
         
-        schema["required"] = ["source"]
+        schema["required"] = []
+        # schema["required"] = ["source"]
 
         return schema
 
@@ -155,8 +155,6 @@ class GradlePlugin(snapcraft.BasePlugin):
     def build(self):
         super().build()
 
-        print("self.options.gradle_options")
-        print(self.options.gradle_options)
         if self._using_gradlew():
             gradle_cmd = ["./gradlew"]
         else:
@@ -171,69 +169,24 @@ class GradlePlugin(snapcraft.BasePlugin):
             )
 
         src = os.path.join(self.builddir, self.options.gradle_output_dir)
-        print("=========== src ===========")
-        print("builddir= " + self.builddir)
-        print(self.options.gradle_output_dir)
-        print(src)
         tarFiles = glob(os.path.join(src, "*.tar"))
-        print(tarFiles)
-        zipFiles = glob(os.path.join(src, "*.zip"))
-        print(zipFiles)
 
         if len(tarFiles) >= 1:
             tarFile = tarFiles[0]
         else:
             raise RuntimeError("Could not find any built tar or zip files for part")
         
-        print("installdir= " + self.installdir)
         tarFile = tarFiles[0]
-        print("tarFile= " + tarFile)
-        print(tarFile)
         tar = tarfile.open(tarFile)
         distribution_dir = os.path.join(self.builddir, "distribution")
-        print("distribution_dir= " + distribution_dir)
         tar.extractall(path = distribution_dir)
         tar.close()
 
-        print("copy source = " + os.path.join(distribution_dir, self.project.info.name))
-        print("copy destination = " + os.path.join(self.installdir + "/"))
         file_utils.link_or_copy_tree(
             os.path.join(distribution_dir, self.project.info.name),
             os.path.join(self.installdir + "/"),
         )
         
-    def _create_symlinks(self):
-        openjdk_version = self._get_openjdk_version(self.project.info.base)
-
-        os.makedirs(os.path.join(self.installdir, "bin"), exist_ok=True)
-        print("self.installdir")
-        print(self.installdir)
-        print(openjdk_version)
-        print(os.path.join(
-            self.installdir,
-            "usr",
-            "lib",
-            "jvm",
-            "java-{}-openjdk-*".format(openjdk_version),
-            "bin",
-            "java",
-        ))
-        java_bin = glob(
-            os.path.join(
-                self.installdir,
-                "usr",
-                "lib",
-                "jvm",
-                "java-{}-openjdk-*".format(openjdk_version),
-                "bin",
-                "java",
-            )
-        )[0]
-        os.symlink(
-            os.path.relpath(java_bin, os.path.join(self.installdir, "bin")),
-            os.path.join(self.installdir, "bin", "java"),
-        )
-
     def run(self, cmd, rootdir):
         super().run(cmd, cwd=rootdir, env=self._build_environment())
 

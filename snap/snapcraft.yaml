@@ -7,6 +7,7 @@ description: |
   a developer, team manager, league organizer, commentator or just a game
   analyzer). Its main features are replay management and replay analysis.
 
+architectures: [amd64, i386]
 base: core18
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
