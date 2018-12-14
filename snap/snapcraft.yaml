@@ -8,9 +8,9 @@ description: |
   analyzer). Its main features are replay management and replay analysis.
 
 base: core18
-grade: devel # must be 'stable' to release into candidate/stable channels
+grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
-icon: ./icon/scelight.png
+icon: ./src-launcher/hu/sllauncher/r/icon/my/app-icon-1.png
 
 apps:
   scelight:
@@ -27,14 +27,17 @@ apps:
 
 parts:
   scelight:
-    plugin: dump
-    source: build/distributions/scelight.tar
-    build-packages:
-      - ca-certificates-java
-    stage-packages:
-      - ca-certificates-java
-      - openjdk-11-jre
-      - fontconfig
+    plugin: gradle-application
+    source: .
+#  scelight:
+#    plugin: dump
+#    source: build/distributions/scelight.tar
+#    build-packages:
+#      - ca-certificates-java
+#    stage-packages:
+#      - ca-certificates-java
+#      - openjdk-11-jre
+#      - fontconfig
 
 # Useful commands for snapping:
 # gradle build && ( rm -rf ~/test/scelight tar; tar -x -f snap/build/distributions/scelight.tar -C ~/test/ )
