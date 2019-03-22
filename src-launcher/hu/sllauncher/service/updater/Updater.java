@@ -165,13 +165,21 @@ public class Updater {
 		throw new FinishException();
 	}
 	
+	/**
+	 * Checks if the <code>SNAP</code> env var is present, and if so,
+	 * tries to load modules bean from one of the following locations:
+	 * <ol>
+	 * 	<li><code>./release/deployment-dev/modules.xml</code>
+	 * 	<li><code>usr/share/scelight/modules.xml</code>
+	 * </ol>
+	 */
 	private void checkLinuxSnap() {
 		String snapRoot = System.getenv( "SNAP" );
 		if ( snapRoot == null )
 			return;
 		
 		File modulesFile = Paths.get( "./release/deployment-dev/modules.xml" ).toFile();
-		if (!modulesFile.exists()) {
+		if ( !modulesFile.exists() ) {
 			modulesFile = Paths.get( snapRoot, "usr/share/scelight/modules.xml" ).toFile();
 		}
 		modules = JAXB.unmarshal( modulesFile, ModulesBean.class );
