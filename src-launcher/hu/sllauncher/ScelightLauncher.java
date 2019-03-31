@@ -83,7 +83,7 @@ public class ScelightLauncher {
 		
 		setUserAgent();
 		
-		if (System.getenv("SNAP") != null) {
+		if (System.getenv("SNAP") == null) {
 			// Crashes on Linux
 			
 			final Exception e = LGuiUtils.setLaf( "Nimbus" );

@@ -5,9 +5,9 @@
         <name>Scelight Launcher</name>
         <version major="3" minor="1" revision="3" v="1"/>
         <folder>launcher</folder>
-        <archiveFile path="ScelightLauncher-3.1.3.zip" sha256="4f166342debe11955d9f0a4bd36b7117e4d1cd6f1ad36a90806b054bd540bbf8" v="1"/>
+        <archiveFile path="ScelightLauncher-3.1.3.zip" sha256="17d8b4e8934d31877c7fa396cc85c0a0e9d15e8eb7560f90f1decaeda5984a24" v="1"/>
         <urlList>https://scelightop.appspot.com/mod/ScelightLauncher-3.1.3.zip</urlList>
-        <archiveSize>1450828</archiveSize>
+        <archiveSize>1451453</archiveSize>
         <fileList path="Scelight/README.txt" sha256="5a25c43112652c8b56267bd15fb2e3e2f80ea540fb92fad4073f88a2000c9553" v="1"/>
         <fileList path="Scelight/Scelight-admin.exe" sha256="a941dc2adaeae277ad21bf0a5447db36145fc4b94a9625a39c03256654640c86" v="1"/>
         <fileList path="Scelight/Scelight-linux.sh" sha256="4f25b801deb50f202204306398de20b7164a627617efe2e09b0f589d49b3df78" v="1"/>
@@ -17,7 +17,7 @@
         <fileList path="Scelight/mod-x/README.txt" sha256="21d236e5eb099f33150049b1c4625c0a1edf355e38ad908b8d6cb0bb6797b459" v="1"/>
         <fileList path="Scelight/mod/launcher/3.1.3/jl1.0.1.jar" sha256="eabaa070e57a204d441cd9b20200f74c165c4dd9cfb9dbf37eeabb3b713c6fac" v="1"/>
         <fileList path="Scelight/mod/launcher/3.1.3/mp3spi1.9.5.jar" sha256="ce19a131c541e127cbaeaf972b1cbafc13f0b7f20ecb8af814ae95047fae550f" v="1"/>
-        <fileList path="Scelight/mod/launcher/3.1.3/scelight-launcher.sldat" sha256="90be51dd4becb49ecc7bf09751adba88467b2f0d86fe2263a53da2d944c8d4c8" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.3/scelight-launcher.sldat" sha256="3411bf0db64cc0d573a7e665aa9a5d8d24641f43ef61b3b220d5e93d119e3e61" v="1"/>
         <fileList path="Scelight/mod/launcher/3.1.3/tritonus_share.jar" sha256="bb6de6849695aaffe5706fef4c9ca3061a7ecd2056493cfdb55dab93d18946b3" v="1"/>
     </launcherMod>
     <modList v="1">
@@ -65,10 +65,10 @@
         <name>Scelight</name>
         <version major="6" minor="4" revision="3" v="1"/>
         <folder>app</folder>
-        <archiveFile path="ScelightApp-6.4.3.zip" sha256="550ea8b4d632bb1db5f6944c3512a95ef98a880fa2e7ffe7ae233b7254b5ddf4" v="1"/>
+        <archiveFile path="ScelightApp-6.4.3.zip" sha256="caea7951cc7befcdd1e98a95ecde48c4843e98329f84938f3f69acaf9d2e79be" v="1"/>
         <urlList>https://scelightop.appspot.com/mod/ScelightApp-6.4.3.zip</urlList>
-        <archiveSize>1387109</archiveSize>
-        <fileList path="Scelight/mod/app/6.4.3/scelight.sldat" sha256="98d536a9566a46841d700be5ab9d74c168ebe6cc02cabf27d879b8b880ba1e3d" v="1"/>
+        <archiveSize>1388175</archiveSize>
+        <fileList path="Scelight/mod/app/6.4.3/scelight.sldat" sha256="8e807261699954d1720cd24c1e8aca1b2888e705b07fb6007bd56c4df93c78a2" v="1"/>
     </modList>
     <extModRefList v="1">
         <name>SC2ReplayStatsUploader</name>
@@ -87,5 +87,5 @@
         <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
         <moduleBeanUrl>https://s3.amazonaws.com/sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
     </extModRefList>
-    <digest>8a7058f69c708eb7f5b9ce037a1cf7b40dd96a8e8640df5fcd1b762e2d4dca0b</digest>
+    <digest>3a2fee48c71a7250464d40f35c63c05fe6f3bbd9773713a4ad5f92027d9c702e</digest>
 </modulesBean>

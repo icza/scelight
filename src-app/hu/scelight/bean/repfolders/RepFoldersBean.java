@@ -65,7 +65,7 @@ public class RepFoldersBean extends Bean {
 				}
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			Env.LOGGER.debug( "Can't list Lutris Game folder: " + lutrisGamesPath );
 			// It's fine if we can't enumerate the contents of Lutris' ~/Games folder.
 		}
 		return repFolderBeanList;
