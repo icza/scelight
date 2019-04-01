@@ -17,7 +17,6 @@ from snapcraft.internal import errors, sources
 
 logger = logging.getLogger(__name__)
 
-
 _DEFAULT_GRADLE_VERSION = "4.10.2"
 _DEFAULT_GRADLE_CHECKSUM = (
     "sha256/b49c6da1b2cb67a0caf6c7480630b51c70a11ca2016ff2f555eaeda863143a29"
@@ -26,7 +25,6 @@ _GRADLE_URL = "https://services.gradle.org/distributions/gradle-{version}-bin.zi
 
 
 class UnsupportedJDKVersionError(errors.SnapcraftError):
-
     fmt = (
         "The gradle-openjdk-version plugin property was set to {version!r}.\n"
         "Valid values for the {base!r} base are: {valid_versions}."
@@ -68,9 +66,8 @@ class GradlePlugin(snapcraft.BasePlugin):
             "type": "string",
             "default": "",
         }
-        
-        schema["required"] = []
-        # schema["required"] = ["source"]
+
+        schema["required"] = ["source"]
 
         return schema
 
@@ -100,18 +97,18 @@ class GradlePlugin(snapcraft.BasePlugin):
 
         self._setup_gradle()
         self._setup_base_tools(project.info.base)
-        
+
     def _get_openjdk_version(self, base):
         if base not in ("core16", "core18"):
             raise errors.PluginBaseError(
                 part_name=self.name, base=self.project.info.base
             )
-        
+
         if base == "core16":
             valid_versions = ["8", "9"]
         elif base == "core18":
             valid_versions = ["8", "11"]
-    
+
         version = self.options.gradle_openjdk_version
         if version and version not in valid_versions:
             raise UnsupportedJDKVersionError(
@@ -120,7 +117,7 @@ class GradlePlugin(snapcraft.BasePlugin):
         elif not version:
             # Get the latest version from the slice
             version = valid_versions[-1]
-            
+
         return version
 
     def _setup_base_tools(self, base):
@@ -166,7 +163,7 @@ class GradlePlugin(snapcraft.BasePlugin):
             + self.options.gradle_options
             + ["build"],
             rootdir=self.builddir,
-            )
+        )
 
         src = os.path.join(self.builddir, self.options.gradle_output_dir)
         tarFiles = glob(os.path.join(src, "*.tar"))
@@ -175,18 +172,18 @@ class GradlePlugin(snapcraft.BasePlugin):
             tarFile = tarFiles[0]
         else:
             raise RuntimeError("Could not find any built tar or zip files for part")
-        
+
         tarFile = tarFiles[0]
         tar = tarfile.open(tarFile)
         distribution_dir = os.path.join(self.builddir, "distribution")
-        tar.extractall(path = distribution_dir)
+        tar.extractall(path=distribution_dir)
         tar.close()
 
         file_utils.link_or_copy_tree(
             os.path.join(distribution_dir, self.project.info.name),
             os.path.join(self.installdir + "/"),
         )
-        
+
     def run(self, cmd, rootdir):
         super().run(cmd, cwd=rootdir, env=self._build_environment())
 
