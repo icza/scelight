@@ -9,7 +9,9 @@ description: |
 
 architectures:
   - build-on: amd64
+    run-on: amd64
   - build-on: i386
+    run-on: i386
 base: core18
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
