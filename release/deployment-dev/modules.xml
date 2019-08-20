@@ -3,22 +3,22 @@
     <reqMinLauncherVer major="1" minor="0" revision="0" v="1"/>
     <launcherMod v="1">
         <name>Scelight Launcher</name>
-        <version major="3" minor="1" revision="3" v="1"/>
+        <version major="3" minor="1" revision="4" v="1"/>
         <folder>launcher</folder>
-        <archiveFile path="ScelightLauncher-3.1.3.zip" sha256="17d8b4e8934d31877c7fa396cc85c0a0e9d15e8eb7560f90f1decaeda5984a24" v="1"/>
-        <urlList>https://scelightop.appspot.com/mod/ScelightLauncher-3.1.3.zip</urlList>
-        <archiveSize>1451453</archiveSize>
+        <archiveFile path="ScelightLauncher-3.1.4.zip" sha256="530e8adbe818ee6888577d7baa6074e0321740e263b8562831fc5f0b6d326b62" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightLauncher-3.1.4.zip</urlList>
+        <archiveSize>1451450</archiveSize>
         <fileList path="Scelight/README.txt" sha256="5a25c43112652c8b56267bd15fb2e3e2f80ea540fb92fad4073f88a2000c9553" v="1"/>
-        <fileList path="Scelight/Scelight-admin.exe" sha256="a941dc2adaeae277ad21bf0a5447db36145fc4b94a9625a39c03256654640c86" v="1"/>
-        <fileList path="Scelight/Scelight-linux.sh" sha256="4f25b801deb50f202204306398de20b7164a627617efe2e09b0f589d49b3df78" v="1"/>
-        <fileList path="Scelight/Scelight-os-x.command" sha256="7998537614c1a78ceaa33ca94056b0713581a86904f9d541529d37593adc92ab" v="1"/>
-        <fileList path="Scelight/Scelight-win.cmd" sha256="9b7062f408450e47da63493fdccb11d97b18ea3335b4de373a9e079520fa81ca" v="1"/>
-        <fileList path="Scelight/Scelight.exe" sha256="f7c80d99d5e102a1a8f460d7102c6199ad480f77327150f19a78161deb0ff12d" v="1"/>
+        <fileList path="Scelight/Scelight-admin.exe" sha256="f6b32025b62f8c8d7824c59ad62ea335f6c57eb954fa2c4e2751f116a072284a" v="1"/>
+        <fileList path="Scelight/Scelight-linux.sh" sha256="14cd1dab491b2842602b0cac477940da8c708c986039e7444f44a3442fe20ca2" v="1"/>
+        <fileList path="Scelight/Scelight-os-x.command" sha256="47a25d4804672c1b8c5f2fdf16855ffd8ad4fc0d416998d662759cfce744def1" v="1"/>
+        <fileList path="Scelight/Scelight-win.cmd" sha256="04f318c929c16702d31f4187e19e7f055ef28829369b44123013feb64801daf2" v="1"/>
+        <fileList path="Scelight/Scelight.exe" sha256="59fdc794789c16b2be6db0c66e7ae0ed4da3b04b93e3fb4be106d89b5551d95c" v="1"/>
         <fileList path="Scelight/mod-x/README.txt" sha256="21d236e5eb099f33150049b1c4625c0a1edf355e38ad908b8d6cb0bb6797b459" v="1"/>
-        <fileList path="Scelight/mod/launcher/3.1.3/jl1.0.1.jar" sha256="eabaa070e57a204d441cd9b20200f74c165c4dd9cfb9dbf37eeabb3b713c6fac" v="1"/>
-        <fileList path="Scelight/mod/launcher/3.1.3/mp3spi1.9.5.jar" sha256="ce19a131c541e127cbaeaf972b1cbafc13f0b7f20ecb8af814ae95047fae550f" v="1"/>
-        <fileList path="Scelight/mod/launcher/3.1.3/scelight-launcher.sldat" sha256="3411bf0db64cc0d573a7e665aa9a5d8d24641f43ef61b3b220d5e93d119e3e61" v="1"/>
-        <fileList path="Scelight/mod/launcher/3.1.3/tritonus_share.jar" sha256="bb6de6849695aaffe5706fef4c9ca3061a7ecd2056493cfdb55dab93d18946b3" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.4/jl1.0.1.jar" sha256="eabaa070e57a204d441cd9b20200f74c165c4dd9cfb9dbf37eeabb3b713c6fac" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.4/mp3spi1.9.5.jar" sha256="ce19a131c541e127cbaeaf972b1cbafc13f0b7f20ecb8af814ae95047fae550f" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.4/scelight-launcher.sldat" sha256="d9d27c4f953b4cdcdd1dfa6cf6cf67e38d9ce0bdc8910e282f617248856841ab" v="1"/>
+        <fileList path="Scelight/mod/launcher/3.1.4/tritonus_share.jar" sha256="bb6de6849695aaffe5706fef4c9ca3061a7ecd2056493cfdb55dab93d18946b3" v="1"/>
     </launcherMod>
     <modList v="1">
         <name>SC2 Textures</name>
@@ -87,5 +87,5 @@
         <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
         <moduleBeanUrl>https://s3.amazonaws.com/sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
     </extModRefList>
-    <digest>ee0965b9a1520b09bfbc5aa65440bb1f7d7fa221c10d3d75820955f0321f2416</digest>
+    <digest>6e22061fc6d34eb1b802c5994ccd3d8f0f94082239bf7c24a8fe46e1d6be0bfe</digest>
 </modulesBean>

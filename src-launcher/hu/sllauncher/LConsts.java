@@ -34,7 +34,7 @@ public interface LConsts {
 	String		LAUNCHER_NAME	   = "Scelight Launcher";
 								   
 	/** Launcher version. */
-	VersionBean	LAUNCHER_VERSION   = new VersionBean( 3, 1, 3 );
+	VersionBean	LAUNCHER_VERSION   = new VersionBean( 3, 1, 4 );
 								   
 	/** Launcher full name (launcher name + launcher version). */
 	String		LAUNCHER_NAME_FULL = LAUNCHER_NAME + " " + LAUNCHER_VERSION;
