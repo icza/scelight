@@ -31,12 +31,12 @@
     </modList>
     <modList v="1">
         <name>SC2 Balance Data</name>
-        <version major="1" minor="6" revision="2" v="1"/>
+        <version major="1" minor="7" revision="0" v="1"/>
         <folder>sc2-bd</folder>
-        <archiveFile path="ScelightSc2Bd-1.6.2.zip" sha256="dfe00891aff6e0b3d05626a66bac0cdf6c282b85caca17c76bf41fe14b1fb877" v="1"/>
-        <urlList>https://scelightop.appspot.com/mod/ScelightSc2Bd-1.6.2.zip</urlList>
-        <archiveSize>1184546</archiveSize>
-        <fileList path="Scelight/mod/sc2-bd/1.6.2/sc2-bd.sldat" sha256="befc1355c5dde439beef7ed6cf589ee8665986aac88d5de7c71233d2d101b493" v="1"/>
+        <archiveFile path="ScelightSc2Bd-1.7.zip" sha256="8878dc7440ca07175d8cc5621ba6904ecd90d1828038b7e70f1cc218ba920fb0" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightSc2Bd-1.7.zip</urlList>
+        <archiveSize>1184536</archiveSize>
+        <fileList path="Scelight/mod/sc2-bd/1.7/sc2-bd.sldat" sha256="e146f52ce9d04e06da5cd98147d5e2b50af79eaf58f0e4fabbce2397eb5ed69b" v="1"/>
     </modList>
     <modList v="1">
         <name>External Module API</name>
@@ -87,5 +87,5 @@
         <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
         <moduleBeanUrl>https://s3.amazonaws.com/sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
     </extModRefList>
-    <digest>41c4eb2243c7f2b8c5e75b700a743d0023d77bac7327428ff033c278e5c79063</digest>
+    <digest>8cb1053a876c0a2f155980281c8d101ea590c6b9ed78aa89d4a40b1515bd741d</digest>
 </modulesBean>
