@@ -77,7 +77,7 @@ public class Protocol {
 	}
 	
 	/** This is the base build number of the latest bundled S2Protocol. */
-	public static final int LATEST_BASE_BUILD = 80669;
+	public static final int LATEST_BASE_BUILD = 81009;
 	
 	/**
 	 * The default protocol handler.<br>
