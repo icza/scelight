@@ -27,6 +27,6 @@ public interface TConsts {
 	String      SC2_TEXTURES_NAME    = "SC2 Textures";
 	
 	/** SC2 Textures version. */
-	VersionBean SC2_TEXTURES_VERSION = new VersionBean( 1, 9 );
+	VersionBean SC2_TEXTURES_VERSION = new VersionBean( 2, 0 );
 	
 }

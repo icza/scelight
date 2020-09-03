@@ -22,12 +22,12 @@
     </launcherMod>
     <modList v="1">
         <name>SC2 Textures</name>
-        <version major="1" minor="9" revision="0" v="1"/>
+        <version major="2" minor="0" revision="0" v="1"/>
         <folder>sc2-t</folder>
-        <archiveFile path="ScelightSc2T-1.9.zip" sha256="3f3f56dd5f60c34c11df011debb9edfcd39f148ff8e495f15ff96e33d5bad9a6" v="1"/>
-        <urlList>https://scelightop.appspot.com/mod/ScelightSc2T-1.9.zip</urlList>
-        <archiveSize>2457845</archiveSize>
-        <fileList path="Scelight/mod/sc2-t/1.9/sc2-t.sldat" sha256="6469693f4f6ce0a532dd82273514ef89a19782a8608873cd68e73b3c1bdb2f43" v="1"/>
+        <archiveFile path="ScelightSc2T-2.0.zip" sha256="245cf7e9be53df234565af4e41fd9b68f17557319c39b2df2aa31627ca792d36" v="1"/>
+        <urlList>https://scelightop.appspot.com/mod/ScelightSc2T-2.0.zip</urlList>
+        <archiveSize>2605478</archiveSize>
+        <fileList path="Scelight/mod/sc2-t/2.0/sc2-t.sldat" sha256="db866ac55bf20b81eee5a7b2ec6b7f45c7308f68fb622df70d106bf53d38549f" v="1"/>
     </modList>
     <modList v="1">
         <name>SC2 Balance Data</name>
@@ -87,5 +87,5 @@
         <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
         <moduleBeanUrl>https://s3.amazonaws.com/sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
     </extModRefList>
-    <digest>e6e48f5cd67f75e0a00a0743336401a0d8d9cb002af12ad03254f66ba349b017</digest>
+    <digest>6cb7c76ea9d7c88027981278f81683b63311905d0a681e3bfdb3d2dcba8427e5</digest>
 </modulesBean>
