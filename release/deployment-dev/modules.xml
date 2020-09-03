@@ -33,10 +33,10 @@
         <name>SC2 Balance Data</name>
         <version major="1" minor="7" revision="0" v="1"/>
         <folder>sc2-bd</folder>
-        <archiveFile path="ScelightSc2Bd-1.7.zip" sha256="8878dc7440ca07175d8cc5621ba6904ecd90d1828038b7e70f1cc218ba920fb0" v="1"/>
+        <archiveFile path="ScelightSc2Bd-1.7.zip" sha256="20b022bb9c5e43d76898f3da717e944d8e757e6c89f9f6686de40544436eccc8" v="1"/>
         <urlList>https://scelightop.appspot.com/mod/ScelightSc2Bd-1.7.zip</urlList>
-        <archiveSize>1184536</archiveSize>
-        <fileList path="Scelight/mod/sc2-bd/1.7/sc2-bd.sldat" sha256="e146f52ce9d04e06da5cd98147d5e2b50af79eaf58f0e4fabbce2397eb5ed69b" v="1"/>
+        <archiveSize>1318815</archiveSize>
+        <fileList path="Scelight/mod/sc2-bd/1.7/sc2-bd.sldat" sha256="fe043965fd80006f09f619949dd919403515227719e3726fa22e227268ad751b" v="1"/>
     </modList>
     <modList v="1">
         <name>External Module API</name>
@@ -87,5 +87,5 @@
         <shortDesc>Uploads new replays to your SC2ReplayStats.com account automatically.</shortDesc>
         <moduleBeanUrl>https://s3.amazonaws.com/sc2replaystats.com/scelight/module.xml</moduleBeanUrl>
     </extModRefList>
-    <digest>a295ed587ba6c8605b6ea9207c2c272dcd02b16dcb0b24052e2ed45f1b94223e</digest>
+    <digest>0dd8efcadb85be1cf5fe183e04d500d234120604d0b1434456250eecd720a715</digest>
 </modulesBean>
