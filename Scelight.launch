@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
-<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/Scelight/src-launcher/hu/sllauncher/ScelightLauncher.java"/>
-</listAttribute>
-<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
-<listEntry value="1"/>
-</listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="hu.sllauncher.ScelightLauncher"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Scelight"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx1024m&#13;&#10;-Dhu.scelight.launched-with=Scelight.launch"/>
-<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:Scelight/app-folder}"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/Scelight/src-launcher/hu/sllauncher/ScelightLauncher.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.buildship.core.classpathprovider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="hu.sllauncher.ScelightLauncher"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Scelight"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx1024m&#13;&#10;-Dhu.scelight.launched-with=Scelight.launch"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:Scelight/app-folder}"/>
 </launchConfiguration>

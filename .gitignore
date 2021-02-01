@@ -24,3 +24,6 @@ tasks.xml
 .idea/libraries
 .idea/**/*.iml
 boot-settings.xml*
+
+.DS_Store
+bin/main
