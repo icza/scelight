@@ -148,6 +148,11 @@ public class UserInitData extends StructView implements IUserInitData {
 	}
 	
 	@Override
+	public Integer getMMR() {
+		return get( F_MMR );
+	}
+	
+	@Override
 	public League getHighestLeague() {
 		if ( highestLeague == null ) {
 			final Integer highestLeagueId = getHighestLeagueId();

@@ -108,6 +108,11 @@ public class User implements IUser {
 	 * </p>
 	 */
 	public double			  spm;
+	
+	/**
+	 * MMR of the user.
+	 */
+	public int mmr;
 							  
 							  
 	// Derived data from tracker events
@@ -158,8 +163,10 @@ public class User implements IUser {
 		this.uid = uid;
 		this.player = player;
 		
-		if ( uid != null )
+		if ( uid != null ) {
 			name = uid.name;
+			mmr = uid.getMMR();
+		}
 		else if ( player != null ) {
 			String name_ = player.getName();
 			// Cut off clan name
@@ -303,4 +310,8 @@ public class User implements IUser {
 		return playerColor;
 	}
 	
+	@Override
+	public int getMMR() {
+		return mmr;
+	}
 }

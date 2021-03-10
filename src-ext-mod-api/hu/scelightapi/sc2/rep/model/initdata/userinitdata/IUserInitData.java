@@ -67,10 +67,13 @@ public interface IUserInitData extends IStructView {
 	/** Test map field name. */
 	String   F_TEST_MAP             = "testMap";
 	
+	/** MMR */
+	String   F_MMR = "scaledRating";
+	
 	
 	/**
 	 * Returns the associated player id for this user init data (in {@link IDetails#getPlayerList()})
-	 * 
+	 *
 	 * @return the associated player id for this user init data (in {@link IDetails#getPlayerList()})
 	 */
 	int getPlayerId();
@@ -180,4 +183,10 @@ public interface IUserInitData extends IStructView {
 	 */
 	ILeague getHighestLeague();
 	
+	/**
+	 * Returns the MMR.
+	 *
+	 * @return MMR
+	 */
+	Integer getMMR();
 }

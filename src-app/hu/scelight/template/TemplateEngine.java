@@ -622,6 +622,10 @@ public class TemplateEngine implements ITemplateEngine {
 				if ( swr.param <= playerUsers.length )
 					vb.append( playerUsers[ swr.param - 1 ].getSq() );
 				break;
+			case MMR:
+				if ( swr.param <= playerUsers.length)
+					vb.append( playerUsers[swr.param - 1 ].getMMR() );
+				break;
 			case SUPPLY_CAPPED :
 				if ( swr.param <= playerUsers.length )
 					vb.append( Env.LANG.formatNumber( playerUsers[ swr.param - 1 ].getSupplyCappedPercent(), 2 ) );

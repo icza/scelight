@@ -62,11 +62,11 @@ public class UsersComp extends BaseRepAnalTabComp {
 		
 		table.setRowHeightForProgressBar();
 		
-		final Vector< Object > columns = Utils.vector( "User Color", "Team", "Color", "Name", "Race", "Result", "<html>Highest<br>League</html>", "APM", "SPM",
+		final Vector< Object > columns = Utils.vector( "User Color", "Team", "Color", "Name", "Race", "Result", "<html>Highest<br>League</html>", "MMR", "APM", "SPM",
 		        "SQ", "<html>Supply-<br>capped %</html>", "<html>Swarm<br>Levels</html>", "<html>Start<br>Dir</html>", "Role", "Control", "Toon", "Slot",
 		        "Handicap" );
 		final List< Class< ? > > columnClasses = Utils.< Class< ? > > asNewList( Color.class, Integer.class, PlayerColor.class, String.class,
-		        RenderablePair.class, RenderablePair.class, TableIcon.class, ProgressBarView.class, ProgressBarView.class, ProgressBarView.class,
+		        RenderablePair.class, RenderablePair.class, TableIcon.class, Integer.class, ProgressBarView.class, ProgressBarView.class, ProgressBarView.class,
 		        ProgressBarView.class, ProgressBarView.class, Integer.class, Role.class, Controller.class, Toon.class, Integer.class, Integer.class );
 		
 		final int userColorColIdx = 0;
@@ -112,6 +112,9 @@ public class UsersComp extends BaseRepAnalTabComp {
 			row.add( u.player == null ? null : new RenderablePair<>( u.player.getResult().ricon.get(), u.player.getResult().text
 			        + ( u.player.isResultDeduced() ? " (Deduced)" : "" ) ) );
 			row.add( u.uid == null ? null : u.uid.getHighestLeague().tableIcon );
+			
+			row.add( u.mmr );
+			
 			row.add( new ProgressBarView( u.apm, maxApm ) );
 			row.add( new ProgressBarView( (int) ( u.spm * 100 ), (int) ( maxSpm * 100 ), Env.LANG.formatNumber( u.spm, 2 ) ) );
 			row.add( new ProgressBarView( u.sq, maxSq ) );
