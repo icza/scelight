@@ -689,6 +689,9 @@ public class Updater {
 							throw new Exception( "Invalid archive content, disallowed file entry: " + zipEntry.getName() );
 					}
 					final Path entryFile = tempPath.resolve( zipEntry.getName() );
+					if (!entryFile.normalize().startsWith(tempPath.normalize())) {
+						throw new RuntimeException("Bad zip entry");
+					}
 					if ( zipEntry.isDirectory() )
 						Files.createDirectories( entryFile );
 					else {
