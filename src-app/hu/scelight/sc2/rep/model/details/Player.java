@@ -79,7 +79,7 @@ public class Player extends StructView implements IPlayer {
 		name = Utils.stripOffMarkupFormatting( get( F_NAME ).toString().replace( "&lt;", "<" ).replace( "&gt;", ">" ) );
 		raceString = get( F_RACE ).toString();
 		race = Race.fromLocalizedValue( raceString );
-		recordedResult = Result.VALUES[ get( F_RESULT ) ];
+		recordedResult = Result.VALUES[ (int) get( F_RESULT ) ];
 		team = get( F_TEAM_ID );
 		toon = new Toon( this.< Map< String, Object > > get( F_TOON ) );
 		

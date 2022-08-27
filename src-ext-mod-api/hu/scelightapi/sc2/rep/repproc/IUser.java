@@ -214,4 +214,11 @@ public interface IUser {
 	 */
 	IPlayerColor getPlayerColor();
 	
+	/**
+	 * Returns the player MMR.
+	 *
+	 * @return the player MMR.
+	 * @since ???
+	 */
+	int getMMR();
 }

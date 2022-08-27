@@ -274,7 +274,10 @@ public enum Symbol implements HasRIcon {
 	        Icons.F_DIRECTION,
 	        "startDirX",
 	        "1",
-	        "<html>Direction of the start location of the <font color=red><b>X</b></font>-th player. It is a time hour value (e.g. 1 o'clock)</html>" );
+	        "<html>Direction of the start location of the <font color=red><b>X</b></font>-th player. It is a time hour value (e.g. 1 o'clock)</html>" ),
+	
+	/** Player's MMR */
+	MMR( Icons.MY_SQ, "mmrX", "4500", "<html>MMR of the <font color=red><b>X</b></font>-th player.</html>" );
 	
 	
 	
