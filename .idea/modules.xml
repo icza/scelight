@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/scelight.iml" filepath="$PROJECT_DIR$/.idea/scelight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scelight.iml" filepath="$PROJECT_DIR$/.idea/modules/scelight.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scelight.main.iml" filepath="$PROJECT_DIR$/.idea/modules/scelight.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scelight.test.iml" filepath="$PROJECT_DIR$/.idea/modules/scelight.test.iml" />
     </modules>

@@ -10,6 +10,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="sce.main" target="1.8" />
+      <module name="sce.test" target="1.8" />
       <module name="scelight" target="1.7" />
       <module name="scelight.main" target="1.8" />
       <module name="scelight.test" target="1.8" />

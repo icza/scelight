@@ -54,12 +54,4 @@ distributions {
     }
 }
 
-task copyIcon(type: Copy) {
-    from './src-launcher/hu/sllauncher/r/icon/my/app-icon-1.png'
-    into './snap/icon'
-    rename { String filename -> 'scelight.png' }
-}
-
-buildDir = new File(rootProject.projectDir, "snap/build")
 mainClassName = 'hu.sllauncher.ScelightLauncher'
-assemble.dependsOn copyIcon

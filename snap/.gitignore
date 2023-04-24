@@ -1,8 +1,0 @@
-*.snap
-.gradle
-.snapcraft
-build
-stage
-parts
-prime
-icon
