@@ -55,7 +55,22 @@ You can change this at any time.
 	<b>Note:</b> The <span class="s">Developer</span> level is disabled by default. You have to <span class="h">prove your developer skills</span> to unlock it.
 	<div class="a">
 		<b>To unlock the <span class="s">Developer</span> level:
-		</b> Create a file "dev-skill-level-ticket.txt" in your <span class="s">Workspace</span> folder having the hexadecimal representation of the SHA-256 checksum of
-		the decimal representation of the max value of an 8-byte signed integer shifted right by a value of 0x1a and XOR-ed with the hex value CafeBabe.
+		</b> 
+		    <ul>
+      <li>Create a file "dev-skill-level-ticket.txt" in your <span class="s">Workspace</span>
+      <ul>
+        <li>Please check under Settings >> Workspace for more information about workspace</li>
+      </ul>
+      </li>
+      <li>Add the solution of following problem to this file
+        <ol>
+          <li>Find the maximum value of an 8-byte signed integer</li>
+          <li>Right Shift the value from <b>1.</b> by 0x1A</li>
+          <li>XOR the value from <b>2.</b> with 0xCAFEBABE </li>
+          <li>Get the decimal representation of the value of <b>3.</b></li>
+          <li>Create the Hexadecimal SHA-256 of the value of <b>4.</b>. Handle the Value from <b>4</b> as a string</li>
+        </ol>
+      </li>
+    </ul>
 	</div>
 </div>
